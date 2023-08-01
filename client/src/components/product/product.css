@@ -1,0 +1,44 @@
+.div_con {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #bbb;
+  padding: 20px 0;
+}
+
+.pro_con {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #fff;
+  border-radius: 6px;
+  width: 310px;
+  margin: 10px 0;
+  padding: 12px 0;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 90px 4px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+/* .img_con {
+  border: 5px;
+} */
+
+.img_con img {
+  border-radius: 6px;
+  margin: 0 0 8px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.cart_btn {
+  margin-top: 10px;
+  width: fit-content;
+}
+
+.crat_sticky {
+  position: sticky;
+  top: 30px;
+  padding: 8px;
+  background-color: chartreuse;
+  z-index: 1;
+}
