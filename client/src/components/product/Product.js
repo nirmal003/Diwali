@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
 import "./product.css";
 
 function Product() {
@@ -29,33 +28,52 @@ function Product() {
   console.log(userData);
   console.log(error);
 
+  const pro = [];
+  const [cartProduct, setcartProduct] = useState("");
+
+  const handleInput = (qty, product) => {
+    pro.push({ product, qty });
+
+    console.log(pro);
+  };
+
   return (
     <>
       <div className="crat_sticky">Cart Items</div>
       <div className="div_con row">
         {!loading && !error ? (
           userData?.user?.map((u) => (
-            <div key={u.Product_id} className="pro_con">
-              <div className="img_con ">
+            <div key={u.Product_id} className="pro_con w-100 col-md-4 col-4">
+              <div className="img_con">
                 <img
-                  style={{ width: "280px", height: "380px" }}
                   className="img-fluid "
-                  src={u.Image}
-                  // src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
+                  // src={u.Image}
+                  src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
                   alt={u.Product_id}
                 />
               </div>
-              <div className="justify-content-center row">
-                <h4>{u.Product_Name}</h4>
-                <span>
-                  <strike>₹{u.Poduct_Price}</strike>
-                  <b>
-                    {" "}
-                    ₹{Math.floor(`${u.Poduct_Price - u.Poduct_Price * 0.3}`)}
-                  </b>
-                </span>
-                <span>Available Qty : {u.Product_Qty}</span>
-                <Button className="cart_btn fw-bold">Add to Cart</Button>
+
+              <div className="details_con col-md-8 col-8 ">
+                <h4 className="pro_head w-100 text-start fw-bold">
+                  {u.Product_Name}
+                </h4>
+
+                <div className="w-100 d-flex justify-content-center algin-items-center price_con pt-4">
+                  <span className="d-flex flex-column text-center mx-3 ">
+                    <strike className="strike">
+                      ₹ {u.Poduct_Price}.00 / Box
+                    </strike>
+                    <span className="price">
+                      ₹ {Math.floor(`${u.Poduct_Price - u.Poduct_Price * 0.3}`)}
+                      .00 / Box
+                    </span>
+                  </span>
+                  <input
+                    className="input text-center mx-4"
+                    placeholder="Qty"
+                    onChange={(e) => handleInput(e.target.value, u)}
+                  />
+                </div>
               </div>
             </div>
           ))

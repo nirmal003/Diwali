@@ -45,9 +45,9 @@ function NavBar() {
         <Container>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav "
-            className="text-black fw-bold fs-4 border-none"
+            className="text-black fw-bold fs-2 border-none"
           >
-            Menu
+            MENU
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto fw-bold">
