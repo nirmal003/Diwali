@@ -250,7 +250,7 @@ function Home() {
         />
       </div>
 
-      <div className="container pad my-5">
+      <div className="container my-5">
         <div className="row justify-content-center">
           <div className="col-lg-12 pb-4">
             <h1 className="acme text-center fw-bolder clr-red">
