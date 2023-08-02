@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import TotalPrice from "./TotalPrice";
 import "./product.css";
 
 function Product() {
@@ -8,11 +9,6 @@ function Product() {
 
   useEffect(() => {
     fetchData();
-
-    // Aos.init();
-    // new WOW.WOW({
-    //   live: false,
-    // }).init();
   }, []);
 
   const fetchData = async () => {
@@ -28,15 +24,6 @@ function Product() {
   console.log(userData);
   console.log(error);
 
-  const pro = [];
-  const [cartProduct, setcartProduct] = useState("");
-
-  const handleInput = (qty, product) => {
-    pro.push({ product, qty });
-
-    console.log(pro);
-  };
-
   return (
     <>
       <div className="crat_sticky">Cart Items</div>
@@ -51,6 +38,7 @@ function Product() {
                   src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
                   alt={u.Product_id}
                 />
+                <span className="proId_con">{u.Product_id}</span>
               </div>
 
               <div className="details_con col-md-8 col-8 ">
@@ -68,11 +56,7 @@ function Product() {
                       .00 / Box
                     </span>
                   </span>
-                  <input
-                    className="input text-center mx-4"
-                    placeholder="Qty"
-                    onChange={(e) => handleInput(e.target.value, u)}
-                  />
+                  <TotalPrice u={u} />
                 </div>
               </div>
             </div>
