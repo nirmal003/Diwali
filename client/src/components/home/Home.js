@@ -1,8 +1,6 @@
 import Aos from "aos";
 import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
-import Col from "react-bootstrap/esm/Col";
-import Row from "react-bootstrap/esm/Row";
+import { Button, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import WOW from "wowjs";
 import "./home.css";
@@ -35,10 +33,10 @@ function Home() {
   console.log(error);
 
   return (
-    <div>
+    <div className="w-100">
       {!loading && !error ? (
         userData?.user?.slice(0, 1).map((u) => (
-          <div key={u.Product_id}>
+          <div key={u.Product_id} className="w-100">
             <img
               className="img-fluid"
               src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
@@ -52,7 +50,7 @@ function Home() {
 
       <Row className="my-3 cracker justify-content-center">
         <Col className="col-lg-6 col-md-8 col-12">
-          <h3 className="fw-bold text-start">Welcome To</h3>
+          <h3 className="fw-bold text-start ">Welcome To</h3>
           <h2 className="text-danger text-start fw-bold mb-4">
             Diwali Crackers
           </h2>
@@ -86,7 +84,7 @@ function Home() {
             <div className="welcome">
               <div>
                 <img
-                  data-aos="fade-right"
+                  data-aos="flip-right"
                   className="img1"
                   src="https://www.malathicrackers.com/images/chakkar.jpg"
                   alt="3456"
@@ -94,7 +92,7 @@ function Home() {
               </div>
               <div>
                 <img
-                  data-aos="fade-left"
+                  data-aos="flip-left"
                   className="img1 img2"
                   src="https://www.malathicrackers.com/images/rocket.jpg"
                   alt="3456"
@@ -106,7 +104,7 @@ function Home() {
             <div className="welcome">
               <div>
                 <img
-                  data-aos="fade-right"
+                  data-aos="flip-left"
                   className="img1 img3"
                   src="https://www.malathicrackers.com/images/flowerpot.jpg"
                   alt="3456"
@@ -114,7 +112,7 @@ function Home() {
               </div>
               <div>
                 <img
-                  data-aos="fade-left"
+                  data-aos="flip-right"
                   className="img1 img4 "
                   src="https://www.malathicrackers.com/images/sparklers.jpg"
                   alt="3456"

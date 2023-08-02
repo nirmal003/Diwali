@@ -68,6 +68,7 @@
 .point2 {
   bottom: 15px;
   right: 10px;
+  width: 180px;
 }
 
 .priceicn {
@@ -117,5 +118,6 @@
 
   .point2 {
     right: 14px;
+    width: 120px;
   }
 }

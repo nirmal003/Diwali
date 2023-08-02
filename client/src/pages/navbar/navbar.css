@@ -15,6 +15,7 @@
   text-decoration: none;
   color: #fff;
   padding: 10px 25px !important;
+  position: relative;
 }
 .nav-link {
   padding: 0;
@@ -34,6 +35,19 @@
 .navbar-toggler:focus {
   box-shadow: none;
 }
+
+.navbar-toggler {
+  border: none;
+}
+
+.toggle {
+  padding: 13px;
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+}
+
 @media (max-width: 1120px) {
   .crackers {
     display: none;

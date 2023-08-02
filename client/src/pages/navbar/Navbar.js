@@ -1,6 +1,6 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Row from "react-bootstrap/Row";
@@ -45,7 +45,7 @@ function NavBar() {
         <Container>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav "
-            className="text-black fw-bold fs-4"
+            className="text-black fw-bold fs-4 border-none"
           >
             Menu
           </Navbar.Toggle>
@@ -54,26 +54,56 @@ function NavBar() {
               <Nav.Link>
                 <Link to="/" className="link">
                   Home
+                  <Navbar.Toggle
+                    aria-controls="basic-navbar-nav "
+                    className="toggle"
+                  >
+                    {" "}
+                  </Navbar.Toggle>
                 </Link>
               </Nav.Link>
               <Nav.Link>
                 <Link to="/about" className="link">
                   About
+                  <Navbar.Toggle
+                    aria-controls="basic-navbar-nav "
+                    className="toggle"
+                  >
+                    {" "}
+                  </Navbar.Toggle>
                 </Link>
               </Nav.Link>
               <Nav.Link>
                 <Link to="/product" className="link">
                   Product
+                  <Navbar.Toggle
+                    aria-controls="basic-navbar-nav "
+                    className="toggle"
+                  >
+                    {" "}
+                  </Navbar.Toggle>
                 </Link>
               </Nav.Link>
               <Nav.Link>
                 <Link to="/safety" className="link">
                   Safety Tips
+                  <Navbar.Toggle
+                    aria-controls="basic-navbar-nav "
+                    className="toggle"
+                  >
+                    {" "}
+                  </Navbar.Toggle>
                 </Link>
               </Nav.Link>
               <Nav.Link>
                 <Link to="/contact" className="link">
                   Contact Us
+                  <Navbar.Toggle
+                    aria-controls="basic-navbar-nav "
+                    className="toggle"
+                  >
+                    {" "}
+                  </Navbar.Toggle>
                 </Link>
               </Nav.Link>
             </Nav>

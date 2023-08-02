@@ -1,7 +1,7 @@
 import React from "react";
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./footer.css";
 
 function Footer() {
@@ -121,10 +121,10 @@ function Footer() {
                     width="100%"
                     height="200"
                     style={{ border: 0 }}
-                    allowfullscreen=""
+                    // allowfullscreen=""
                     loading="lazy"
                     title="Diwali Crackers"
-                    referrerpolicy="no-referrer-when-downgrade"
+                    // referrerpolicy="no-referrer-when-downgrade"
                   />
                 </div>
                 <div className="col-lg-12 text-center pt-4">
@@ -164,7 +164,6 @@ function Footer() {
         </div>
       </div>
       <div className="fixed point w0">
-        {/* <a href="https://api.whatsapp.com/send?phone=918523979570"> */}
         <a onClick={() => window.open("https://wa.me/+919942814506")}>
           <img
             src="https://www.malathicrackers.com/images/whatsappicon.png"
@@ -173,7 +172,6 @@ function Footer() {
             title="Malathi Crackers"
           />
         </a>
-        {/* </a> */}
       </div>
 
       <div className="fixed point1 w0 d-none d-lg-block">
@@ -204,14 +202,14 @@ function Footer() {
       </div>
 
       <div className="fixed point2">
-        <a href="products.php">
+        <Link to="/products">
           <img
             src="https://www.malathicrackers.com/images/quickpurchase.png"
             className="priceicn2 float-right"
             alt="Malathi Crackers"
             title="Malathi Crackers"
           />
-        </a>
+        </Link>
       </div>
     </>
   );
