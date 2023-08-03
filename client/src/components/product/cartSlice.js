@@ -23,6 +23,7 @@ export const cartSlice = createSlice({
           c.qty = action.payload.qty;
           c.offerPrice = action.payload.offerPrice;
           c.totalPrice = action.payload.totalPrice;
+          c.discountPrice = action.payload.discountPrice;
           c.product = action.payload.product;
         }
         return c;

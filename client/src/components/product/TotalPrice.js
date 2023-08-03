@@ -11,17 +11,29 @@ function TotalPrice(u) {
 
   const handleInput = (qty, product) => {
     const id = product.u.Product_id;
-    const offerPrice = product.u.Poduct_Price - product.u.Poduct_Price * 0.3;
+    const discountPrice = product.u.Poduct_Price * 0.3;
+    const offerPrice = product.u.Poduct_Price - discountPrice;
     setTotalPrice(qty * offerPrice);
-    const data = { id, qty, product, offerPrice, totalPrice: qty * offerPrice };
+    const data = {
+      id,
+      qty,
+      product,
+      offerPrice,
+      discountPrice: qty * discountPrice,
+      totalPrice: qty * offerPrice,
+    };
+
+    if (Number(qty) === 0) {
+      dispatch(deleteCart(id));
+      return;
+    }
 
     if (cartProduct.length === 0) {
       // console.log("empty call");
       dispatch(addCart(data));
     } else {
-      console.log(cartProduct);
       const duplicate = cartProduct.filter((p) => p.id === id);
-      console.log(duplicate.length);
+      // console.log(duplicate.length);
       if (duplicate.length && qty) {
         // console.log("update call");
         dispatch(updateCart(data));

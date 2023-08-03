@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import TotalPrice from "./TotalPrice";
 import "./product.css";
 
@@ -24,9 +25,29 @@ function Product() {
   console.log(userData);
   console.log(error);
 
+  const cartProduct = useSelector((state) => state.cart.cart);
+
+  const totalDiscount =
+    cartProduct.length &&
+    cartProduct.reduce((acc, val) => acc + Number(val.discountPrice), 0);
+
+  const totalPrice =
+    cartProduct.length &&
+    cartProduct.reduce((acc, val) => acc + Number(val.totalPrice), 0);
+
   return (
     <>
-      <div className="crat_sticky">Cart Items</div>
+      <div className="crat_sticky d-flex flex-row justify-content-between w-100 text-center">
+        <div className="fw-bold text-wrap cart_price">
+          Total Products : {cartProduct.length}
+        </div>
+        <div className="fw-bold text-wrap cart_price">
+          Discount Total : ₹.{Math.floor(totalDiscount)}
+        </div>
+        <div className="fw-bold text-wrap cart_price">
+          Overall Total : ₹.{Math.floor(totalPrice)}
+        </div>
+      </div>
       <div className="div_con row">
         {!loading && !error ? (
           userData?.user?.map((u) => (
