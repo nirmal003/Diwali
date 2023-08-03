@@ -1,17 +1,43 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addCart, deleteCart, updateCart } from "./cartSlice";
 
 function TotalPrice(u) {
   const [totalPrice, setTotalPrice] = useState(0);
 
-  const pro = [];
+  const dispatch = useDispatch();
+  const cartProduct = useSelector((state) => state.cart.cart);
+  console.log(cartProduct);
 
   const handleInput = (qty, product) => {
-    console.log(product.u);
+    const id = product.u.Product_id;
     const offerPrice = product.u.Poduct_Price - product.u.Poduct_Price * 0.3;
     setTotalPrice(qty * offerPrice);
-    console.log(totalPrice);
-    pro.push({ product, qty });
-    console.log(pro);
+    const data = { id, qty, product, offerPrice, totalPrice: qty * offerPrice };
+
+    if (cartProduct.length === 0) {
+      // console.log("empty call");
+      dispatch(addCart(data));
+    } else {
+      console.log(cartProduct);
+      const duplicate = cartProduct.filter((p) => p.id === id);
+      console.log(duplicate.length);
+      if (duplicate.length && qty) {
+        // console.log("update call");
+        dispatch(updateCart(data));
+      } else {
+        if (qty.length === 0) {
+          // console.log("delete call");
+          dispatch(deleteCart(id));
+        } else if (duplicate.length) {
+          // console.log("2update call");
+          dispatch(updateCart(data));
+        } else {
+          // console.log("add call");
+          dispatch(addCart(data));
+        }
+      }
+    }
   };
 
   return (

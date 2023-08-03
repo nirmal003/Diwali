@@ -14,7 +14,7 @@ function Safety() {
           </div>
         </div>
       </div>
-      <div class="container pad">
+      <div class="container pt-2 ">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-12 pb-4 text-start">
             <h2 class="acme heading1 pb-3 clr-red">Diwali Crackers</h2>
@@ -50,9 +50,9 @@ function Safety() {
 
             <div className="text4 pt-3">
               <ImCheckmark className="icnclr1 fw-bold" />
-              <div className="roboto fn text-start">
+              <div className="robotoc fn text-start">
                 <h1 class="acme fw-bold heading5 pl">Branded Fireworks</h1>
-                <p class="roboto pl">
+                <p class="roboto pl ">
                   Buy fireworks from authorized / reputed manufacturers only.
                 </p>
               </div>
@@ -89,10 +89,10 @@ function Safety() {
             </div>
           </div>
 
-          <div class="col-lg-6 col-md-12 col-12">
+          <div class="col-lg-6 col-md-12 col-12 text-start">
             <h3 class="block-head acme font fw-bold">Don'ts</h3>
 
-            <div className="text4 pt-4">
+            <div className="text4 pt-4 ">
               <ImCross className="icnclr2 fw-bold" />
               <div className="roboto fn text-start">
                 <h1 class="acme fw-bold heading5 pl">Don't make tricks</h1>
