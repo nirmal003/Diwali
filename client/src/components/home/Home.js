@@ -1,9 +1,12 @@
 import Aos from "aos";
 import React, { useEffect, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import WOW from "wowjs";
 import "./home.css";
+
+import { addData } from "./dataSlice";
 
 function Home() {
   const [userData, setUserData] = useState();
@@ -22,7 +25,9 @@ function Home() {
   const fetchData = async () => {
     try {
       const data = await fetch(process.env.REACT_APP_KEY);
-      setUserData(await data.json());
+      const jsonData = await data.json();
+      // setUserData(jsonData);
+      dispatch(addData(jsonData));
       setLoading(false);
     } catch (error) {
       setError(error);
@@ -32,10 +37,14 @@ function Home() {
   console.log(userData);
   console.log(error);
 
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.data.data);
+  console.log(data);
+
   return (
     <div className="w-100">
-      {!loading && !error ? (
-        userData?.user?.slice(0, 1).map((u) => (
+      {data.length ? (
+        data?.slice(0, 1).map((u) => (
           <div key={u.Product_id} className="w-100">
             <img
               className="img-fluid"
