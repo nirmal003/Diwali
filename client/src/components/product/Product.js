@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import * as helpers from "../../Helper/helper";
@@ -7,8 +7,6 @@ import TotalPrice from "./TotalPrice";
 import "./product.css";
 
 function Product() {
-  const [error, setError] = useState(null);
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -19,7 +17,7 @@ function Product() {
       const jsonData = await data.json();
       dispatch(addData(jsonData));
     } catch (error) {
-      setError(error);
+      console.log(error);
     }
   };
 
