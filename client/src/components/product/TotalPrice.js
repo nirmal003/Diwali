@@ -55,6 +55,7 @@ function TotalPrice(u) {
   return (
     <>
       <input
+        type="number"
         className="input text-center mx-4"
         placeholder="Qty"
         onChange={(e) => handleInput(e.target.value, u)}
