@@ -1,10 +1,17 @@
+.pro_title {
+  padding: 5px;
+  color: #fff;
+  font-size: 20px;
+  /* font-weight: 600; */
+  background: #5a1a60 !important;
+}
 .div_con {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   /* background-color: #e21515; */
-  background-color: rgb(226, 21, 192);
-  padding: 6px;
+  background-color: rgb(201, 134, 190);
+  padding: 3px 6px;
   margin: 0;
 }
 
@@ -110,9 +117,9 @@
 
 .crat_sticky {
   position: sticky;
-  top: 30px;
+  top: 0;
   padding: 4px;
-  background-color: rgb(229, 254, 4);
+  /* background-color: rgb(229, 254, 4); */
   z-index: 1;
 }
 

@@ -1,5 +1,5 @@
 import Aos from "aos";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -9,10 +9,6 @@ import "./home.css";
 import { addData } from "./dataSlice";
 
 function Home() {
-  const [userData, setUserData] = useState();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
   useEffect(() => {
     fetchData();
     Aos.init();
@@ -26,16 +22,11 @@ function Home() {
     try {
       const data = await fetch(process.env.REACT_APP_KEY);
       const jsonData = await data.json();
-      // setUserData(jsonData);
       dispatch(addData(jsonData));
-      setLoading(false);
     } catch (error) {
-      setError(error);
+      console.log(error);
     }
   };
-
-  console.log(userData);
-  console.log(error);
 
   const dispatch = useDispatch();
   const data = useSelector((state) => state.data.data);
@@ -43,19 +34,13 @@ function Home() {
 
   return (
     <div className="w-100">
-      {data.length ? (
-        data?.slice(0, 1).map((u) => (
-          <div key={u.Product_id} className="w-100">
-            <img
-              className="img-fluid"
-              src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
-              alt={u.Product_id}
-            />
-          </div>
-        ))
-      ) : (
-        <h2>Loading...</h2>
-      )}
+      <div className="w-100">
+        <img
+          className="img-fluid"
+          src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
+          alt="Diwali Crackers"
+        />
+      </div>
 
       <Row className="my-3 cracker justify-content-center">
         <Col className="col-lg-6 col-md-8 col-12">

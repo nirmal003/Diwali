@@ -4,10 +4,14 @@ import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Row from "react-bootstrap/Row";
+import { HiShoppingCart } from "react-icons/hi";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 
 function NavBar() {
+  const cartProduct = useSelector((state) => state.cart.cart);
+
   return (
     <>
       <Container fluid>
@@ -41,11 +45,11 @@ function NavBar() {
         </Row>
       </Container>
 
-      <Navbar expand="lg" className="bg-primary sticky ">
+      <Navbar expand="lg" className=" sticky navbar ">
         <Container>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav "
-            className="text-black fw-bold fs-2 border-none"
+            className="text-white fw-bold fs-2 border border-1 m-1"
           >
             MENU
           </Navbar.Toggle>
@@ -110,6 +114,15 @@ function NavBar() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+
+      <div className="cart_icon_con ">
+        <Link to="/cart" className="text-decoration-none text-white">
+          <HiShoppingCart className="shopping_cart_icon fw-bolder fs-1 " />
+          <span className="cart_qty  translae-middle ">
+            {cartProduct.length}
+          </span>
+        </Link>
+      </div>
     </>
   );
 }
