@@ -42,7 +42,7 @@ function Footer() {
                             Call us now
                           </span>
                           <h2 className="acme text-white fnt1">
-                            + 91 85239 79570
+                            + 91 98947 40650
                           </h2>
                         </div>
                       </div>
@@ -56,10 +56,10 @@ function Footer() {
               <div className="row pb-4">
                 <div className="col-lg-4 col-md-6 col-12">
                   <h1 className="clr-blk fw-bolder acme heading3 pb-2">
-                    Malathi Crackers
+                    Awesome Crackers
                   </h1>
                   <p className="roboto text-white text-start smallfnt">
-                    "Malathi Crackers" is acknowledged as the renowned
+                    "Awesome Crackers" is acknowledged as the renowned
                     manufacturer of an exclusive range of Ground Chakkar, Flower
                     Pots, Twinkling Star, Atom Bomb, Rockets etc.
                   </p>
@@ -78,22 +78,22 @@ function Footer() {
                   <div className="text1">
                     <FaMapMarkerAlt className="text-white" />
                     <div className="roboto fn text-white smallfnt">
-                      3/208,Meesalur, Village,
-                      <br /> Sivakasi, Tamil Nadu - 626 003
+                      4/480, Veerachelliya Puram,
+                      <br /> Sivakasi, Virudhunagar - 626 005
                     </div>
                   </div>
 
                   <div className="text1">
                     <FaPhoneAlt className="text-white" />
                     <div className="roboto fn text-white text-start  smallfnt">
-                      +91 85239 79570
+                      +91 98947 40650
                     </div>
                   </div>
 
                   <div className="text1">
                     <FaPhoneAlt className="text-white text-end" />
                     <div className="roboto fn text-white text-start smallfnt">
-                      +91 80985 43249
+                      +91 97913 24210
                     </div>
                   </div>
 
@@ -107,7 +107,7 @@ function Footer() {
                   <div className="text1">
                     <GrMail className="text-white" />
                     <div className="roboto fn text-white smallfnt">
-                      malathicrackers@gmail.com
+                      awesomecrackerss@gmail.com
                     </div>
                   </div>
                 </div>
@@ -121,10 +121,8 @@ function Footer() {
                     width="100%"
                     height="200"
                     style={{ border: 0 }}
-                    // allowfullscreen=""
                     loading="lazy"
                     title="Diwali Crackers"
-                    // referrerpolicy="no-referrer-when-downgrade"
                   />
                 </div>
                 <div className="col-lg-12 text-center pt-4">
@@ -163,8 +161,9 @@ function Footer() {
           </div>
         </div>
       </div>
+
       <div className="fixed point w0">
-        <a onClick={() => window.open("https://wa.me/+919942814506")}>
+        <a onClick={() => window.open("https://wa.me/+919894740650")}>
           <img
             src="https://www.malathicrackers.com/images/whatsappicon.png"
             className="priceicn float-left filter"
@@ -185,13 +184,13 @@ function Footer() {
           <div className="tooltip text-white carter text-center">
             For More Details Call <br />
             <FaPhoneAlt className="text-white" />
-            +91 85239 79570
+            +91 98947 40650
           </div>
         </span>
       </div>
 
       <div className="fixed point1 w0 d-lg-none">
-        <a href="tel:+918523979570">
+        <a href="tel:+919894740650">
           <img
             src="https://www.malathicrackers.com/images/callicon.png"
             className=" priceicn float-left"

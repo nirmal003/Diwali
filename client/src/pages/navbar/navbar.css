@@ -53,9 +53,8 @@
 }
 
 .cart_icon_con {
-  width: 75px;
-  height: 75px;
-  padding-left: 4px;
+  width: 72px;
+  height: 72px;
   border-radius: 50% 0 0 50%;
   position: fixed;
   z-index: 2;

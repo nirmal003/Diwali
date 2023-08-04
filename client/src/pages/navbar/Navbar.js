@@ -16,12 +16,12 @@ function NavBar() {
     <>
       <Container fluid>
         <Row className="fw-bold bg-dark header">
-          <Col className="text-white fs-6">Orders - +91 85239 79570</Col>
+          <Col className="text-white fs-6">Orders - +91 98947 40650</Col>
           <Col className="text-white badge fs-6 fw-bolder">
-            Welcome to Malathi Crackers, Sivakasi
+            Welcome to Awesome Crackers, Sivakasi
           </Col>
           <Col className=" text-white badge fs-6 fw-bolder">
-            Mail Us : malathicrackers@gmail.com
+            Mail Us : awesomecrackerss@gmail.com
           </Col>
         </Row>
         <Row className="header">
@@ -33,13 +33,13 @@ function NavBar() {
           </Col>
           <Col>
             <div className="align-middle acme py-2 fs-1 text-danger fw-bolder justify-content-md-center">
-              Diwali Crackers
+              Awesome Crackers
             </div>
           </Col>
           <Col>
             <div className="align-middle py-2 fw-bold fs-6 justify-content-md-center">
               <span className="clr-red fs-5">FOR QUERIES & BULK ORDER </span>
-              <br /> +91 80985 43249 <br /> +91 96002 66278
+              <br /> +91 98947 40650 <br /> +91 97913 24210
             </div>
           </Col>
         </Row>
