@@ -201,7 +201,7 @@ function Footer() {
       </div>
 
       <div className="fixed point2">
-        <Link to="/products">
+        <Link to="/product">
           <img
             src="https://www.malathicrackers.com/images/quickpurchase.png"
             className="priceicn2 float-right"
