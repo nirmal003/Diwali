@@ -30,14 +30,7 @@ function Product() {
 
   const totalPrice = cartProduct.length && helpers.overallPrice(cartProduct);
 
-  const groupByCategory =
-    data &&
-    data.reduce((group, product) => {
-      const { Status } = product;
-      group[Status] = group[Status] ?? [];
-      group[Status].push(product);
-      return group;
-    }, {});
+  const groupByCategory = data && helpers.productCategory(data);
 
   console.log(groupByCategory);
 
