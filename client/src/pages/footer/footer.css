@@ -52,7 +52,7 @@
 
 .fixed {
   position: fixed;
-  z-index: 2;
+  z-index: 3;
 }
 
 .point {

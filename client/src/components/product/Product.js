@@ -64,9 +64,9 @@ function Product() {
       </div>
 
       <>
-        {groupByCategory ? (
+        {Object.keys(groupByCategory).length ? (
           Object.entries(groupByCategory).map(([key, value]) => (
-            <>
+            <div key={key}>
               <h5 className="bg-info pro_title mb-0">{key}</h5>
               <div className="div_con row">
                 {value.map((u) => (
@@ -108,10 +108,10 @@ function Product() {
                   </div>
                 ))}
               </div>
-            </>
+            </div>
           ))
         ) : (
-          <h2 className="fw-bold">Loading...</h2>
+          <h1 className="fw-bold text-center pt-3">Loading...</h1>
         )}
       </>
     </>
