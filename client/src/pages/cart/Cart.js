@@ -20,18 +20,41 @@ function Cart() {
       </div>
 
       <div className="scoop_parent">
-        <div className="scoop">data</div>
-        <div className="scoop">
+        <div className="scoop scoop1">
+          <div className="cart_img_con scoop1_child col-6">
+            <img
+              className=""
+              src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
+              alt=""
+            />
+            <span className="text-start">qwerttrfeh hagcew qwertre</span>
+          </div>
+
+          <div className="cart_input_con scoop1_child py-1 col-3">
+            <input type="text" className="input " />
+            <span>₹ 235.00</span>
+          </div>
+
+          <div className="cart_cancel_con scoop1_child col-3">
+            <span>₹ 123004</span>
+            <span className="cart_cancel_icon ">
+              <IoMdCloseCircle className="text-white" />
+            </span>
+          </div>
+        </div>
+
+        <div className="scoop scoop2">
           <span>Net Total</span>
           <span>₹ 23432123</span>
         </div>
-        <div className="scoop">
+
+        <div className="scoop scoop2">
           <span>Discount Total</span>
-          <span>₹ 23432123</span>
+          <span>₹ 23423</span>
         </div>
-        <div className="scoop">
+        <div className="scoop scoop2">
           <span>Sub Total</span>
-          <span>₹ 23432123</span>
+          <span>₹ 2123</span>
         </div>
       </div>
       <div className=" fs-3 estimate_con">Confirm Estimate</div>
