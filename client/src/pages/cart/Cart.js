@@ -3,13 +3,14 @@ import { IoMdCloseCircle } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as helpers from "../../Helper/helper";
-import { deleteCart } from "../../components/product/cartSlice";
+import { deleteCart, updateCart } from "../../components/product/cartSlice";
 import "./cart.css";
 
 function Cart() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cartProduct = useSelector((state) => state.cart.cart);
+  console.log(cartProduct);
 
   const netTotal = cartProduct.length && helpers.netTotal(cartProduct);
 
@@ -34,7 +35,13 @@ function Cart() {
       discountPrice: qty * discountPrice,
     };
 
-    console.log(data);
+    if (Number(qty) === 0) {
+      if (window.confirm("do you want to cancel this item?...."))
+        dispatch(deleteCart(c.id));
+      return;
+    } else {
+      dispatch(updateCart(data));
+    }
   };
 
   return (
@@ -70,8 +77,8 @@ function Cart() {
                 <input
                   type="text"
                   defaultValue={c.qty}
-                  placeholder="Qty"
                   required
+                  placeholder="Qty"
                   className="input text-center"
                   onChange={(e) => handleCartInput(e.target.value, c)}
                 />
@@ -99,11 +106,13 @@ function Cart() {
           <span>Discount Total</span>
           <span>₹ {Math.floor(totalDiscount)}.00</span>
         </div>
+
         <div className="scoop scoop2">
           <span>Sub Total</span>
           <span>₹ {Math.floor(totalPrice)}.00</span>
         </div>
       </div>
+
       <div className=" fs-3 estimate_con">Confirm Estimate</div>
     </div>
   );

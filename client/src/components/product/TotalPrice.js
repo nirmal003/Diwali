@@ -34,21 +34,24 @@ function TotalPrice(u) {
     } else {
       const duplicate = cartProduct.filter((p) => p.id === id);
       // console.log(duplicate.length);
-      if (duplicate.length && qty) {
+      if (duplicate.length) {
         // console.log("update call");
         dispatch(updateCart(data));
       } else {
-        if (qty.length === 0) {
-          // console.log("delete call");
-          dispatch(deleteCart(id));
-        } else if (duplicate.length) {
-          // console.log("2update call");
-          dispatch(updateCart(data));
-        } else {
-          // console.log("add call");
-          dispatch(addCart(data));
-        }
+        dispatch(addCart(data));
       }
+      // } else {
+      //   if (qty.length === 0) {
+      //     // console.log("delete call");
+      //     dispatch(deleteCart(id));
+      //   } else if (duplicate.length) {
+      //     // console.log("2update call");
+      //     dispatch(updateCart(data));
+      //   } else {
+      //     // console.log("add call");
+      //     dispatch(addCart(data));
+      //   }
+      // }
     }
   };
 
