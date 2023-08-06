@@ -10,7 +10,7 @@ function Cart() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cartProduct = useSelector((state) => state.cart.cart);
-  console.log(cartProduct);
+  // console.log(cartProduct);
 
   const netTotal = cartProduct.length && helpers.netTotal(cartProduct);
 
@@ -24,7 +24,6 @@ function Cart() {
   };
 
   const handleCartInput = (qty, c) => {
-    console.log(c);
     const discountPrice =
       (c.product.u.Discount_Percentage / 100) * c.product.u.Product_Price;
 
