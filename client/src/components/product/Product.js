@@ -79,8 +79,8 @@ function Product() {
                       <img
                         className="img-fluid"
                         loading="lazy"
-                        // src={u.Image}
-                        src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
+                        src={u.Image}
+                        // src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
                         alt={u.Product_id}
                       />
                       <span className="proId_con">{u.Product_id}</span>

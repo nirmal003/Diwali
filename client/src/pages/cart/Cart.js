@@ -50,10 +50,10 @@ function Cart() {
 
   return (
     <div className="cart_list_con">
-      <>
-        <div className="cart_goback_btn" onClick={() => navigate(-1)}>
-          <IoMdCloseCircle />
-        </div>
+      <div className="cart_goback_btn" onClick={() => navigate(-1)}>
+        <IoMdCloseCircle />
+      </div>
+      <div className="cart">
         <div className="w-100 ">
           <h1 className="fw-bolder acme m-2 mb-3">Awesome Crackers </h1>
           <span className="fs-5 fw-bold">
@@ -71,7 +71,8 @@ function Cart() {
                   <img
                     className="col-5"
                     loading="lazy"
-                    src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
+                    src={c.product.u.Image}
+                    // src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
                     alt={c.id}
                   />
                   <span className="text-start col-7">
@@ -127,7 +128,7 @@ function Cart() {
             Confirm Estimate
           </Link>
         </div>
-      </>
+      </div>
     </div>
   );
 }
