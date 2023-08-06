@@ -9,16 +9,16 @@ function TotalPrice(u) {
   const cartProduct = useSelector((state) => state.cart.cart);
   console.log(cartProduct);
 
-  const handleInput = (qty, product) => {
-    const id = product.u.Product_id;
-    const discountPrice = product.u.Poduct_Price * 0.3;
-    const offerPrice = product.u.Poduct_Price - discountPrice;
+  const handleInput = (qty, p) => {
+    const id = p.u.Product_id;
+    const discountPrice = (p.u.Discount_Percentage / 100) * p.u.Product_Price;
+    const offerPrice = p.u.Product_Price - discountPrice;
     setTotalPrice(qty * offerPrice);
 
     const data = {
       id,
       qty,
-      product,
+      product: p,
       offerPrice,
       discountPrice: qty * discountPrice,
       totalPrice: qty * offerPrice,

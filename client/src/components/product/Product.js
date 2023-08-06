@@ -16,7 +16,6 @@ function Product() {
     try {
       const data = await fetch(process.env.REACT_APP_KEY);
       const jsonData = await data.json();
-      console.log(jsonData.product);
       dispatch(addData(jsonData));
     } catch (error) {
       console.log(error);
@@ -26,8 +25,6 @@ function Product() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.data.data);
   const cartProduct = useSelector((state) => state.cart.cart);
-
-  console.log(data);
 
   cartProduct.length &&
     cartProduct.filter((c) => {
@@ -94,12 +91,12 @@ function Product() {
                       <div className="w-100 d-flex justify-content-center algin-items-center price_con pt-4">
                         <span className="d-flex flex-column text-center mx-3 ">
                           <strike className="strike">
-                            ₹ {u.Poduct_Price}.00 / Box
+                            ₹ {u.Product_Price}.00 / Box
                           </strike>
                           <span className="price">
                             ₹{" "}
                             {Math.floor(
-                              `${u.Poduct_Price - u.Poduct_Price * 0.3}`
+                              `${u.Product_Price - u.Product_Price * 0.3}`
                             )}
                             .00 / Box
                           </span>

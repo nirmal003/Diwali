@@ -18,17 +18,16 @@ export function overallDiscount(cartProduct) {
 
 export function netTotal(cartProduct) {
   return cartProduct.reduce(
-    (acc, val) => acc + Number(val.product.u.Poduct_Price),
+    (acc, val) => acc + Number(val.product.u.Product_Price),
     0
   );
 }
 
 export function productCategory(data) {
-  console.log(data);
   return data.reduce((group, product) => {
-    const { Status } = product;
-    group[Status] = group[Status] ?? [];
-    group[Status].push(product);
+    const { Category_Name } = product;
+    group[Category_Name] = group[Category_Name] ?? [];
+    group[Category_Name].push(product);
     return group;
   }, {});
 }

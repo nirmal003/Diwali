@@ -24,7 +24,9 @@ function Cart() {
   };
 
   const handleCartInput = (qty, c) => {
-    const discountPrice = c.product.u.Poduct_Price * 0.3;
+    console.log(c);
+    const discountPrice =
+      (c.product.u.Discount_Percentage / 100) * c.product.u.Product_Price;
 
     const data = {
       id: c.id,
