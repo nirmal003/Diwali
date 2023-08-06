@@ -16,6 +16,7 @@ function Product() {
     try {
       const data = await fetch(process.env.REACT_APP_KEY);
       const jsonData = await data.json();
+      console.log(jsonData.product);
       dispatch(addData(jsonData));
     } catch (error) {
       console.log(error);
@@ -25,6 +26,8 @@ function Product() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.data.data);
   const cartProduct = useSelector((state) => state.cart.cart);
+
+  console.log(data);
 
   cartProduct.length &&
     cartProduct.filter((c) => {

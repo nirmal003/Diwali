@@ -24,6 +24,7 @@ export function netTotal(cartProduct) {
 }
 
 export function productCategory(data) {
+  console.log(data);
   return data.reduce((group, product) => {
     const { Status } = product;
     group[Status] = group[Status] ?? [];
