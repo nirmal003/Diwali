@@ -14,6 +14,7 @@ function TotalPrice(u) {
     const discountPrice = product.u.Poduct_Price * 0.3;
     const offerPrice = product.u.Poduct_Price - discountPrice;
     setTotalPrice(qty * offerPrice);
+
     const data = {
       id,
       qty,
@@ -29,26 +30,20 @@ function TotalPrice(u) {
     }
 
     if (cartProduct.length === 0) {
-      // console.log("empty call");
       dispatch(addCart(data));
     } else {
       const duplicate = cartProduct.filter((p) => p.id === id);
-      // console.log(duplicate.length);
       if (duplicate.length) {
-        // console.log("update call");
         dispatch(updateCart(data));
       } else {
         dispatch(addCart(data));
       }
       // } else {
       //   if (qty.length === 0) {
-      //     // console.log("delete call");
       //     dispatch(deleteCart(id));
       //   } else if (duplicate.length) {
-      //     // console.log("2update call");
       //     dispatch(updateCart(data));
       //   } else {
-      //     // console.log("add call");
       //     dispatch(addCart(data));
       //   }
       // }

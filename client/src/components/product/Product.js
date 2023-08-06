@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as helpers from "../../Helper/helper";
 import { addData } from "../home/dataSlice";
 import TotalPrice from "./TotalPrice";
+import { deleteCart } from "./cartSlice";
 import "./product.css";
 
 function Product() {
@@ -24,6 +25,11 @@ function Product() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.data.data);
   const cartProduct = useSelector((state) => state.cart.cart);
+
+  cartProduct.length &&
+    cartProduct.filter((c) => {
+      if (c.qty === 0) dispatch(deleteCart(c.id));
+    });
 
   const totalDiscount =
     cartProduct.length && helpers.overallDiscount(cartProduct);

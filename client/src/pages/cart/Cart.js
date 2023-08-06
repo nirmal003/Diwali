@@ -28,7 +28,7 @@ function Cart() {
 
     const data = {
       id: c.id,
-      qty,
+      qty: qty.length ? qty : 0,
       product: c.product,
       offerPrice: c.offerPrice,
       totalPrice: qty * c.offerPrice,
@@ -36,9 +36,12 @@ function Cart() {
     };
 
     if (Number(qty) === 0) {
-      if (window.confirm("do you want to cancel this item?...."))
+      if (window.confirm("do you want to cancel this item?....")) {
         dispatch(deleteCart(c.id));
-      return;
+        return;
+      } else {
+        dispatch(updateCart(data));
+      }
     } else {
       dispatch(updateCart(data));
     }
@@ -75,13 +78,13 @@ function Cart() {
 
               <div className="cart_input_con scoop1_child py-1 col-3">
                 <input
-                  type="text"
+                  type="number"
                   defaultValue={c.qty}
-                  required
                   placeholder="Qty"
                   className="input text-center"
                   onChange={(e) => handleCartInput(e.target.value, c)}
                 />
+
                 <span>₹ {Math.floor(c.offerPrice)}.00</span>
               </div>
 
@@ -113,7 +116,7 @@ function Cart() {
         </div>
       </div>
 
-      <div className=" fs-3 estimate_con">Confirm Estimate</div>
+      <div className=" fs-3 estimate_con disabled">Confirm Estimate</div>
     </div>
   );
 }
