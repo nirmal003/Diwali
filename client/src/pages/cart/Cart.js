@@ -102,17 +102,17 @@ function Cart() {
 
         <div className="scoop scoop2">
           <span>Net Total</span>
-          <span>₹ {Math.floor(netTotal)}.00</span>
+          <span className="scoop2_amnt">₹ {Math.floor(netTotal)}.00</span>
         </div>
 
         <div className="scoop scoop2">
           <span>Discount Total</span>
-          <span>₹ {Math.floor(totalDiscount)}.00</span>
+          <span className="scoop2_amnt">₹ {Math.floor(totalDiscount)}.00</span>
         </div>
 
         <div className="scoop scoop2">
           <span>Sub Total</span>
-          <span>₹ {Math.floor(totalPrice)}.00</span>
+          <span className="scoop2_amnt">₹ {Math.floor(totalPrice)}.00</span>
         </div>
       </div>
 

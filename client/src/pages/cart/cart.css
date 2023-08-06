@@ -60,10 +60,15 @@
   font-size: 16px;
 }
 .scoop2 {
-  padding: 0 4px;
+  padding: 0 4px 0 8px;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
   height: 60px;
+}
+
+.scoop2_amnt {
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .cart_img_con {
@@ -102,11 +107,12 @@
 }
 
 .cart_cancel_con {
-  /* background: aqua; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
+  font-size: 17px;
+  font-weight: 700;
 }
 
 .cart_cancel_icon {
@@ -127,7 +133,7 @@
   font-weight: 600;
   border-radius: 6px;
   padding: 10px;
-  margin: 16px;
+  margin: 40px 16px 240px;
 }
 
 .scoop:before {
