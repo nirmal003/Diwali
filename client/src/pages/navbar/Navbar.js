@@ -118,9 +118,7 @@ function NavBar() {
       <div className="cart_icon_con ">
         <Link to="/cart" className="text-decoration-none text-white">
           <HiShoppingCart className="shopping_cart_icon fw-bolder fs-1 " />
-          <span className="cart_qty  translae-middle ">
-            {cartProduct.length}
-          </span>
+          <span className="cart_qty ">{cartProduct.length}</span>
         </Link>
       </div>
     </>

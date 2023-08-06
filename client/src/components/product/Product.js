@@ -71,7 +71,7 @@ function Product() {
                 {value.map((u) => (
                   <div
                     key={u.Product_id}
-                    className="pro_con w-100 col-md-4 col-4"
+                    className="pro_con col-12 col-md-5 col-lg-5"
                   >
                     <div className="img_con">
                       <img

@@ -7,6 +7,7 @@ import Home from "./components/home/Home";
 import Product from "./components/product/Product";
 import Safety from "./components/safety/Safety";
 import Cart from "./pages/cart/Cart";
+import Estimate from "./pages/estimate/Estimate";
 import Footer from "./pages/footer/Footer";
 import NavBar from "./pages/navbar/Navbar";
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/safety" element={<Safety />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/estimate" element={<Estimate />} />
         </Routes>
         <Footer />
       </Router>

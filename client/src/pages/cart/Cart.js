@@ -1,7 +1,7 @@
 import React from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as helpers from "../../Helper/helper";
 import { deleteCart, updateCart } from "../../components/product/cartSlice";
 import "./cart.css";
@@ -81,6 +81,7 @@ function Cart() {
                   type="number"
                   defaultValue={c.qty}
                   placeholder="Qty"
+                  min="0"
                   className="input text-center"
                   onChange={(e) => handleCartInput(e.target.value, c)}
                 />
@@ -116,7 +117,11 @@ function Cart() {
         </div>
       </div>
 
-      <div className=" fs-3 estimate_con disabled">Confirm Estimate</div>
+      <div className=" fs-3 estimate_con disabled">
+        <Link to="/estimate" className="text-decoration-none text-black">
+          Confirm Estimate
+        </Link>
+      </div>
     </div>
   );
 }

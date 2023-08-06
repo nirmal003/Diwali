@@ -166,7 +166,7 @@ function Footer() {
       )}
 
       <div className="fixed point w0">
-        <a onClick={() => window.open("https://wa.me/+918870249702")}>
+        <a onClick={() => window.open("https://wa.me/+919894740650")}>
           <img
             src="https://www.malathicrackers.com/images/whatsappicon.png"
             className="priceicn float-left filter"
