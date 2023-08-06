@@ -50,79 +50,84 @@ function Cart() {
 
   return (
     <div className="cart_list_con">
-      <div className="cart_goback_btn" onClick={() => navigate(-1)}>
-        <IoMdCloseCircle />
-      </div>
-      <div className="w-100 ">
-        <h1 className="fw-bolder acme m-2 mb-3">Awesome Crackers </h1>
-        <span className="fs-5 fw-bold">
-          4/480, Veerachelliya Puram, Sivakasi, Virudhunagar - 626 005
-        </span>
-        <br />
-        <span className="fs-4 fw-bold">Mobile No : 98947 40650</span>
-      </div>
-
-      <div className="scoop_parent">
-        {cartProduct.length &&
-          cartProduct.map((c) => (
-            <div className="scoop scoop1" key={c.id}>
-              <div className="cart_img_con scoop1_child col-6">
-                <img
-                  className="col-5"
-                  src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
-                  alt=""
-                />
-                <span className="text-start col-7">
-                  {c.product.u.Product_Name}
-                </span>
-              </div>
-
-              <div className="cart_input_con scoop1_child py-1 col-3">
-                <input
-                  type="number"
-                  defaultValue={c.qty}
-                  placeholder="Qty"
-                  min="0"
-                  className="input text-center"
-                  onChange={(e) => handleCartInput(e.target.value, c)}
-                />
-
-                <span>₹ {Math.floor(c.offerPrice)}.00</span>
-              </div>
-
-              <div className="cart_cancel_con scoop1_child col-3">
-                <span>₹ {Math.floor(c.totalPrice)}</span>
-                <span
-                  className="cart_cancel_icon "
-                  onClick={() => deleteProduct(c.id)}
-                >
-                  <IoMdCloseCircle />
-                </span>
-              </div>
-            </div>
-          ))}
-
-        <div className="scoop scoop2">
-          <span>Net Total</span>
-          <span className="scoop2_amnt">₹ {Math.floor(netTotal)}.00</span>
+      <>
+        <div className="cart_goback_btn" onClick={() => navigate(-1)}>
+          <IoMdCloseCircle />
+        </div>
+        <div className="w-100 ">
+          <h1 className="fw-bolder acme m-2 mb-3">Awesome Crackers </h1>
+          <span className="fs-5 fw-bold">
+            4/480, Veerachelliya Puram, Sivakasi, Virudhunagar - 626 005
+          </span>
+          <br />
+          <span className="fs-4 fw-bold">Mobile No : 98947 40650</span>
         </div>
 
-        <div className="scoop scoop2">
-          <span>Discount Total</span>
-          <span className="scoop2_amnt">₹ {Math.floor(totalDiscount)}.00</span>
+        <div className="scoop_parent">
+          {cartProduct.length &&
+            cartProduct.map((c) => (
+              <div className="scoop scoop1" key={c.id}>
+                <div className="cart_img_con scoop1_child col-6">
+                  <img
+                    className="col-5"
+                    loading="lazy"
+                    src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
+                    alt={c.id}
+                  />
+                  <span className="text-start col-7">
+                    {c.product.u.Product_Name}
+                  </span>
+                </div>
+
+                <div className="cart_input_con scoop1_child py-1 col-3">
+                  <input
+                    type="number"
+                    defaultValue={c.qty}
+                    placeholder="Qty"
+                    min="0"
+                    className="input text-center"
+                    onChange={(e) => handleCartInput(e.target.value, c)}
+                  />
+
+                  <span>₹ {Math.floor(c.offerPrice)}.00</span>
+                </div>
+
+                <div className="cart_cancel_con scoop1_child col-3">
+                  <span>₹ {Math.floor(c.totalPrice)}</span>
+                  <span
+                    className="cart_cancel_icon "
+                    onClick={() => deleteProduct(c.id)}
+                  >
+                    <IoMdCloseCircle />
+                  </span>
+                </div>
+              </div>
+            ))}
+
+          <div className="scoop scoop2">
+            <span>Net Total</span>
+            <span className="scoop2_amnt">₹ {Math.floor(netTotal)}.00</span>
+          </div>
+
+          <div className="scoop scoop2">
+            <span>Discount Total</span>
+            <span className="scoop2_amnt">
+              ₹ {Math.floor(totalDiscount)}.00
+            </span>
+          </div>
+
+          <div className="scoop scoop2">
+            <span>Sub Total</span>
+            <span className="scoop2_amnt">₹ {Math.floor(totalPrice)}.00</span>
+          </div>
         </div>
 
-        <div className="scoop scoop2">
-          <span>Sub Total</span>
-          <span className="scoop2_amnt">₹ {Math.floor(totalPrice)}.00</span>
+        <div className=" fs-3 estimate_con disabled">
+          <Link to="/estimate" className="text-decoration-none text-black">
+            Confirm Estimate
+          </Link>
         </div>
-      </div>
-
-      <div className=" fs-3 estimate_con disabled">
-        <Link to="/estimate" className="text-decoration-none text-black">
-          Confirm Estimate
-        </Link>
-      </div>
+      </>
     </div>
   );
 }

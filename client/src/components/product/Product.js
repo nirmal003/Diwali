@@ -54,9 +54,11 @@ function Product() {
         <div className="fw-bold text-wrap cart_price">
           Total Products : {cartProduct.length}
         </div>
+
         <div className="fw-bold text-wrap cart_price">
           Discount Total : ₹.{Math.floor(totalDiscount)}
         </div>
+
         <div className="fw-bold text-wrap cart_price">
           Overall Total : ₹.{Math.floor(totalPrice)}
         </div>
@@ -76,6 +78,7 @@ function Product() {
                     <div className="img_con">
                       <img
                         className="img-fluid"
+                        loading="lazy"
                         // src={u.Image}
                         src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
                         alt={u.Product_id}
@@ -91,14 +94,14 @@ function Product() {
                       <div className="w-100 d-flex justify-content-center algin-items-center price_con pt-4">
                         <span className="d-flex flex-column text-center mx-3 ">
                           <strike className="strike">
-                            ₹ {u.Product_Price}.00 / Box
+                            ₹ {u.Product_Price}.00 / {u.Material_Type}
                           </strike>
                           <span className="price">
                             ₹{" "}
                             {Math.floor(
                               `${u.Product_Price - u.Product_Price * 0.3}`
                             )}
-                            .00 / Box
+                            .00 / {u.Material_Type}
                           </span>
                         </span>
                         <TotalPrice u={u} />
