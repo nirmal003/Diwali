@@ -117,13 +117,14 @@ function Footer() {
                     <h1 className="clr-blk fw-bolder acme heading3 pb-2">
                       Reach Us
                     </h1>
+
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15736.720224744686!2d77.9100638!3d9.5797426!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7935d8081bf3df35!2sMalathi%20Crackers!5e0!3m2!1sen!2sin!4v1657260182961!5m2!1sen!2sin"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.249301856351!2d77.8964142!3d9.5737655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06d399cbb66739%3A0xc7f2a8d12bb02420!2sAwesome%20Crackers!5e0!3m2!1sen!2sin!4v1691351471262!5m2!1sen!2sin"
                       width="100%"
                       height="200"
                       style={{ border: 0 }}
                       loading="lazy"
-                      title="Diwali Crackers"
+                      title="Awesome Crackers"
                     />
                   </div>
                   <div className="col-lg-12 text-center pt-4">
