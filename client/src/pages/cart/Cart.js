@@ -54,13 +54,12 @@ function Cart() {
         <IoMdCloseCircle />
       </div>
       <div className="cart">
-        <div className="w-100 ">
-          <h1 className="fw-bolder acme m-2 mb-3">Awesome Crackers </h1>
-          <span className="fs-5 fw-bold">
+        <div className="w-100 cart_head_con ">
+          <h3 className="fw-bold acme m-2 ">Awesome Crackers </h3>
+          <span className="fs-6  mx-5 text-center">
             4/480, Veerachelliya Puram, Sivakasi, Virudhunagar - 626 005
           </span>
-          <br />
-          <span className="fs-4 fw-bold">Mobile No : 98947 40650</span>
+          <span className="fs-6 ">Mobile No : 98947 40650</span>
         </div>
 
         <div className="scoop_parent">
@@ -123,7 +122,7 @@ function Cart() {
           </div>
         </div>
 
-        <div className=" fs-3 estimate_con disabled">
+        <div className=" fs-5 estimate_btn_con disabled">
           <Link to="/estimate" className="text-decoration-none text-black">
             Confirm Estimate
           </Link>
