@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import City from "./City";
 import "./estimate.css";
 
 function Estimate() {
@@ -7,18 +8,18 @@ function Estimate() {
 
   const getData = (e) => {
     const { name, value } = e.target;
-
     const inputData = { [name]: value };
-
     setUser({ ...user, ...inputData });
-
     console.log(user);
   };
 
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = async (e) => {
     e.preventDefault();
-    // user.address = { ...address };
-    console.log(user);
+
+    const postData = await fetch("");
+    const jsonData = await postData.json();
+
+    console.log(jsonData);
   };
 
   return (
@@ -35,11 +36,39 @@ function Estimate() {
         <div className="form_con">
           <form className="" onSubmit={handleOnSubmit}>
             <div className="form-group col-12 p-1">
+              <select
+                name="state"
+                onChange={getData}
+                className="w-100 py-2 px-1 form-control shadow-none"
+              >
+                <option value="" disabled selected>
+                  ---- Select your state ----
+                </option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Pondicherry">Pondicherry</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Kerala">Kerala</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+
+            <div className="form-group col-12 p-1">
+              <select
+                name="city"
+                onChange={getData}
+                className="w-100 py-2 px-1 form-control shadow-none"
+              >
+                <City />
+              </select>
+            </div>
+
+            <div className="form-group col-12 p-1">
               <input
                 type="text"
                 name="name"
                 className="form-control shadow-none"
-                placeholder="Customer Name"
+                placeholder="Customer Name (*)"
                 required
                 onChange={getData}
               />
@@ -50,7 +79,7 @@ function Estimate() {
                 className="form-control shadow-none"
                 type="number"
                 name="mobileName"
-                placeholder="Mobile Number"
+                placeholder="Mobile Number (*)"
                 required
                 onChange={getData}
               />
@@ -61,7 +90,7 @@ function Estimate() {
                 className="form-control shadow-none"
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder="Email (Optional)"
                 onChange={getData}
               />
             </div>
@@ -71,64 +100,40 @@ function Estimate() {
                 className="form-control shadow-none"
                 type="text"
                 name="address"
-                placeholder="Address"
-                rows="4"
+                placeholder="Address (*)"
+                rows="3"
                 required
                 onChange={getData}
               />
             </div>
 
-            <div className="form-group col-12 p-1">
-              <select
-                name="state"
-                onChange={getData}
-                className="w-100 py-2 px-1 form-control shadow-none"
-              >
-                <option value="student">Student</option>
-                <option value="employee">Employee</option>
-                <option value="other">Other</option>
-              </select>
+            <div className="estimate_amnt text-end p-1">
+              <div className="d-flex justify-content-center flex-direction-row algin-items-center pt-2">
+                <span className="col-8">Sub Total :</span>
+                <span className="col-4">₹ 456789</span>
+              </div>
+              <div className="fw-bold d-flex justify-content-center flex-direction-row algin-items-center pt-2">
+                <span className="col-8">Min.Order Amount :</span>
+                <span className="col-4">₹ 456789</span>
+              </div>
+              <div className="d-flex justify-content-center flex-direction-row algin-items-center pt-2">
+                <span className="col-8">Packing Charges (3%) :</span>
+                <span className="col-4">₹ 456789</span>
+              </div>
+              <div className="d-flex justify-content-center flex-direction-row algin-items-center pt-2">
+                <span className="col-8">Round OFF :</span>
+                <span className="col-4">₹ 456789</span>
+              </div>
+              <div className="d-flex justify-content-center flex-direction-row algin-items-center pt-2">
+                <span className="col-8">Overall Total :</span>
+                <span className="col-4">₹ 456789</span>
+              </div>
             </div>
 
-            <div className="form-group col-12 p-1">
-              <select
-                name="state"
-                onChange={getData}
-                className="w-100 py-2 px-1 form-control shadow-none"
-              >
-                <option value="student">Student</option>
-                <option value="employee">Employee</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <Button variant="primary" type="submit" className="m-2 submit_btn">
+            <Button variant="primary" type="submit" className="m-4 submit_btn">
               Submit
             </Button>
           </form>
-        </div>
-
-        <div className="estimate_amnt text-end px-4">
-          <div className="d-flex justify-content-center flex-direction-row algin-items-center pt-2">
-            <span className="col-8">Sub Totla :</span>
-            <span className="col-4">₹ 456789</span>
-          </div>
-          <div className="fw-bold d-flex justify-content-center flex-direction-row algin-items-center pt-2">
-            <span className="col-8">Min.Order Amount :</span>
-            <span className="col-4">₹ 456789</span>
-          </div>
-          <div className="d-flex justify-content-center flex-direction-row algin-items-center pt-2">
-            <span className="col-8">Packing Charges (3%) :</span>
-            <span className="col-4">₹ 456789</span>
-          </div>
-          <div className="d-flex justify-content-center flex-direction-row algin-items-center pt-2">
-            <span className="col-8">Round OFF :</span>
-            <span className="col-4">₹ 456789</span>
-          </div>
-          <div className="d-flex justify-content-center flex-direction-row algin-items-center pt-2">
-            <span className="col-8">Overall Total :</span>
-            <span className="col-4">₹ 456789</span>
-          </div>
         </div>
       </div>
     </div>
