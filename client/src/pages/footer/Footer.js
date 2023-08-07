@@ -177,7 +177,7 @@ function Footer() {
         </a>
       </div>
 
-      <div className="fixed point1 w0 d-none d-lg-block">
+      {/* <div className="fixed point1 w0 d-none d-lg-block">
         <span className="time-of-year">
           <img
             src="https://www.malathicrackers.com/images/callicon.png"
@@ -191,7 +191,7 @@ function Footer() {
             +91 98947 40650
           </div>
         </span>
-      </div>
+      </div> */}
 
       <div className="fixed point1 w0 d-lg-none">
         <a href="tel:+919894740650">
