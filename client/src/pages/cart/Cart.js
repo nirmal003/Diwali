@@ -9,6 +9,7 @@ import "./cart.css";
 function Cart() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const cartProduct = useSelector((state) => state.cart.cart);
   console.log(cartProduct);
 
@@ -89,11 +90,11 @@ function Cart() {
                     onChange={(e) => handleCartInput(e.target.value, c)}
                   />
 
-                  <span>₹ {Math.floor(c.offerPrice)}.00</span>
+                  <span>₹ {Math.round(c.offerPrice)}.00</span>
                 </div>
 
                 <div className="cart_cancel_con scoop1_child col-3">
-                  <span>₹ {Math.floor(c.totalPrice)}</span>
+                  <span>₹ {Math.round(c.totalPrice)}</span>
                   <span
                     className="cart_cancel_icon "
                     onClick={() => deleteProduct(c.id)}
@@ -106,19 +107,19 @@ function Cart() {
 
           <div className="scoop scoop2">
             <span>Net Total</span>
-            <span className="scoop2_amnt">₹ {Math.floor(netTotal)}.00</span>
+            <span className="scoop2_amnt">₹ {Math.round(netTotal)}.00</span>
           </div>
 
           <div className="scoop scoop2">
             <span>Discount Total</span>
             <span className="scoop2_amnt">
-              ₹ {Math.floor(totalDiscount)}.00
+              ₹ {Math.round(totalDiscount)}.00
             </span>
           </div>
 
           <div className="scoop scoop2">
             <span>Sub Total</span>
-            <span className="scoop2_amnt">₹ {Math.floor(totalPrice)}.00</span>
+            <span className="scoop2_amnt">₹ {Math.round(totalPrice)}.00</span>
           </div>
         </div>
 

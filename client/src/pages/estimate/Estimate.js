@@ -1,12 +1,21 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import * as helpers from "../../Helper/helper";
 import City from "./City";
 import "./estimate.css";
 
 function Estimate() {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
+
+  const cartProduct = useSelector((state) => state.cart.cart);
+
+  const totalPrice = cartProduct.length && helpers.overallPrice(cartProduct);
+  const packingCharge = (totalPrice * 0.03).toFixed(2);
+  const roundOff = packingCharge - Math.round(packingCharge);
+  const overallTotal = Math.round(totalPrice) + Math.round(packingCharge);
 
   const getData = (e) => {
     const { name, value } = e.target;
@@ -110,23 +119,23 @@ function Estimate() {
             <div className="estimate_amnt text-end p-1">
               <div className="d-flex justify-content-center flex-direction-row algin-items-center pt-2">
                 <span className="col-8">Sub Total :</span>
-                <span className="col-4">₹ 456789</span>
+                <span className="col-4">₹ {Math.round(totalPrice)}.00</span>
               </div>
               <div className="fw-bold d-flex justify-content-center flex-direction-row algin-items-center pt-2">
                 <span className="col-8">Min.Order Amount :</span>
-                <span className="col-4">₹ 456789</span>
+                <span className="col-4">₹ 2500.00</span>
               </div>
               <div className="d-flex justify-content-center flex-direction-row algin-items-center pt-2">
                 <span className="col-8">Packing Charges (3%) :</span>
-                <span className="col-4">₹ 456789</span>
+                <span className="col-4">₹ {packingCharge}</span>
               </div>
               <div className="d-flex justify-content-center flex-direction-row algin-items-center pt-2">
                 <span className="col-8">Round OFF :</span>
-                <span className="col-4">₹ 456789</span>
+                <span className="col-4">₹ {roundOff.toFixed(2)}</span>
               </div>
               <div className="d-flex justify-content-center flex-direction-row algin-items-center pt-2">
                 <span className="col-8">Overall Total :</span>
-                <span className="col-4">₹ 456789</span>
+                <span className="col-4">₹ {overallTotal}.00</span>
               </div>
             </div>
 

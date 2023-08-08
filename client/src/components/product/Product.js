@@ -96,11 +96,12 @@ function Product() {
                       <div className="w-100 d-flex justify-content-center algin-items-center price_con pt-4">
                         <span className="d-flex flex-column text-center mx-3 ">
                           <strike className="strike">
-                            ₹ {u.Product_Price}.00 / {u.Material_Type}
+                            ₹ {Math.round(u.Product_Price)}.00 /{" "}
+                            {u.Material_Type}
                           </strike>
                           <span className="price">
                             ₹{" "}
-                            {Math.floor(
+                            {Math.round(
                               `${u.Product_Price - u.Product_Price * 0.3}`
                             )}
                             .00 / {u.Material_Type}
