@@ -7,7 +7,7 @@ function TotalPrice(u) {
 
   const dispatch = useDispatch();
   const cartProduct = useSelector((state) => state.cart.cart);
-  console.log(cartProduct);
+  // console.log(cartProduct);
 
   const duplicate =
     cartProduct.length && cartProduct.filter((p) => p.id === u.u.Product_id);

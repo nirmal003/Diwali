@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import * as helpers from "../../Helper/helper";
-import { deleteCart, updateCart } from "../../components/product/cartSlice";
 import "./cart.css";
 
+import * as helpers from "../../Helper/helper";
+import { deleteCart, updateCart } from "../../components/product/cartSlice";
+import ModelView from "../model/ModelView";
+
 function Cart() {
+  const [imgUrl, setImgUrl] = useState("");
+  const [show, setShow] = useState(false);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -49,87 +54,97 @@ function Cart() {
     }
   };
 
+  const getImgUrl = (url) => {
+    setImgUrl(url);
+    setShow(!show);
+  };
+
   return (
-    <div className="cart_list_con">
-      <div className="cart_goback_btn" onClick={() => navigate(-1)}>
-        <IoMdCloseCircle />
-      </div>
-      <div className="cart">
-        <div className="w-100 cart_head_con ">
-          <h3 className="fw-bold acme m-2 ">Awesome Crackers </h3>
-          <span className="fs-6  mx-5 text-center">
-            4/480, Veerachelliya Puram, Sivakasi, Virudhunagar - 626 005
-          </span>
-          <span className="fs-6 ">Mobile No : 98947 40650</span>
+    <>
+      <div className="cart_list_con">
+        <div className="cart_goback_btn" onClick={() => navigate(-1)}>
+          <IoMdCloseCircle />
         </div>
-
-        <div className="scoop_parent">
-          {cartProduct.length &&
-            cartProduct.map((c) => (
-              <div className="scoop scoop1" key={c.id}>
-                <div className="cart_img_con scoop1_child col-6">
-                  <img
-                    className="col-5"
-                    loading="lazy"
-                    src={c.product.u.Image}
-                    // src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
-                    alt={c.id}
-                  />
-                  <span className="text-start col-7">
-                    {c.product.u.Product_Name}
-                  </span>
-                </div>
-
-                <div className="cart_input_con scoop1_child py-1 col-3">
-                  <input
-                    type="number"
-                    defaultValue={c.qty}
-                    placeholder="Qty"
-                    min="0"
-                    className="input text-center"
-                    onChange={(e) => handleCartInput(e.target.value, c)}
-                  />
-
-                  <span>₹ {Math.round(c.offerPrice)}.00</span>
-                </div>
-
-                <div className="cart_cancel_con scoop1_child col-3">
-                  <span>₹ {Math.round(c.totalPrice)}</span>
-                  <span
-                    className="cart_cancel_icon "
-                    onClick={() => deleteProduct(c.id)}
-                  >
-                    <IoMdCloseCircle />
-                  </span>
-                </div>
-              </div>
-            ))}
-
-          <div className="scoop scoop2">
-            <span>Net Total</span>
-            <span className="scoop2_amnt">₹ {Math.round(netTotal)}.00</span>
-          </div>
-
-          <div className="scoop scoop2">
-            <span>Discount Total</span>
-            <span className="scoop2_amnt">
-              ₹ {Math.round(totalDiscount)}.00
+        <div className="cart">
+          <div className="w-100 cart_head_con ">
+            <h3 className="fw-bold acme m-2 ">Awesome Crackers </h3>
+            <span className="fs-6  mx-5 text-center">
+              4/480, Veerachelliya Puram, Sivakasi, Virudhunagar - 626 005
             </span>
+            <span className="fs-6 ">Mobile No : 98947 40650</span>
           </div>
 
-          <div className="scoop scoop2">
-            <span>Sub Total</span>
-            <span className="scoop2_amnt">₹ {Math.round(totalPrice)}.00</span>
-          </div>
-        </div>
+          <div className="scoop_parent">
+            {cartProduct.length &&
+              cartProduct.map((c) => (
+                <div className="scoop scoop1" key={c.id}>
+                  <div className="cart_img_con scoop1_child col-6">
+                    <img
+                      className="col-5"
+                      loading="lazy"
+                      src={c.product.u.Image}
+                      // src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
+                      alt={c.id}
+                      onClick={() => getImgUrl(c.product.u.Image)}
+                    />
+                    <span className="text-start col-7">
+                      {c.product.u.Product_Name}
+                    </span>
+                  </div>
 
-        <div className=" fs-5 estimate_btn_con disabled">
-          <Link to="/estimate" className="text-decoration-none text-black">
-            Confirm Estimate
-          </Link>
+                  <div className="cart_input_con scoop1_child py-1 col-3">
+                    <input
+                      type="number"
+                      defaultValue={c.qty}
+                      placeholder="Qty"
+                      min="0"
+                      className="input text-center"
+                      onChange={(e) => handleCartInput(e.target.value, c)}
+                    />
+
+                    <span>₹ {Math.round(c.offerPrice)}.00</span>
+                  </div>
+
+                  <div className="cart_cancel_con scoop1_child col-3">
+                    <span>₹ {Math.round(c.totalPrice)}</span>
+                    <span
+                      className="cart_cancel_icon "
+                      onClick={() => deleteProduct(c.id)}
+                    >
+                      <IoMdCloseCircle />
+                    </span>
+                  </div>
+                </div>
+              ))}
+
+            <div className="scoop scoop2">
+              <span>Net Total</span>
+              <span className="scoop2_amnt">₹ {Math.round(netTotal)}.00</span>
+            </div>
+
+            <div className="scoop scoop2">
+              <span>Discount Total</span>
+              <span className="scoop2_amnt">
+                ₹ {Math.round(totalDiscount)}.00
+              </span>
+            </div>
+
+            <div className="scoop scoop2">
+              <span>Sub Total</span>
+              <span className="scoop2_amnt">₹ {Math.round(totalPrice)}.00</span>
+            </div>
+          </div>
+
+          <div className=" fs-5 estimate_btn_con disabled">
+            <Link to="/estimate" className="text-decoration-none text-black">
+              Confirm Estimate
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+
+      {show && <ModelView imgUrl={imgUrl} show={() => setShow(!show)} />}
+    </>
   );
 }
 

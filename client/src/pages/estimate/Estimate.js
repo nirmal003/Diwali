@@ -26,9 +26,16 @@ function Estimate() {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    const postData = await fetch("");
-    const jsonData = await postData.json();
-    console.log(jsonData);
+
+    const postData = await fetch(process.env.REACT_APP_ORDER, {
+      mode: "no-cors",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
+
+    // const jsonData = await postData.json();
+    console.log("hi");
   };
 
   return (

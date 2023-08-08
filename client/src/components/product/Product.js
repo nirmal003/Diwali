@@ -1,15 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import * as helpers from "../../Helper/helper";
+import ModelView from "../../pages/model/ModelView";
 import { addData } from "../home/dataSlice";
 import TotalPrice from "./TotalPrice";
 import { deleteCart } from "./cartSlice";
 import "./product.css";
 
 function Product() {
+  const [imgUrl, setImgUrl] = useState("");
+  const [show, setShow] = useState(() => false);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -41,6 +45,11 @@ function Product() {
   const groupByCategory = data && helpers.productCategory(data);
 
   console.log(groupByCategory);
+
+  const getImgUrl = (url) => {
+    setImgUrl(url);
+    setShow(!show);
+  };
 
   return (
     <>
@@ -84,6 +93,7 @@ function Product() {
                         src={u.Image}
                         // src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
                         alt={u.Product_id}
+                        onClick={() => getImgUrl(u.Image)}
                       />
                       <span className="proId_con">{u.Product_id}</span>
                     </div>
@@ -123,6 +133,8 @@ function Product() {
       <Link to="/cart">
         <Button className="mt-4 fs-5 fw-bold">Submit</Button>
       </Link>
+
+      {show && <ModelView imgUrl={imgUrl} show={() => setShow(!show)} />}
     </>
   );
 }
