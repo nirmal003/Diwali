@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import * as helpers from "../../Helper/helper";
 import { addData } from "../home/dataSlice";
 import TotalPrice from "./TotalPrice";
@@ -116,7 +118,10 @@ function Product() {
           <h1 className="fw-bold text-center pt-3">Loading...</h1>
         )}
       </>
-      <div>submit</div>
+
+      <Link to="/cart">
+        <Button className="mt-4 fs-5 fw-bold">Submit</Button>
+      </Link>
     </>
   );
 }
