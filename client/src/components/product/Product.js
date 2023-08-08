@@ -116,6 +116,7 @@ function Product() {
           <h1 className="fw-bold text-center pt-3">Loading...</h1>
         )}
       </>
+      <div>submit</div>
     </>
   );
 }

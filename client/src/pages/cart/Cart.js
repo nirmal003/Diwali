@@ -10,7 +10,7 @@ function Cart() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cartProduct = useSelector((state) => state.cart.cart);
-  // console.log(cartProduct);
+  console.log(cartProduct);
 
   const netTotal = cartProduct.length && helpers.netTotal(cartProduct);
 

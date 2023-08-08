@@ -15,10 +15,8 @@ function Estimate() {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-
     const postData = await fetch("");
     const jsonData = await postData.json();
-
     console.log(jsonData);
   };
 

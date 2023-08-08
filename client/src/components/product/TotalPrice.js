@@ -9,6 +9,9 @@ function TotalPrice(u) {
   const cartProduct = useSelector((state) => state.cart.cart);
   console.log(cartProduct);
 
+  const duplicate =
+    cartProduct.length && cartProduct.filter((p) => p.id === u.u.Product_id);
+
   const handleInput = (qty, p) => {
     const id = p.u.Product_id;
     const discountPrice = (p.u.Discount_Percentage / 100) * p.u.Product_Price;
@@ -52,14 +55,34 @@ function TotalPrice(u) {
 
   return (
     <>
-      <input
-        type="number"
-        className="input text-center mx-4"
-        min="0"
-        placeholder="Qty"
-        onChange={(e) => handleInput(e.target.value, u)}
-      />
-      <span className="tot_price text-center">₹ {Math.floor(totalPrice)}</span>
+      {duplicate[0]?.id === u.u.Product_id ? (
+        <>
+          <input
+            type="number"
+            className="input text-center mx-4"
+            min="0"
+            placeholder="Qty"
+            defaultValue={duplicate[0].qty}
+            onChange={(e) => handleInput(e.target.value, u)}
+          />
+          <span className="tot_price text-center">
+            ₹ {Math.floor(totalPrice)}
+          </span>
+        </>
+      ) : (
+        <>
+          <input
+            type="number"
+            className="input text-center mx-4"
+            min="0"
+            placeholder="Qty"
+            onChange={(e) => handleInput(e.target.value, u)}
+          />
+          <span className="tot_price text-center">
+            ₹ {Math.floor(totalPrice)}
+          </span>
+        </>
+      )}
     </>
   );
 }
