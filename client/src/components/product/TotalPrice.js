@@ -66,7 +66,7 @@ function TotalPrice(u) {
             onChange={(e) => handleInput(e.target.value, u)}
           />
           <span className="tot_price text-center">
-            ₹ {Math.floor(totalPrice)}
+            ₹ {Math.floor(duplicate[0].totalPrice)}
           </span>
         </>
       ) : (
