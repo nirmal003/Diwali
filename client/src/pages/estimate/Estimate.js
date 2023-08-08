@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import City from "./City";
 import "./estimate.css";
 
 function Estimate() {
   const [user, setUser] = useState({});
+  const navigate = useNavigate();
 
   const getData = (e) => {
     const { name, value } = e.target;
@@ -130,6 +132,13 @@ function Estimate() {
 
             <Button variant="primary" type="submit" className="m-4 submit_btn">
               Submit
+            </Button>
+            <Button
+              onClick={() => navigate(-1)}
+              variant="danger"
+              className="m-4 submit_btn"
+            >
+              Go Back
             </Button>
           </form>
         </div>
