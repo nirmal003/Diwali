@@ -1,11 +1,10 @@
 import { useState } from "react";
+import { Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as helpers from "../../Helper/helper";
-import "./estimate.css";
-
-import { Button } from "react-bootstrap";
 import City from "./City";
+import "./estimate.css";
 
 function Estimate() {
   const [user, setUser] = useState({});
@@ -13,7 +12,9 @@ function Estimate() {
   const navigate = useNavigate();
 
   const cartProduct = useSelector((state) => state.cart.cart);
+  console.log(cartProduct);
 
+  const netTotal = cartProduct.length && helpers.netTotal(cartProduct);
   const totalPrice = cartProduct.length && helpers.overallPrice(cartProduct);
   const packingCharge = (totalPrice * 0.03).toFixed(2);
   const roundOff = packingCharge - Math.round(packingCharge);
@@ -28,25 +29,29 @@ function Estimate() {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    console.log(user.mobilenumber);
 
     if (user.mobilenumber.match(/^\d{10}$/)) {
       setLength(true);
-      console.log("hiiii");
       const postData = await fetch(
-        `${process.env.REACT_APP_ORDER}?customer_Name=${user.name}&mobile_Number=${user.mobilenumber}&address=${user.address}`,
+        `${process.env.REACT_APP_ORDER}?customer_Name=${
+          user.name
+        }&mobile_Number=${user.mobilenumber}&address=${
+          user.address
+        }&net_total=${netTotal}&sub_total=${Math.round(
+          totalPrice
+        )}&overall_amount=${overallTotal}&user_Data=${JSON.stringify(
+          user
+        )}&cart_Items=${encodeURIComponent(JSON.stringify(cartProduct))}`,
         {
           mode: "no-cors",
           headers: {
             "Access-Control-Allow-Origin": "*",
           },
         }
-      );
-      // const jsonData = await postData.json();
+      ).then((res) => console.log(res));
     } else {
       setLength(false);
     }
-    console.log("hi");
   };
 
   return (

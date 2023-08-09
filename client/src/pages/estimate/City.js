@@ -13,8 +13,8 @@ function City() {
       <option value="Arantangi">Arantangi</option>
       <option value="Aravakurichi">Aravakurichi</option>
       <option value="Ariyalur">Ariyalur</option>
-      <option value="Arkonam">Arkonam</option>
-      <option value="Arni">Arni</option>
+      <option value="Arakonam">Arakonam</option>
+      <option value="Arani">Arani</option>
       <option value="Aruppukottai">Aruppukottai</option>
       <option value="Attur">Attur</option>
       <option value="Avanashi">Avanashi</option>
