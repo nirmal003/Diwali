@@ -115,12 +115,14 @@ function NavBar() {
         </Container>
       </Navbar>
 
-      <div className="cart_icon_con ">
-        <Link to="/cart" className="text-decoration-none text-white">
-          <HiShoppingCart className="shopping_cart_icon fw-bolder fs-1 " />
-          <span className="cart_qty ">{cartProduct.length}</span>
-        </Link>
-      </div>
+      {cartProduct.length > 0 && (
+        <div className="cart_icon_con ">
+          <Link to="/cart" className="text-decoration-none text-white">
+            <HiShoppingCart className="shopping_cart_icon fw-bolder fs-1 " />
+            <span className="cart_qty ">{cartProduct.length}</span>
+          </Link>
+        </div>
+      )}
     </>
   );
 }
