@@ -27,13 +27,15 @@ function Estimate() {
   const handleOnSubmit = async (e) => {
     e.preventDefault();
 
-    const postData = await fetch(process.env.REACT_APP_ORDER, {
-      mode: "no-cors",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
-    });
-
+    if (user.mobileNumber.length == 10) {
+      console.log("hii");
+      const postData = await fetch(process.env.REACT_APP_ORDER, {
+        mode: "no-cors",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
+    }
     // const jsonData = await postData.json();
     console.log("hi");
   };
@@ -94,7 +96,7 @@ function Estimate() {
               <input
                 className="form-control shadow-none"
                 type="number"
-                name="mobileName"
+                name="mobilenumber"
                 placeholder="Mobile Number (*)"
                 required
                 onChange={getData}
@@ -138,7 +140,12 @@ function Estimate() {
               </div>
               <div className="d-flex justify-content-center flex-direction-row algin-items-center pt-2">
                 <span className="col-8">Round OFF :</span>
-                <span className="col-4">₹ {roundOff.toFixed(2)}</span>
+                <span className="col-4">
+                  ₹{" "}
+                  {roundOff.toFixed(2) > 0
+                    ? `- ${roundOff.toFixed(2)}`
+                    : ` + ${Math.abs(roundOff.toFixed(2))}`}
+                </span>
               </div>
               <div className="d-flex justify-content-center flex-direction-row algin-items-center pt-2">
                 <span className="col-8">Overall Total :</span>
@@ -146,7 +153,13 @@ function Estimate() {
               </div>
             </div>
 
-            <Button variant="primary" type="submit" className="m-4 submit_btn">
+            <Button
+              variant="primary"
+              type="submit"
+              className={`m-4 submit_btn ${
+                Math.round(totalPrice) > 2500 ? "" : "disabled"
+              }`}
+            >
               Submit
             </Button>
 

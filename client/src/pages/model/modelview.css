@@ -34,6 +34,10 @@
   color: #fff;
 }
 
+.span:active {
+  color: rgb(0, 0, 0);
+}
+
 .model img {
   margin: 31px 8px 4px;
   width: 340px;

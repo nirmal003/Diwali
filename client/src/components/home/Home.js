@@ -46,10 +46,10 @@ function Home() {
         <Col className="col-lg-6 col-md-8 col-12">
           <h3 className="fw-bold text-start ">Welcome To</h3>
           <h2 className="text-danger text-start fw-bold mb-4">
-            Diwali Crackers
+            Awesome Crackers
           </h2>
           <p className="fs-5 para roboto ">
-            Malathi Crackers, We are the leading online fireworks supplier of
+            Awesome Crackers, We are the leading online fireworks supplier of
             all types of conventional crackers including chakras, flowerpots,
             rockets, bombs, sound crackers, etc. Apart from usual varieties, we
             have a wide range of fancy and novel crackers are sold, which
@@ -154,7 +154,7 @@ function Home() {
                   src="https://www.malathicrackers.com/images/singlesound.png"
                   className="img-fluid pb-3 wow rollIn"
                   data-aos="flip-right"
-                  data-aos-duration="1000"
+                  // data-aos-duration="300"
                   data-aos-delay="100"
                   alt="Single Sound"
                   title="Sivakasi Crackers Shop"
@@ -171,7 +171,7 @@ function Home() {
                   src="https://www.malathicrackers.com/images/flowerpots.png"
                   className="img-fluid pb-3 wow rollIn"
                   data-aos="flip-left"
-                  data-aos-duration="1000"
+                  // data-aos-duration="300"
                   data-aos-delay="100"
                   alt="Flower Pots"
                   title="Sivakasi Crackers Shop"
@@ -189,7 +189,7 @@ function Home() {
                   src="https://www.malathicrackers.com/images/diwalicrackers.png"
                   className="w-100 pb-4"
                   data-aos="zoom-in"
-                  data-aos-duration="1000"
+                  // data-aos-duration="300"
                   data-aos-delay="100"
                   alt="Discount Sivakasi Crackers"
                   title="Sivakasi Crackers Shop"
@@ -202,7 +202,7 @@ function Home() {
                   src="https://www.malathicrackers.com/images/chakkar.png"
                   className="img-fluid pb-3 wow rollIn"
                   data-aos="flip-left"
-                  data-aos-duration="1000"
+                  // data-aos-duration="300"
                   data-aos-delay="100"
                   alt="Lar Crackers"
                   title="Sivakasi Crackers Shop"
@@ -219,7 +219,7 @@ function Home() {
                   src="https://www.malathicrackers.com/images/novelties.png"
                   className="img-fluid pb-3 wow rollIn"
                   data-aos="flip-right"
-                  data-aos-duration="1000"
+                  // data-aos-duration="300"
                   data-aos-delay="100"
                   alt="Diwali Pattasu"
                   title="Fancy Novelties"

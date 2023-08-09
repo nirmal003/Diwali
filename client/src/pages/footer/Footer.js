@@ -136,8 +136,8 @@ function Footer() {
                       crackers through the enquiry button. We will contact you
                       within 24 hrs and confirm the order through WhatsApp or
                       phone call. Please add and submit your enquiries and enjoy
-                      your Diwali with Malathi Crackers. Our License No.----.
-                      Malathi Crackers as a company following 100% legal &
+                      your Diwali with Awesome Crackers. Our License No.----.
+                      Awesome Crackers as a company following 100% legal &
                       statutory compliances and all our shops, go-downs are
                       maintained as per the explosive acts. We send the parcels
                       through registered and legal transport service providers
@@ -155,7 +155,7 @@ function Footer() {
                 <div className="col-lg-12 col-md-12 col-12">
                   <ul className="fullpad">
                     <li className="text-white roboto text-center smallfnt">
-                      Copyright &copy; 2022, Malathi Crackers.
+                      Copyright &copy; 2022, Awesome Crackers.
                       <span className="wrdbrk">All rights reserved </span>
                     </li>
                   </ul>
