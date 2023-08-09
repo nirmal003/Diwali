@@ -11,7 +11,7 @@ function Contact() {
         />
       </div>
 
-      <div class="container  w-100">
+      <div class="container w-100 mt-4">
         <div class="row my-3 ">
           <div class="col-lg-5 col-md-5 px-4 text-start">
             <h1 class="acme pb-4 fw-bold">
