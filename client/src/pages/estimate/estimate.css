@@ -56,3 +56,15 @@
   font-size: 1.15rem;
   padding: 0.425rem 0.55rem;
 }
+
+.submit_btn {
+  background-color: #02f927d6 !important;
+  color: black !important;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.goback_btn {
+  font-weight: 400;
+  font-size: 1.2rem;
+}

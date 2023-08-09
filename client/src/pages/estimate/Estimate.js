@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { Button } from "react-bootstrap";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as helpers from "../../Helper/helper";
-import City from "./City";
 import "./estimate.css";
+
+import { Button } from "react-bootstrap";
+import City from "./City";
 
 function Estimate() {
   const [user, setUser] = useState({});
@@ -31,13 +32,16 @@ function Estimate() {
 
     if (user.mobilenumber.match(/^\d{10}$/)) {
       setLength(true);
-      console.log("hii");
-      const postData = await fetch(process.env.REACT_APP_ORDER, {
-        mode: "no-cors",
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      });
+      console.log("hiiii");
+      const postData = await fetch(
+        `${process.env.REACT_APP_ORDER}?customer_Name=${user.name}&mobile_Number=${user.mobilenumber}&address=${user.address}`,
+        {
+          mode: "no-cors",
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
       // const jsonData = await postData.json();
     } else {
       setLength(false);
@@ -168,7 +172,6 @@ function Estimate() {
             </div>
 
             <Button
-              variant="success"
               type="submit"
               className={`m-4 submit_btn ${
                 Math.round(totalPrice) > 2500 ? "" : "disabled"
@@ -180,7 +183,7 @@ function Estimate() {
             <Button
               onClick={() => navigate(-1)}
               variant="danger"
-              className="m-4 submit_btn"
+              className="m-4 goback_btn"
             >
               Go Back
             </Button>
