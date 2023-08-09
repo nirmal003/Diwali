@@ -19,7 +19,7 @@ function Safety() {
       <div className="container pt-2 ">
         <div className="row">
           <div className="col-lg-12 col-md-12 col-12 pb-4 text-start">
-            <h2 className="acme heading1 pb-3 clr-red">Diwali Crackers</h2>
+            <h2 className="acme heading1 pb-3 clr-red">Awesome Crackers</h2>
             <p className="roboto">
               There are certain Dos &amp; Don'ts to follow while purchasing,
               bursting and storing crackers. Thus, it is very important to
@@ -32,7 +32,9 @@ function Safety() {
             <h3 className="block-head acme font fw-bold">Do's</h3>
 
             <div className="text4 pt-4">
-              <ImCheckmark className="icnclr1 fw-bold" />
+              <div>
+                <ImCheckmark className="icnclr1 fw-bold" />
+              </div>
               <div className="roboto fn text-start">
                 <h1 className="acme fw-bold heading5 pl">Instructions</h1>
                 <p className="roboto pl">
@@ -43,7 +45,9 @@ function Safety() {
             </div>
 
             <div className="text4 pt-3">
-              <ImCheckmark className="icnclr1 fw-bold" />
+              <div>
+                <ImCheckmark className="icnclr1 fw-bold" />
+              </div>
               <div className="roboto fn text-start">
                 <h1 className="acme fw-bold heading5 pl">Outdoor</h1>
                 <p className="roboto pl">Use fireworks only outdoor.</p>
@@ -51,7 +55,9 @@ function Safety() {
             </div>
 
             <div className="text4 pt-3">
-              <ImCheckmark className="icnclr1 fw-bold" />
+              <div>
+                <ImCheckmark className="icnclr1 fw-bold" />
+              </div>
               <div className="robotoc fn text-start">
                 <h1 className="acme fw-bold heading5 pl">Branded Fireworks</h1>
                 <p className="roboto pl ">
@@ -61,7 +67,9 @@ function Safety() {
             </div>
 
             <div className="text4 pt-3">
-              <ImCheckmark className="icnclr1 fw-bold" />
+              <div>
+                <ImCheckmark className="icnclr1 fw-bold" />
+              </div>
               <div className="roboto fn text-start">
                 <h1 className="acme fw-bold heading5 pl">Distance</h1>
                 <p className="roboto pl">
@@ -72,7 +80,9 @@ function Safety() {
             </div>
 
             <div className="text4 pt-3">
-              <ImCheckmark className="icnclr1 fw-bold" />
+              <div>
+                <ImCheckmark className="icnclr1 fw-bold" />
+              </div>
               <div className="roboto fn text-start">
                 <h1 className="acme fw-bold heading5 pl">Supervision</h1>
                 <p className="roboto pl">Always have adult supervision.</p>
@@ -80,7 +90,9 @@ function Safety() {
             </div>
 
             <div className="text4 pt-3">
-              <ImCheckmark className="icnclr1 fw-bold" />
+              <div>
+                <ImCheckmark className="icnclr1 fw-bold" />
+              </div>
               <div className="roboto fn text-start">
                 <h1 className="acme fw-bold heading5 pl">Water</h1>
                 <p className="roboto pl">
@@ -95,7 +107,9 @@ function Safety() {
             <h3 className="block-head acme font fw-bold">Don'ts</h3>
 
             <div className="text4 pt-4 ">
-              <ImCross className="icnclr2 fw-bold" />
+              <div>
+                <ImCross className="icnclr2 fw-bold" />
+              </div>
               <div className="roboto fn text-start">
                 <h1 className="acme fw-bold heading5 pl">Don't make tricks</h1>
                 <p className="roboto pl">Never make your own fireworks.</p>
@@ -103,7 +117,9 @@ function Safety() {
             </div>
 
             <div className="text4 pt-3">
-              <ImCross className="icnclr2 fw-bold" />
+              <div>
+                <ImCross className="icnclr2 fw-bold" />
+              </div>
               <div className="roboto fn text-start">
                 <h1 className="acme fw-bold heading5 pl">Don't relight</h1>
                 <p className="roboto pl">
@@ -114,7 +130,9 @@ function Safety() {
             </div>
 
             <div className="text4 pt-3">
-              <ImCross className="icnclr2 fw-bold" />
+              <div>
+                <ImCross className="icnclr2 fw-bold" />
+              </div>
               <div className="roboto fn text-start">
                 <h1 className="acme fw-bold heading5 pl">Don't carry it</h1>
                 <p className="roboto pl">
@@ -124,7 +142,9 @@ function Safety() {
             </div>
 
             <div className="text4 pt-3">
-              <ImCross className="icnclr2 fw-bold" />
+              <div>
+                <ImCross className="icnclr2 fw-bold" />
+              </div>
               <div className="roboto fn text-start">
                 <h1 className="acme fw-bold heading5 pl">Don't Touch it</h1>
                 <p className="roboto pl">
@@ -135,7 +155,9 @@ function Safety() {
             </div>
 
             <div className="text4 pt-3">
-              <ImCross className="icnclr2 fw-bold" />
+              <div>
+                <ImCross className="icnclr2 fw-bold" />
+              </div>
               <div className="roboto fn text-start">
                 <h1 className="acme fw-bold heading5 pl">
                   Do not use Glass / Metal
@@ -147,7 +169,9 @@ function Safety() {
             </div>
 
             <div className="text4 pt-3">
-              <ImCross className="icnclr2 fw-bold" />
+              <div>
+                <ImCross className="icnclr2 fw-bold" />
+              </div>
               <div className="roboto fn text-start">
                 <h1 className="acme fw-bold heading5 pl">
                   Don't wear loose clothes
