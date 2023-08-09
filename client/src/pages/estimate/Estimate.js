@@ -1,18 +1,24 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as helpers from "../../Helper/helper";
 import City from "./City";
 import "./estimate.css";
+import { addUser } from "./userSlice";
 
 function Estimate() {
   const [user, setUser] = useState({});
   const [length, setLength] = useState(true);
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const cartProduct = useSelector((state) => state.cart.cart);
   console.log(cartProduct);
+
+  const userData = useSelector((state) => state.user.user);
+  console.log(userData);
 
   const netTotal = cartProduct.length && helpers.netTotal(cartProduct);
   const totalPrice = cartProduct.length && helpers.overallPrice(cartProduct);
@@ -32,6 +38,8 @@ function Estimate() {
 
     if (user.mobilenumber.match(/^\d{10}$/)) {
       setLength(true);
+      dispatch(addUser(user));
+
       const postData = await fetch(
         `${process.env.REACT_APP_ORDER}?customer_Name=${
           user.name
