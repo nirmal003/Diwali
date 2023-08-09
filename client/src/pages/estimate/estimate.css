@@ -1,5 +1,5 @@
 .estimate_page::before {
-  background: #000 none repeat scroll 0 0;
+  background: #000 none repeat 0 0;
   content: "";
   min-height: 100%;
   left: 0;
