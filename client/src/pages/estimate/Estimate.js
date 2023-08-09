@@ -8,6 +8,7 @@ import "./estimate.css";
 
 function Estimate() {
   const [user, setUser] = useState({});
+  const [length, setLength] = useState(true);
   const navigate = useNavigate();
 
   const cartProduct = useSelector((state) => state.cart.cart);
@@ -26,8 +27,10 @@ function Estimate() {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
+    console.log(user.mobilenumber);
 
-    if (user.mobileNumber.length == 10) {
+    if (user.mobilenumber.match(/^\d{10}$/)) {
+      setLength(true);
       console.log("hii");
       const postData = await fetch(process.env.REACT_APP_ORDER, {
         mode: "no-cors",
@@ -35,8 +38,10 @@ function Estimate() {
           "Access-Control-Allow-Origin": "*",
         },
       });
+      // const jsonData = await postData.json();
+    } else {
+      setLength(false);
     }
-    // const jsonData = await postData.json();
     console.log("hi");
   };
 
@@ -86,7 +91,7 @@ function Estimate() {
                 type="text"
                 name="name"
                 className="form-control shadow-none"
-                placeholder="Customer Name (*)"
+                placeholder="Customer Name  (*)"
                 required
                 onChange={getData}
               />
@@ -94,13 +99,20 @@ function Estimate() {
 
             <div className="form-group col-12 p-1">
               <input
-                className="form-control shadow-none"
+                className={`form-control shadow-none ${
+                  length ? "" : "bg-warning fw-bold"
+                }`}
                 type="number"
                 name="mobilenumber"
-                placeholder="Mobile Number (*)"
+                placeholder="Mobile Number  (*)"
                 required
                 onChange={getData}
               />
+              {!length && (
+                <span className="text-black fw-bold">
+                  Please enter valid number
+                </span>
+              )}
             </div>
 
             <div className="form-group col-12 p-1">
@@ -118,7 +130,7 @@ function Estimate() {
                 className="form-control shadow-none"
                 type="text"
                 name="address"
-                placeholder="Address (*)"
+                placeholder="Address  (*)"
                 rows="3"
                 required
                 onChange={getData}
@@ -154,7 +166,7 @@ function Estimate() {
             </div>
 
             <Button
-              variant="primary"
+              variant="success"
               type="submit"
               className={`m-4 submit_btn ${
                 Math.round(totalPrice) > 2500 ? "" : "disabled"
