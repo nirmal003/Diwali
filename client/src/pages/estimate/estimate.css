@@ -1,11 +1,12 @@
 .estimate_page::before {
-  background: #000 none repeat 0 0;
+  background: #000 none repeat scroll 0 0;
   content: "";
-  min-height: 100%;
+  height: 100%;
   left: 0;
   opacity: 0.65;
   position: absolute;
   top: 0;
+  bottom: 0;
   width: 100%;
 }
 
