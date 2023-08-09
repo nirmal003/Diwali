@@ -1,7 +1,23 @@
+.estimate_page::before {
+  background: #000 none repeat scroll 0 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.65;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 .estimate_page {
+  background-image: url("https://www.malathicrackers.com/images/parallax.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
   width: 100%;
   min-height: 100%;
-  background: #bf1ae4;
   color: white;
   position: absolute;
   top: 0;
@@ -18,6 +34,7 @@
 }
 
 .estimate_con {
+  position: absolute;
   width: 400px;
   /* background-color: red; */
   height: 100vh;

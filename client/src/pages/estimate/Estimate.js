@@ -109,8 +109,8 @@ function Estimate() {
                 onChange={getData}
               />
               {!length && (
-                <span className="text-black fw-bold">
-                  Please enter valid number
+                <span className=" fw-bold">
+                  Please enter valid mobile number
                 </span>
               )}
             </div>
@@ -156,6 +156,8 @@ function Estimate() {
                   ₹{" "}
                   {roundOff.toFixed(2) > 0
                     ? `- ${roundOff.toFixed(2)}`
+                    : roundOff.toFixed(2) == 0
+                    ? `${roundOff.toFixed(2)}`
                     : ` + ${Math.abs(roundOff.toFixed(2))}`}
                 </span>
               </div>
