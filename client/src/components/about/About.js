@@ -73,8 +73,7 @@ function About() {
                     href="tel:+919894740650"
                     className="clr-red heading5 acme text-decoration-none"
                   >
-                    <FaPhoneAlt className="clr pb-1" />
-                    +91 98947 40650
+                    <FaPhoneAlt className="clr pb-1" /> +91 98947 40650
                   </a>
                 </div>
               </div>
