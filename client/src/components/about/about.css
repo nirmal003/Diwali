@@ -1,18 +1,16 @@
-.bgoverlay {
+.bg_overlay {
   position: relative;
 }
 
 .parall {
-  background-color: #002d58;
   background-image: url("https://www.malathicrackers.com/images/parallaxbanner.jpg");
   height: auto;
   background-attachment: fixed;
   background-size: cover;
-  background-position: right;
-  width: 100%;
+  background-position: center;
 }
 
-.bgoverlay::after {
+.bg_overlay::after {
   z-index: 0;
   position: absolute;
   content: "";
@@ -27,19 +25,10 @@
   );
 }
 
-::after,
-::before {
-  box-sizing: border-box;
+.box-bg {
+  position: relative;
+  z-index: 1;
 }
-
-/* .row > * {
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * 0.5);
-  padding-left: calc(var(--bs-gutter-x) * 0.5);
-  margin-top: var(--bs-gutter-y);
-} */
 
 .toll-free-cta::before {
   bottom: 100%;
@@ -61,4 +50,46 @@
   position: relative;
   margin-top: 15px;
   font-size: 20px;
+}
+
+.cardicn {
+  font-size: 55px;
+  color: #fff !important;
+}
+
+.card1st {
+  background: #db2a1b;
+}
+
+.card2nd {
+  background: #002d58;
+}
+
+.cardwrapper {
+  padding: 3rem 2rem;
+  border-radius: 30px;
+  position: relative;
+  height: 340px;
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.padht {
+  transition: 0.5s;
+  transform: translateY(0);
+}
+
+@media (min-width: 5px) and (max-width: 767.98px) {
+  .bg_overlay::after {
+    background-color: #002d58d1;
+    background-image: none;
+  }
+}
+
+@media (min-width: 5px) and (max-width: 767.98px) {
+  .cardwrapper {
+    height: 280px;
+  }
 }
