@@ -79,7 +79,7 @@ function Product() {
         {Object.keys(groupByCategory).length ? (
           Object.entries(groupByCategory).map(([key, value]) => (
             <div key={key}>
-              <h5 className="bg-info pro_title mb-0">{key}</h5>
+              <h5 className="pro_title mb-0">{key}</h5>
               <div className="div_con row">
                 {value.map((u) => (
                   <div
@@ -99,11 +99,11 @@ function Product() {
                     </div>
 
                     <div className="details_con col-md-8 col-8 ">
-                      <h4 className="pro_head w-100 text-start fw-bold">
+                      <h4 className="pro_head w-100 text-start">
                         {u.Product_Name}
                       </h4>
 
-                      <div className="w-100 d-flex justify-content-center algin-items-center price_con pt-4">
+                      <div className="w-100 d-flex justify-content-center algin-items-center price_con ">
                         <span className="d-flex flex-column text-center mx-3 ">
                           <strike className="strike">
                             ₹ {Math.round(u.Product_Price)}.00 /{" "}
