@@ -75,7 +75,7 @@ function Cart() {
           </div>
 
           <div className="scoop_parent">
-            {cartProduct.length &&
+            {cartProduct.length > 0 &&
               cartProduct.map((c) => (
                 <div className="scoop scoop1" key={c.id}>
                   <div className="cart_img_con scoop1_child col-6">

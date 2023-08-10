@@ -4,7 +4,7 @@ import "./modelview.css";
 
 function ModelView({ show, imgUrl }) {
   return (
-    <div className="overlay">
+    <div className="overlay" onClick={show}>
       <div className="model text-center">
         <span className="span" onClick={show}>
           <IoIosClose />
