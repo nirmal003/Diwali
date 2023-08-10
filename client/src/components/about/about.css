@@ -3,20 +3,20 @@
 }
 
 .parall {
-  /* background-color: #002d58; */
+  background-color: #002d58;
   background-image: url("https://www.malathicrackers.com/images/parallaxbanner.jpg");
   height: auto;
   background-attachment: fixed;
   background-size: cover;
   background-position: right;
-  /* width: 100%; */
+  width: 100%;
 }
 
 .bgoverlay::after {
   z-index: 0;
-  /* position: absolute; */
-  content: "hiiiiiiiiiiii";
-  /* width: 100%;
+  position: absolute;
+  content: "";
+  width: 100%;
   height: 100%;
   top: 0;
   left: 0;
@@ -24,7 +24,7 @@
     290deg,
     rgba(52, 53, 60, 0.14) 45%,
     #002d58 45%
-  ); */
+  );
 }
 
 ::after,
@@ -45,7 +45,7 @@
   bottom: 100%;
   left: 30px;
   border: solid transparent;
-  content: "sdf";
+  content: "";
   height: 0;
   width: 0;
   position: absolute;

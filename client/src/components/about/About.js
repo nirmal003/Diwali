@@ -12,7 +12,7 @@ function About() {
         />
       </div>
 
-      <div className="container ">
+      <div className="container">
         <div className="row">
           <div className="col-lg-6 col-md-6 col-12 text-center align-self-center pt-4">
             <img
@@ -36,42 +36,44 @@ function About() {
               services and true value for money.
             </p>
           </div>
+        </div>
+      </div>
 
-          <div className="parall bgoverlay">
-            <div className="container py-5">
-              <div className="row">
-                <div className="col-lg-6 col-md-6 col-12">
-                  <div className="box-bg box-left">
-                    <h1 className="acme heading3 text-black pb-lg-4">
-                      <i>
-                        Fireworks Direct Outlet Available With Discount.
-                        Celebrate Diwali with Awesome Crackers!....
-                      </i>
-                    </h1>
-                    <p className="roboto para-lh pb-3 text-balck">
-                      Our service is to fulfill your needs and requirements to
-                      the maximum extent possible. We are the best place to
-                      fullfill your cracker shopping. We have cracker gift
-                      boxes, rockets, ground chakkars, flowerpots, sparklers,
-                      skyshots and various other type of crackers. After
-                      understanding the hardship of buying quality crackers
-                      during diwali season we came up with the solution to buy
-                      crackers online. We sell products only which is of good
-                      quality and received acceptance by the customers.
-                    </p>
-                    <div className="toll-free-cta">
-                      <a
-                        href="tel:+919894740650"
-                        className="clr-red heading5 acme"
-                      >
-                        <FaPhoneAlt className="clr pb-1" />
-                        +91 98947 40650
-                      </a>
-                    </div>
+      <div className="bg-info w-100 m-0 p-0">
+        <div className="parall bgoverlay">
+          <div className="container py-5">
+            <div className="row">
+              <div className="col-lg-6 col-md-6 col-12">
+                <div className="box-bg box-left">
+                  <h1 className="acme heading3 text-black pb-lg-4">
+                    <i>
+                      Fireworks Direct Outlet Available With Discount. Celebrate
+                      Diwali with Awesome Crackers!....
+                    </i>
+                  </h1>
+                  <p className="roboto para-lh pb-3 text-balck">
+                    Our service is to fulfill your needs and requirements to the
+                    maximum extent possible. We are the best place to fullfill
+                    your cracker shopping. We have cracker gift boxes, rockets,
+                    ground chakkars, flowerpots, sparklers, skyshots and various
+                    other type of crackers. After understanding the hardship of
+                    buying quality crackers during diwali season we came up with
+                    the solution to buy crackers online. We sell products only
+                    which is of good quality and received acceptance by the
+                    customers.
+                  </p>
+                  <div className="toll-free-cta">
+                    <a
+                      href="tel:+919894740650"
+                      className="clr-red heading5 acme"
+                    >
+                      <FaPhoneAlt className="clr pb-1" />
+                      +91 98947 40650
+                    </a>
                   </div>
                 </div>
-                <div className="col-lg-6 col-md-12"></div>
               </div>
+              <div className="col-lg-6 col-md-12"></div>
             </div>
           </div>
         </div>
