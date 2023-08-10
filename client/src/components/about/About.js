@@ -1,5 +1,4 @@
 import React from "react";
-import { FaPhoneAlt } from "react-icons/fa";
 
 function About() {
   return (
@@ -51,7 +50,7 @@ function About() {
                       Diwali with Awesome Crackers!....
                     </i>
                   </h1>
-                  <p className="roboto para-lh pb-3 text-balck">
+                  <p className="roboto para-lh  text-balck">
                     Our service is to fulfill your needs and requirements to the
                     maximum extent possible. We are the best place to fullfill
                     your cracker shopping. We have cracker gift boxes, rockets,
@@ -62,7 +61,7 @@ function About() {
                     which is of good quality and received acceptance by the
                     customers.
                   </p>
-                  <div className="toll-free-cta">
+                  {/* <div className="toll-free-cta">
                     <a
                       href="tel:+919894740650"
                       className="clr-red heading5 acme"
@@ -70,7 +69,7 @@ function About() {
                       <FaPhoneAlt className="clr pb-1" />
                       +91 98947 40650
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="col-lg-6 col-md-12"></div>
