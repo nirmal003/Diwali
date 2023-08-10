@@ -101,7 +101,7 @@ function Footer() {
                     <div className="text1">
                       <FaPhoneAlt className="text-white" />
                       <div className="roboto fn text-white smallfnt">
-                        +91 96002 66278
+                        +91 80724 60650
                       </div>
                     </div>
 
@@ -149,6 +149,7 @@ function Footer() {
               </div>
             </>
           )}
+
           <div className="container">
             <div className="footer__copyright">
               <div className="row">
@@ -171,8 +172,8 @@ function Footer() {
           <img
             src="https://www.malathicrackers.com/images/whatsappicon.png"
             className="priceicn float-left filter"
-            alt="Malathi Crackers"
-            title="Malathi Crackers"
+            alt="Awesome Crackers"
+            title="Awesome Crackers"
           />
         </a>
       </div>
@@ -198,8 +199,8 @@ function Footer() {
           <img
             src="https://www.malathicrackers.com/images/callicon.png"
             className=" priceicn float-left"
-            alt="Malathi Crackers"
-            title="Malathi Crackers"
+            alt="Awesome Crackers"
+            title="Awesome Crackers"
           />
         </a>
       </div>
@@ -209,8 +210,8 @@ function Footer() {
           <img
             src="https://www.malathicrackers.com/images/quickpurchase.png"
             className="priceicn2 float-right"
-            alt="Malathi Crackers"
-            title="Malathi Crackers"
+            alt="Awesome Crackers"
+            title="Awesome Crackers"
           />
         </Link>
       </div>

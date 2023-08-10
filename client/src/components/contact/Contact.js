@@ -25,7 +25,7 @@ function Contact() {
             <h2 class="acme heading5 pb-2 clr-red"> MOBILE NUMBER </h2>
             <p class="roboto smallfnt"> +91 98947 40650</p>
             <p class="roboto smallfnt"> +91 97913 24210</p>
-            <p class="roboto smallfnt"> +91 96002 66278</p>
+            <p class="roboto smallfnt"> +91 80724 60650</p>
             <hr />
             <h2 class="acme heading5 pb-2 clr-red">EMAIL</h2>
             <p class="roboto pb-2 smallfnt">awesomecrackerss@gmail.com </p>
