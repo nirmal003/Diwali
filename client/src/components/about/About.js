@@ -81,16 +81,16 @@ function About() {
         </div>
       </div>
 
-      <div className="container px-3 pt-5 pb-4">
+      <div className="container px-3 pt-4 pb-4">
         <div className="row">
-          <div className="col-lg-12 col-md-12 col-12 pb-4 text-center">
-            <h1 className="acme clr-red fw-bold mb-3">Why Choose Us</h1>
-            {/* <img
+          <div className="col-lg-12 col-md-12 col-12 pb-2 text-center">
+            <h1 className="acme clr-red fw-bold mb-1">Why Choose Us</h1>
+            <img
               src="https://www.malathicrackers.com/images/line.png"
-              className="img-fluid"
+              className="w-10 mb-1"
               alt="RJR Agency"
               title=" RJR Agency"
-            /> */}
+            />
             <p className="roboto">
               In a competitive world of fire crackers, we are well known for
               qualitative crackers and fancy novelties at reasonable price. The
@@ -101,7 +101,7 @@ function About() {
             </p>
           </div>
 
-          <div className="col-12 col-md-6 col-lg-3 text-center pt-3 padht">
+          <div className="col-12 col-md-6 col-lg-3 text-center pt-2 padht">
             <div className="cardwrapper card1st shadow ">
               <div className="pb-4">
                 <FaPuzzlePiece className="cardicn" />
