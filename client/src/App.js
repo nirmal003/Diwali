@@ -1,11 +1,10 @@
-// import { PDFViewer } from "@react-pdf/renderer";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
 import Home from "./components/home/Home";
-// import MyDocument from "./components/invoice/MyDocument";
+import MyDocument from "./components/invoice/MyDocument";
 import Product from "./components/product/Product";
 import Safety from "./components/safety/Safety";
 import Cart from "./pages/cart/Cart";
@@ -26,14 +25,10 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/estimate" element={<Estimate />} />
-          {/* <Route path="/invoice" element={<MyDocument />} /> */}
+          <Route path="/invoice" element={<MyDocument />} />
         </Routes>
         <Footer />
       </Router>
-
-      {/* <PDFViewer>
-        <MyDocument />
-      </PDFViewer> */}
     </div>
   );
 }

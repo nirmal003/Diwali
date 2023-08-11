@@ -1,30 +1,23 @@
-import { Document, Page, StyleSheet, Text, View } from "@react-pdf/renderer";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import React from "react";
+import PdfFlie from "./PdfFlie";
 
-// Create styles
-const styles = StyleSheet.create({
-  page: {
-    flexDirection: "row",
-    backgroundColor: "#E4E4E4",
-  },
-  section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1,
-  },
-});
+function MyDocument() {
+  return (
+    <div>
+      <PDFDownloadLink document={<PdfFlie />}>
+        {({ loading }) =>
+          loading ? <button>loding</button> : <button>download</button>
+        }
+      </PDFDownloadLink>
 
-// Create Document Component
-const MyDocument = () => (
-  <Document>
-    <Page size="A4" style={styles.page}>
-      <View style={styles.section}>
-        <Text>sdfghjklxdcfgvhbjnkxcvbnm #1</Text>
-      </View>
-      <View style={styles.section}>
-        <Text>Section #2</Text>
-      </View>
-    </Page>
-  </Document>
-);
+      <div>hi</div>
+      <div>hi</div>
+      <div>hi</div>
+      <div>hi</div>
+      <div>hi</div>
+    </div>
+  );
+}
 
 export default MyDocument;
