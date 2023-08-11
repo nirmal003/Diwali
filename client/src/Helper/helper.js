@@ -18,7 +18,7 @@ export function overallDiscount(cartProduct) {
 
 export function netTotal(cartProduct) {
   return cartProduct.reduce(
-    (acc, val) => acc + Number(val.product.u.Product_Price),
+    (acc, val) => acc + Number(val.product.u.Product_Price) * val.qty,
     0
   );
 }

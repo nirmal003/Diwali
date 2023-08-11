@@ -42,16 +42,18 @@ function Cart() {
       discountPrice: qty * discountPrice,
     };
 
-    if (Number(qty) === 0) {
-      if (window.confirm("do you want to cancel this item?....")) {
-        dispatch(deleteCart(c.id));
-        return;
-      } else {
-        dispatch(updateCart(data));
-      }
-    } else {
-      dispatch(updateCart(data));
-    }
+    dispatch(updateCart(data));
+
+    // if (Number(qty) === 0) {
+    //   if (window.confirm("do you want to cancel this item?....")) {
+    //     dispatch(deleteCart(c.id));
+    //     return;
+    //   } else {
+    //     dispatch(updateCart(data));
+    //   }
+    // } else {
+    //   dispatch(updateCart(data));
+    // }
   };
 
   const getImgUrl = (url) => {
