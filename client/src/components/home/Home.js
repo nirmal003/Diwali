@@ -48,7 +48,7 @@ function Home() {
           <h2 className="text-danger text-start fw-bold mb-4">
             Awesome Crackers
           </h2>
-          <p className="fs-5 para roboto ">
+          <p className="fs-6 para roboto ">
             Awesome Crackers, We are the leading online fireworks supplier of
             all types of conventional crackers including chakras, flowerpots,
             rockets, bombs, sound crackers, etc. Apart from usual varieties, we
@@ -59,7 +59,7 @@ function Home() {
             gifting purposes. Enjoy a safe and sound Diwali by ordering crackers
             online.
           </p>
-          <p className="fs-5 para roboto">
+          <p className="fs-6 para roboto">
             Our aim is to deliver optimum quality service to our clients has
             been achieved with the help of a well organized infrastructure
             coupled with dedicated man power. Enjoy your festivals such as
