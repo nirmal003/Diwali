@@ -5,8 +5,6 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     borderBottomWidth: 1,
-    // borderLeftWidth: 1,
-    // borderRightWidth: 1,
     alignItems: "center",
     fontSize: 11,
     flexGrow: 1,
