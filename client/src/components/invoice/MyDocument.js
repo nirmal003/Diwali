@@ -1,6 +1,6 @@
 import { Document, Page, StyleSheet, View } from "@react-pdf/renderer";
 import React from "react";
-import InvoiceClient from "./InvoiceClient";
+import InvoiceDetails from "./InvoiceDetails";
 import InvoiceFooter from "./InvoiceFooter";
 import InvoiceHeader from "./InvoiceHeader";
 import InvoiceItems from "./InvoiceItems";
@@ -27,7 +27,7 @@ function MyDocument() {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        <InvoiceClient />
+        <InvoiceDetails />
         <View style={styles.tableContainer}>
           <InvoiceHeader />
           <InvoiceItems />

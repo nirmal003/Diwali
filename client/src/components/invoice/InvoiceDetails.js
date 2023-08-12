@@ -2,6 +2,18 @@ import { Image, StyleSheet, Text, View } from "@react-pdf/renderer";
 import React from "react";
 
 const styles = StyleSheet.create({
+  invoice: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderTopWidth: 1,
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    height: 25,
+    fontSize: 11,
+    paddingHorizontal: 8,
+  },
   column: {
     display: "flex",
     flexDirection: "column",
@@ -68,9 +80,14 @@ const styles = StyleSheet.create({
   },
 });
 
-function InvoiceClient() {
+function InvoiceDetails() {
   return (
     <>
+      <View style={styles.invoice}>
+        <Text>Invoice No : 345678912</Text>
+        <Text style={{ fontSize: 18 }}>INVOICE</Text>
+        <Text>Date : 13-08-2023</Text>
+      </View>
       <View style={styles.column}>
         <View style={styles.contact}>
           <Text>Mobile : 98947 40650</Text>
@@ -90,7 +107,6 @@ function InvoiceClient() {
           </Text>
         </View>
       </View>
-
       <View style={styles.row}>
         <View style={styles.customer}>
           <Text style={{ fontWeight: "bold", fontSize: 13 }}>
@@ -109,4 +125,4 @@ function InvoiceClient() {
   );
 }
 
-export default InvoiceClient;
+export default InvoiceDetails;
