@@ -3,7 +3,7 @@ import React from "react";
 
 const styles = StyleSheet.create({
   titleContainer: {
-    marginTop: 12,
+    marginTop: 23,
   },
   reportTitle: {
     fontSize: 12,

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "@react-pdf/renderer";
+import { Image, StyleSheet, Text, View } from "@react-pdf/renderer";
 import React from "react";
 
 const styles = StyleSheet.create({
@@ -9,10 +9,10 @@ const styles = StyleSheet.create({
     borderLeftWidth: 1,
     borderRightWidth: 1,
     justifyContent: "space-between",
-    paddingTop: 6,
-    paddingBottom: 5,
+    paddingTop: 4,
+    paddingBottom: 2,
     paddingHorizontal: 8,
-    height: 150,
+    height: 115,
   },
   contact: {
     display: "flex",
@@ -73,28 +73,21 @@ function InvoiceClient() {
     <>
       <View style={styles.column}>
         <View style={styles.contact}>
-          {/* <View> */}
-          <Text>Mobile : 3456789</Text>
-          {/* </View> */}
-          {/* <View> */}
+          <Text>Mobile : 98947 40650</Text>
           <Text>E-mail : awesomecrackerss.com</Text>
-          {/* </View> */}
         </View>
         <View style={styles.logocon}>
-          {/* <View> */}
-          <Text>logo</Text>
-          {/* </View> */}
+          <Image
+            style={{ width: 100, height: "auto" }}
+            src="https://nirmal003.github.io/Images/aws3.jpg"
+          />
         </View>
 
         <View style={styles.title}>
-          {/* <View> */}
           <Text>Awesome Crackers</Text>
-          {/* </View> */}
-          {/* <View> */}
           <Text style={styles.location}>
             4/480, Veerachelliya Puram , Sivakasi , Virudhunagar - 626005
           </Text>
-          {/* </View> */}
         </View>
       </View>
 
