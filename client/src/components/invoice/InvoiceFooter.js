@@ -5,10 +5,11 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     borderColor: "#000",
-    borderRightWidth: 1,
-    borderLeftWidth: 1,
+    // borderRightWidth: 1,
+    // borderLeftWidth: 1,
     borderBottomWidth: 1,
-    fontSize: 14,
+    fontSize: 12.5,
+    fontWeight: "bold",
   },
   description: {
     width: "82%",
@@ -38,7 +39,7 @@ function InvoiceFooter() {
       <View style={styles.row} className="fw-bolder">
         <Text style={styles.description}>Discount(30%)</Text>
         <Text style={styles.total}>
-          {Number.parseFloat(2333456).toFixed(2)}
+          {Number.parseFloat(2003323456).toFixed(2)}
         </Text>
       </View>
       <View style={styles.row} className="fw-bolder">

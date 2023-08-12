@@ -16,7 +16,7 @@ function Invoice() {
         }
       </PDFDownloadLink>
 
-      <PDFViewer width={1000} height={1100} showToolbar={false}>
+      <PDFViewer width={1000} height={1100} showToolbar={true}>
         <MyDocument />
       </PDFViewer>
 

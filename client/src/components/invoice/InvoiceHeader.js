@@ -5,13 +5,13 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     borderBottomWidth: 1,
-    borderLeftWidth: 1,
-    borderRightWidth: 1,
+    // borderLeftWidth: 1,
+    // borderRightWidth: 1,
     alignItems: "center",
     textAlign: "center",
-    fontStyle: "bold",
-    // flexGrow: 1,
-    fontSize: 13,
+    fontWeight: "bold",
+    flexGrow: 1,
+    fontSize: 12.5,
   },
   sno: {
     width: "6%",
@@ -61,10 +61,10 @@ function InvoiceHeader() {
     <>
       <View style={styles.container}>
         <Text style={styles.sno}>S.No</Text>
-        <Text style={styles.code}>Id</Text>
+        <Text style={styles.code}>Code</Text>
         <Text style={styles.description}>Product Name</Text>
         <Text style={styles.type}>Type</Text>
-        <Text style={styles.qty}>Qty</Text>
+        <Text style={styles.qty}>Quantity</Text>
         <Text style={styles.rate}>Rate (Rs)</Text>
         <Text style={styles.amount}>Amount (Rs)</Text>
       </View>

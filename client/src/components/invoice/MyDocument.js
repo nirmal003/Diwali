@@ -1,5 +1,6 @@
-import { Document, Page, StyleSheet } from "@react-pdf/renderer";
+import { Document, Page, StyleSheet, View } from "@react-pdf/renderer";
 import React from "react";
+import InvoiceClient from "./InvoiceClient";
 import InvoiceFooter from "./InvoiceFooter";
 import InvoiceHeader from "./InvoiceHeader";
 import InvoiceItems from "./InvoiceItems";
@@ -11,10 +12,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     padding: 6,
   },
-  section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1,
+
+  tableContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    borderWidth: 1,
+    borderColor: "#000",
   },
 });
 
@@ -22,9 +25,12 @@ function MyDocument() {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        <InvoiceHeader />
-        <InvoiceItems />
-        <InvoiceFooter />
+        <InvoiceClient />
+        <View style={styles.tableContainer}>
+          <InvoiceHeader />
+          <InvoiceItems />
+          <InvoiceFooter />
+        </View>
         <InvoiceThanks />
       </Page>
     </Document>
