@@ -112,11 +112,11 @@ function InvoiceDetails() {
           <Text style={{ fontWeight: "bold", fontSize: 13 }}>
             Customer Details
           </Text>
-          <Text>Nirmal </Text>
+          <Text>sdfghj </Text>
           <Text>1234789034</Text>
         </View>
         <View style={styles.address}>
-          <Text>addresdfghjkk dfghjk </Text>
+          <Text>addresdfghjkk dfghjk</Text>
           <Text>dfghj dsfghjkl sddfghjk szfdghjss </Text>
           <Text>villupuram , Rameshwaram</Text>
         </View>

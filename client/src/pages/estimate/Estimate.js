@@ -56,7 +56,10 @@ function Estimate() {
             "Access-Control-Allow-Origin": "*",
           },
         }
-      ).then((res) => console.log(res));
+      ).then((res) => {
+        console.log(res);
+        navigate("/invoice");
+      });
     } else {
       setLength(false);
     }

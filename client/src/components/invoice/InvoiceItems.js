@@ -63,18 +63,29 @@ const styles = StyleSheet.create({
   },
 });
 
-function InvoiceItems() {
+function InvoiceItems({ item }) {
+  // const cartProduct = useSelector((state) => state.cart.cart);
+  // console.log(cartProduct);
+
   return (
     <>
-      <View style={styles.row}>
-        <Text style={styles.sno}>10</Text>
-        <Text style={styles.code}>200</Text>
-        <Text style={styles.description}>expewrtyui dsdxfcghjkljhb</Text>
-        <Text style={styles.type}>BOX</Text>
-        <Text style={styles.qty}>12384</Text>
-        <Text style={styles.rate}>2345.00</Text>
-        <Text style={styles.amount}>987654.00</Text>
-      </View>
+      {/* {item.length &&
+        item.map((item, index) => (
+          <View style={styles.row} key={index}>
+            <Text style={styles.sno}>{index}</Text>
+            <Text style={styles.code}>{item.id}</Text>
+            <Text style={styles.description}>
+              {item.product.u.Product_Name}
+            </Text>
+            <Text style={styles.type}>{item.product.u.Material_Type}</Text>
+            <Text style={styles.qty}>{item.qty}</Text>
+            <Text style={styles.rate}>{item.product.u.Product_Price}</Text>
+            <Text style={styles.amount}>
+              {Math.round(item.qty * item.product.u.Product_Price)}
+            </Text>
+          </View>
+        ))} */}
+
       <View style={styles.row}>
         <Text style={styles.sno}>100</Text>
         <Text style={styles.code}>200</Text>

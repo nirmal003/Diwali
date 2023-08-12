@@ -4,11 +4,14 @@ import { Button } from "react-bootstrap";
 import MyDocument from "./MyDocument";
 
 function Invoice() {
+  // const cartProduct = useSelector((state) => state.cart.cart);
+  // console.log(cartProduct);
+
   return (
     <div className="d-flex row my-3">
       <PDFDownloadLink
         className="mb-2"
-        document={<MyDocument />}
+        document={<MyDocument item={"cartProduct"} />}
         fileName="Invoice.pdf"
       >
         {({ loading }) =>
