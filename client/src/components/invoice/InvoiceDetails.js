@@ -11,8 +11,20 @@ const styles = StyleSheet.create({
     borderLeftWidth: 1,
     borderRightWidth: 1,
     height: 25,
-    fontSize: 11,
+    fontSize: 10.5,
     paddingHorizontal: 8,
+  },
+  invoiceno: {
+    width: "35%",
+  },
+  invoicetitle: {
+    width: "30%",
+    fontSize: 18,
+    textAlign: "center",
+  },
+  invoicedate: {
+    width: "35%",
+    textAlign: "right",
   },
   column: {
     display: "flex",
@@ -90,11 +102,11 @@ function InvoiceDetails({ date, user }) {
   return (
     <>
       <View style={styles.invoice}>
-        <Text style={{ fontSize: 10 }}>
-          Bill.No : {new Date(date).getTime()}
+        <Text style={styles.invoiceno}>
+          Invoice No : {new Date(date).getTime()}
         </Text>
-        <Text style={{ fontSize: 18 }}>INVOICE</Text>
-        <Text style={{ fontSize: 10 }}>
+        <Text style={styles.invoicetitle}>INVOICE</Text>
+        <Text style={styles.invoicedate}>
           Date : {new Date(date).getDate().toString().padStart(2, "0")}-
           {(new Date(date).getMonth() + 1).toString().padStart(2, "0")}-
           {new Date(date).getFullYear()}
