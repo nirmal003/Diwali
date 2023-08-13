@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View } from "@react-pdf/renderer";
 import React from "react";
 
+import * as helpers from "../../Helper/helper";
+
 const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
@@ -28,30 +30,37 @@ const styles = StyleSheet.create({
   },
 });
 
-function InvoiceFooter() {
+function InvoiceFooter({ item }) {
+  console.log(item);
+
+  const netTotal = item.length && helpers.netTotal(item);
+  console.log(netTotal);
+  const totalDiscount = item.length && helpers.overallDiscount(item);
+  const totalPrice = item.length && helpers.overallPrice(item);
+  const packingCharge = (totalPrice * 0.03).toFixed(2);
+  const overallTotal = Math.round(totalPrice) + Math.round(packingCharge);
+
   return (
     <>
       <View style={styles.row} className="fw-bolder">
         <Text style={styles.description}>Net Total</Text>
-        <Text style={styles.total}>{Number.parseFloat(3456).toFixed(2)}</Text>
+        <Text style={styles.total}>{Math.round(netTotal).toFixed(2)}</Text>
       </View>
       <View style={styles.row} className="fw-bolder">
         <Text style={styles.description}>Discount(30%)</Text>
-        <Text style={styles.total}>
-          {Number.parseFloat(2003323456).toFixed(2)}
-        </Text>
+        <Text style={styles.total}>{Math.round(totalDiscount).toFixed(2)}</Text>
       </View>
       <View style={styles.row} className="fw-bolder">
         <Text style={styles.description}>Sub Total</Text>
-        <Text style={styles.total}>{Number.parseFloat(2345).toFixed(2)}</Text>
+        <Text style={styles.total}>{Math.round(totalPrice).toFixed(2)}</Text>
       </View>
       <View style={styles.row} className="fw-bolder">
         <Text style={styles.description}>Packing Charges(3%)</Text>
-        <Text style={styles.total}>{Number.parseFloat(234).toFixed(2)}</Text>
+        <Text style={styles.total}>{packingCharge}</Text>
       </View>
       <View style={styles.row} className="fw-bolder">
         <Text style={styles.description}>Overall Total</Text>
-        <Text style={styles.total}>{Number.parseFloat(2345).toFixed(2)}</Text>
+        <Text style={styles.total}>{overallTotal.toFixed(2)}</Text>
       </View>
     </>
   );

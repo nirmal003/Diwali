@@ -31,7 +31,7 @@ function MyDocument({ item }) {
         <View style={styles.tableContainer}>
           <InvoiceHeader />
           <InvoiceItems item={item} />
-          <InvoiceFooter />
+          <InvoiceFooter item={item} />
         </View>
         <InvoiceThanks />
       </Page>
