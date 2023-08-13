@@ -90,9 +90,11 @@ function InvoiceDetails({ date, user }) {
   return (
     <>
       <View style={styles.invoice}>
-        <Text>Invoice No : {new Date(date).getTime()}</Text>
+        <Text style={{ fontSize: 10 }}>
+          Bill.No : {new Date(date).getTime()}
+        </Text>
         <Text style={{ fontSize: 18 }}>INVOICE</Text>
-        <Text>
+        <Text style={{ fontSize: 10 }}>
           Date : {new Date(date).getDate().toString().padStart(2, "0")}-
           {(new Date(date).getMonth() + 1).toString().padStart(2, "0")}-
           {new Date(date).getFullYear()}
