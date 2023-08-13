@@ -64,15 +64,14 @@ const styles = StyleSheet.create({
 });
 
 function InvoiceItems({ item }) {
-  // const cartProduct = useSelector((state) => state.cart.cart);
-  // console.log(cartProduct);
+  console.log(item);
 
   return (
     <>
-      {/* {item.length &&
-        item.map((item, index) => (
+      {item?.length > 0 &&
+        item?.map((item, index) => (
           <View style={styles.row} key={index}>
-            <Text style={styles.sno}>{index}</Text>
+            <Text style={styles.sno}>{index + 1}</Text>
             <Text style={styles.code}>{item.id}</Text>
             <Text style={styles.description}>
               {item.product.u.Product_Name}
@@ -84,89 +83,7 @@ function InvoiceItems({ item }) {
               {Math.round(item.qty * item.product.u.Product_Price)}
             </Text>
           </View>
-        ))} */}
-
-      <View style={styles.row}>
-        <Text style={styles.sno}>100</Text>
-        <Text style={styles.code}>200</Text>
-        <Text style={styles.description}>expewrtyui dsdxfcghjkljhb</Text>
-        <Text style={styles.type}>BOX</Text>
-        <Text style={styles.qty}>12384</Text>
-        <Text style={styles.rate}>2345.00</Text>
-        <Text style={styles.amount}>987654.00</Text>
-      </View>
-      <View style={styles.row}>
-        <Text style={styles.sno}>100</Text>
-        <Text style={styles.code}>200</Text>
-        <Text style={styles.description}>expewrtyui dsdxfcghjkljhb</Text>
-        <Text style={styles.type}>BOX</Text>
-        <Text style={styles.qty}>12384</Text>
-        <Text style={styles.rate}>2345.00</Text>
-        <Text style={styles.amount}>987654.00</Text>
-      </View>
-      <View style={styles.row}>
-        <Text style={styles.sno}>100</Text>
-        <Text style={styles.code}>200</Text>
-        <Text style={styles.description}>expewrtyui dsdxfcghjkljhb</Text>
-        <Text style={styles.type}>BOX</Text>
-        <Text style={styles.qty}>12384</Text>
-        <Text style={styles.rate}>2345.00</Text>
-        <Text style={styles.amount}>987654.00</Text>
-      </View>
-      <View style={styles.row}>
-        <Text style={styles.sno}>100</Text>
-        <Text style={styles.code}>200</Text>
-        <Text style={styles.description}>expewrtyui dsdxfcghjkljhb</Text>
-        <Text style={styles.type}>BOX</Text>
-        <Text style={styles.qty}>12384</Text>
-        <Text style={styles.rate}>2345.00</Text>
-        <Text style={styles.amount}>987654.00</Text>
-      </View>
-      <View style={styles.row}>
-        <Text style={styles.sno}>100</Text>
-        <Text style={styles.code}>200</Text>
-        <Text style={styles.description}>expewrtyui dsdxfcghjkljhb</Text>
-        <Text style={styles.type}>BOX</Text>
-        <Text style={styles.qty}>12384</Text>
-        <Text style={styles.rate}>2345.00</Text>
-        <Text style={styles.amount}>987654.00</Text>
-      </View>
-      <View style={styles.row}>
-        <Text style={styles.sno}>100</Text>
-        <Text style={styles.code}>200</Text>
-        <Text style={styles.description}>expewrtyui dsdxfcghjkljhb</Text>
-        <Text style={styles.type}>BOX</Text>
-        <Text style={styles.qty}>12384</Text>
-        <Text style={styles.rate}>2345.00</Text>
-        <Text style={styles.amount}>987654.00</Text>
-      </View>
-      <View style={styles.row}>
-        <Text style={styles.sno}>100</Text>
-        <Text style={styles.code}>200</Text>
-        <Text style={styles.description}>expewrtyui dsdxfcghjkljhb</Text>
-        <Text style={styles.type}>BOX</Text>
-        <Text style={styles.qty}>12384</Text>
-        <Text style={styles.rate}>2345.00</Text>
-        <Text style={styles.amount}>987654.00</Text>
-      </View>
-      <View style={styles.row}>
-        <Text style={styles.sno}>100</Text>
-        <Text style={styles.code}>200</Text>
-        <Text style={styles.description}>expewrtyui dsdxfcghjkljhb</Text>
-        <Text style={styles.type}>BOX</Text>
-        <Text style={styles.qty}>12384</Text>
-        <Text style={styles.rate}>2345.00</Text>
-        <Text style={styles.amount}>987654.00</Text>
-      </View>
-      <View style={styles.row}>
-        <Text style={styles.sno}>100</Text>
-        <Text style={styles.code}>200</Text>
-        <Text style={styles.description}>expewrtyui dsdxfcghjkljhb</Text>
-        <Text style={styles.type}>BOX</Text>
-        <Text style={styles.qty}>12384</Text>
-        <Text style={styles.rate}>2345.00</Text>
-        <Text style={styles.amount}>987654.00</Text>
-      </View>
+        ))}
     </>
   );
 }

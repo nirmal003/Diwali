@@ -1,17 +1,18 @@
-import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import React from "react";
 import { Button } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import MyDocument from "./MyDocument";
 
 function Invoice() {
-  // const cartProduct = useSelector((state) => state.cart.cart);
-  // console.log(cartProduct);
-
+  const cartProduct = useSelector((state) => state.cart.cart);
+  console.log(cartProduct);
+  const data = cartProduct;
   return (
     <div className="d-flex row my-3">
       <PDFDownloadLink
         className="mb-2"
-        document={<MyDocument item={"cartProduct"} />}
+        document={<MyDocument item={data} />}
         fileName="Invoice.pdf"
       >
         {({ loading }) =>
@@ -19,9 +20,9 @@ function Invoice() {
         }
       </PDFDownloadLink>
 
-      <PDFViewer width={1000} height={1100} showToolbar={true}>
+      {/* <PDFViewer width={1000} height={1100} showToolbar={true}>
         <MyDocument />
-      </PDFViewer>
+      </PDFViewer> */}
 
       <div>hiiiii</div>
     </div>
