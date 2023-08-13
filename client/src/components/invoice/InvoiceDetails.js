@@ -15,10 +15,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
   },
   invoiceno: {
-    width: "35%",
+    width: "34.6%",
   },
   invoicetitle: {
-    width: "30%",
+    width: "30.4%",
     fontSize: 18,
     textAlign: "center",
   },
