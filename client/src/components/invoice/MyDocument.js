@@ -23,11 +23,11 @@ const styles = StyleSheet.create({
   },
 });
 
-function MyDocument({ item }) {
+function MyDocument({ item, user }) {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        <InvoiceDetails />
+        <InvoiceDetails user={user} />
         <View style={styles.tableContainer}>
           <InvoiceHeader />
           <InvoiceItems item={item} />

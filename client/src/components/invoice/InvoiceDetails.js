@@ -80,7 +80,9 @@ const styles = StyleSheet.create({
   },
 });
 
-function InvoiceDetails() {
+function InvoiceDetails({ user }) {
+  console.log(user);
+
   return (
     <>
       <View style={styles.invoice}>
@@ -112,13 +114,15 @@ function InvoiceDetails() {
           <Text style={{ fontWeight: "bold", fontSize: 13 }}>
             Customer Details
           </Text>
-          <Text>sdfghj </Text>
-          <Text>1234789034</Text>
+          <Text>{user[0]?.name}</Text>
+          <Text>{user[0]?.mobilenumber}</Text>
         </View>
         <View style={styles.address}>
-          <Text>addresdfghjkk dfghjk</Text>
-          <Text>dfghj dsfghjkl sddfghjk szfdghjss </Text>
-          <Text>villupuram , Rameshwaram</Text>
+          <Text>{user[0]?.address.split(" ")?.slice(0, 2).join(" ")}</Text>
+          <Text>{user[0]?.address.split(" ")?.slice(2).join(" ")}</Text>
+          <Text>
+            {user[0]?.city}, {user[0]?.state}.
+          </Text>
         </View>
       </View>
     </>

@@ -34,7 +34,6 @@ function InvoiceFooter({ item }) {
   console.log(item);
 
   const netTotal = item.length && helpers.netTotal(item);
-  console.log(netTotal);
   const totalDiscount = item.length && helpers.overallDiscount(item);
   const totalPrice = item.length && helpers.overallPrice(item);
   const packingCharge = (totalPrice * 0.03).toFixed(2);
