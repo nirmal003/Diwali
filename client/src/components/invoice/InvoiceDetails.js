@@ -81,8 +81,11 @@ const styles = StyleSheet.create({
 });
 
 function InvoiceDetails({ date, user }) {
-  console.log(user);
-  console.log(new Date(date).getTime());
+  // console.log(user);
+  // console.log(new Date(date).getTime());
+  // console.log(new Date(date).getFullYear());
+  // console.log(new Date(date).getDate().toString().padStart(2, "0"));
+  // console.log((new Date(date).getMonth() + 1).toString().padStart(2, "0"));
 
   return (
     <>
@@ -90,8 +93,8 @@ function InvoiceDetails({ date, user }) {
         <Text>Invoice No : {new Date(date).getTime()}</Text>
         <Text style={{ fontSize: 18 }}>INVOICE</Text>
         <Text>
-          Date : {new Date(date).getDate().padStart(2, "0")}-
-          {(new Date(date).getMonth() + 1).padStart(2, "0")}-
+          Date : {new Date(date).getDate().toString().padStart(2, "0")}-
+          {(new Date(date).getMonth() + 1).toString().padStart(2, "0")}-
           {new Date(date).getFullYear()}
         </Text>
       </View>

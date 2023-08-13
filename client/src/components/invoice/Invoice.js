@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import MyDocument from "./MyDocument";
 
 function Invoice() {
-  const date = useParams();
+  const { date } = useParams();
   const cartProduct = useSelector((state) => state.cart.cart);
   const userData = useSelector((state) => state.user.user);
   console.log(date);
