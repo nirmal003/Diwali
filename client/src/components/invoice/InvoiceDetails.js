@@ -80,15 +80,20 @@ const styles = StyleSheet.create({
   },
 });
 
-function InvoiceDetails({ user }) {
+function InvoiceDetails({ date, user }) {
   console.log(user);
+  console.log(new Date(date).getTime());
 
   return (
     <>
       <View style={styles.invoice}>
-        <Text>Invoice No : 345678912</Text>
+        <Text>Invoice No : {new Date(date).getTime()}</Text>
         <Text style={{ fontSize: 18 }}>INVOICE</Text>
-        <Text>Date : 13-08-2023</Text>
+        <Text>
+          Date : {new Date(date).getDate().padStart(2, "0")}-
+          {(new Date(date).getMonth() + 1).padStart(2, "0")}-
+          {new Date(date).getFullYear()}
+        </Text>
       </View>
       <View style={styles.column}>
         <View style={styles.contact}>
@@ -121,7 +126,7 @@ function InvoiceDetails({ user }) {
           <Text>{user[0]?.address.split(" ")?.slice(0, 2).join(" ")}</Text>
           <Text>{user[0]?.address.split(" ")?.slice(2).join(" ")}</Text>
           <Text>
-            {user[0]?.city}, {user[0]?.state}.
+            {user[0]?.city} {user[0]?.state}
           </Text>
         </View>
       </View>

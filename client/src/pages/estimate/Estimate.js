@@ -39,6 +39,7 @@ function Estimate() {
     if (user.mobilenumber.match(/^\d{10}$/)) {
       setLength(true);
       dispatch(addUser(user));
+      const date = new Date();
 
       const postData = await fetch(
         `${process.env.REACT_APP_ORDER}?customer_Name=${
@@ -58,7 +59,7 @@ function Estimate() {
         }
       ).then((res) => {
         console.log(res);
-        navigate("/invoice");
+        navigate(`/invoice/${date}`);
       });
     } else {
       setLength(false);

@@ -25,7 +25,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/estimate" element={<Estimate />} />
-          <Route path="/invoice" element={<Invoice />} />
+          <Route path="/invoice/:date" element={<Invoice />} />
         </Routes>
         <Footer />
       </Router>
