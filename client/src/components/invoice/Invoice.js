@@ -10,8 +10,8 @@ import MyDocument from "./MyDocument";
 
 function Invoice() {
   const dt = useParams();
-  const [blob, setBlob] = useState(null);
-  const [url, setUrl] = useState(null);
+  const [blob, setBlob] = useState(() => null);
+  const [url, setUrl] = useState(() => null);
   const cartProduct = useSelector((state) => state.cart.cart);
   const userData = useSelector((state) => state.user.user);
   console.log(blob);
@@ -22,24 +22,19 @@ function Invoice() {
     if (cartProduct.length !== 0 && blob) {
       try {
         const storageRef = ref(storage, `invoice-${dt.time}.pdf`);
-        console.log("before1");
         const snapshot = await uploadBytes(storageRef, blob);
-        console.log("after1");
-        console.log("before2");
         const downloadURL = await getDownloadURL(snapshot.ref);
-        console.log("after2");
-        console.log(downloadURL);
         setUrl(downloadURL);
+        const send_mail = await fetch(
+          `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`,
+          {
+            mode: "no-cors",
+          }
+        );
+        console.log("success", send_mail);
       } catch (err) {
         console.log(err);
       }
-
-      // const send_mail = await fetch(
-      //   `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`,
-      //   {
-      //     mode: "no-cors",
-      //   }
-      // );
     }
   };
 
@@ -67,7 +62,6 @@ function Invoice() {
         <MyDocument />
       </PDFViewer> */}
 
-      <br />
       <br />
 
       {url && <iframe src={url} width="100%" height={940} title="invoice" />}
