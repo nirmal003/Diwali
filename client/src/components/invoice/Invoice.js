@@ -24,8 +24,14 @@ function Invoice() {
 
       uploadBytes(storageRef, blob).then((snapshot) => {
         console.log("success");
-        getDownloadURL(snapshot.ref).then((downloadURL) => {
+        getDownloadURL(snapshot.ref).then(async (downloadURL) => {
           console.log("Download link to your message: ", downloadURL);
+          // await fetch(
+          //   `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`,
+          //   {
+          //     mode: "no-cors",
+          //   }
+          // ).then(() => console.log("mail sent successfully"));
         });
       });
     }
