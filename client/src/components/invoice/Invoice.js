@@ -15,7 +15,7 @@ function Invoice() {
 
   const handleDownloadClick = async (blob, url) => {
     console.log(blob, url);
-    setUrl(url);
+    // setUrl(url);
 
     // const fr = new FileReader();
     // fr.readAsDataURL(blob);
@@ -48,7 +48,7 @@ function Invoice() {
       <br />
       <br />
 
-      {url && <iframe src={url} height={940} title="invoice" />}
+      {/* {url && <iframe src={url} height={940} title="invoice" />} */}
     </div>
   );
 }
