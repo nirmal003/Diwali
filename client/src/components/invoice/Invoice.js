@@ -14,6 +14,13 @@ function Invoice() {
 
   const handleDownloadClick = async (blob, url) => {
     console.log(blob, url);
+
+    const fr = new FileReader();
+    fr.readAsDataURL(blob);
+    fr.addEventListener("load", () => {
+      const res = fr.result;
+      console.log(res);
+    });
   };
 
   return (
