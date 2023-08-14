@@ -14,7 +14,6 @@ function Invoice() {
   const [url, setUrl] = useState(() => null);
   const cartProduct = useSelector((state) => state.cart.cart);
   const userData = useSelector((state) => state.user.user);
-  console.log(blob);
 
   const callfn = async (blob) => {
     console.log(blob);
@@ -31,7 +30,6 @@ function Invoice() {
             mode: "no-cors",
           }
         );
-        console.log("success", send_mail);
       } catch (err) {
         console.log(err);
       }
