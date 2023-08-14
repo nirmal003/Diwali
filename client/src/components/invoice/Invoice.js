@@ -11,21 +11,28 @@ import MyDocument from "./MyDocument";
 function Invoice() {
   const dt = useParams();
   const [blob, setBlob] = useState(null);
+  const [url, setUrl] = useState(null);
   const cartProduct = useSelector((state) => state.cart.cart);
   const userData = useSelector((state) => state.user.user);
-  console.log(dt);
   console.log(blob);
 
-  const callfn = async (blob, dt) => {
-    console.log(blob, dt);
+  const callfn = async (blob) => {
+    console.log(blob);
 
     if (cartProduct.length !== 0 && blob) {
-      const storageRef = ref(storage, `invoice-${dt.time}.pdf`);
-
-      const snapshot = await uploadBytes(storageRef, blob);
-      const downloadURL = await getDownloadURL(snapshot.ref);
-
-      console.log(downloadURL);
+      try {
+        const storageRef = ref(storage, `invoice-${dt.time}.pdf`);
+        console.log("before1");
+        const snapshot = await uploadBytes(storageRef, blob);
+        console.log("after1");
+        console.log("before2");
+        const downloadURL = await getDownloadURL(snapshot.ref);
+        console.log("after2");
+        console.log(downloadURL);
+        setUrl(downloadURL);
+      } catch (err) {
+        console.log(err);
+      }
 
       // const send_mail = await fetch(
       //   `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`,
@@ -37,11 +44,11 @@ function Invoice() {
   };
 
   useMemo(() => {
-    callfn(blob, dt);
+    callfn(blob);
   }, [blob, dt.time]);
 
   return (
-    <div className="d-flex row my-3">
+    <div className="d-flex flex-column  my-3">
       <PDFDownloadLink
         className="mb-2"
         document={<MyDocument dt={dt} item={cartProduct} user={userData} />}
@@ -51,12 +58,7 @@ function Invoice() {
           loading ? (
             <Button>Loading</Button>
           ) : (
-            <>
-              {
-                // handleDownloadClick(blob, url),
-                <Button onClick={setBlob(blob)}>Download</Button>
-              }
-            </>
+            <Button onClick={setBlob(blob)}>Download</Button>
           )
         }
       </PDFDownloadLink>
@@ -68,7 +70,7 @@ function Invoice() {
       <br />
       <br />
 
-      {/* {url && <iframe src={url} height={940} title="invoice" />} */}
+      {url && <iframe src={url} width="100%" height={940} title="invoice" />}
     </div>
   );
 }

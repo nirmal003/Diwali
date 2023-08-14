@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
 });
 
 function InvoiceFooter({ item }) {
-  console.log(item);
+  // console.log(item);
 
   const netTotal = item.length && helpers.netTotal(item);
   const totalDiscount = item.length && helpers.overallDiscount(item);

@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
 });
 
 function InvoiceItems({ item }) {
-  console.log(item);
+  // console.log(item);
 
   return (
     <>
