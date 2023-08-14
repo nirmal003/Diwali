@@ -48,12 +48,11 @@ function Estimate() {
           date
         ).getTime()}&customer_Name=${user.name}&mobile_Number=${
           user.mobilenumber
-        }&address=${user.address}&order_Date=${
-          // new Date(date).getDate().toString().padStart(2, "0") /
-          // (new Date(date).getMonth() + 1).toString().padStart(2, "0") /
-          // new Date(date).getFullYear()
-          date.getTime()
-        }&net_total=${netTotal}&sub_total=${Math.round(
+        }&address=${user.address}&order_Date=${`${new Date(
+          date
+        ).toLocaleDateString()}  ${new Date(
+          date
+        ).toLocaleTimeString()}`}&net_total=${netTotal}&sub_total=${Math.round(
           totalPrice
         )}&overall_amount=${overallTotal}&user_Data=${JSON.stringify(
           user
