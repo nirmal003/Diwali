@@ -43,7 +43,7 @@ function Estimate() {
       const time = new Date(date).getTime();
       console.log(time);
 
-      await fetch(
+      const resp = await fetch(
         `${process.env.REACT_APP_ORDER}?order_Id=${new Date(
           date
         ).getTime()}&customer_Name=${user.name}&mobile_Number=${
@@ -57,10 +57,12 @@ function Estimate() {
         )}&overall_amount=${overallTotal}&user_Data=${JSON.stringify(
           user
         )}&cart_Items=${encodeURIComponent(JSON.stringify(cartProduct))}`
-      ).then((res) => {
-        console.log(res);
+      );
+
+      if (resp.ok) {
+        console.log(resp);
         navigate(`/invoice/${date}/${time}`);
-      });
+      }
     } else {
       setLength(false);
     }
