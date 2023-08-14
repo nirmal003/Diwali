@@ -1,20 +1,17 @@
-// Import the functions you need from the SDKs you need
-import firebase from "firebase/compat/app";
-import "firebase/compat/storage";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "firebase/app";
+import { getStorage } from "firebase/storage";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDrpLKnCXAisBrbHqQMin2smFN15jiAZkI",
-  authDomain: "main-project-cebfd.firebaseapp.com",
-  projectId: "main-project-cebfd",
-  storageBucket: "main-project-cebfd.appspot.com",
-  messagingSenderId: "778621182331",
-  appId: "1:778621182331:web:efcf4b0144e1956a48ddde",
+  apiKey: "AIzaSyDeyt8Fl_5X4-i1yKgRbzKOsJIJVudUj0g",
+  authDomain: "awesome-crackers.firebaseapp.com",
+  projectId: "awesome-crackers",
+  storageBucket: "awesome-crackers.appspot.com",
+  messagingSenderId: "185704730233",
+  appId: "1:185704730233:web:9dc29ddf056a9aa2278ea8",
+  measurementId: "G-M1DCFTCYPQ",
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-export const storage = firebase.storage();
-export default firebase;
+
+export const app = initializeApp(firebaseConfig);
+export const storage = getStorage(app);

@@ -1,28 +1,34 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import React, { useState } from "react";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import React from "react";
 import { Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { storage } from "./firebase";
 
 import MyDocument from "./MyDocument";
 
 function Invoice() {
   const dt = useParams();
-  const [url, setUrl] = useState(null);
+  // const [url, setUrl] = useState(null);
   const cartProduct = useSelector((state) => state.cart.cart);
   const userData = useSelector((state) => state.user.user);
-  console.log(dt);
+  // console.log(dt);
 
   const handleDownloadClick = async (blob, url) => {
-    console.log(blob, url);
+    // console.log(blob, url);
     // setUrl(url);
 
-    // const fr = new FileReader();
-    // fr.readAsDataURL(blob);
-    // fr.addEventListener("load", () => {
-    //   const res = fr.result;
-    //   console.log(res);
-    // });
+    if (cartProduct.length !== 0) {
+      const storageRef = ref(storage, `invoice-${dt.time}.pdf`);
+
+      uploadBytes(storageRef, blob).then((snapshot) => {
+        console.log("success");
+        getDownloadURL(snapshot.ref).then((downloadURL) => {
+          console.log("Download link to your message: ", downloadURL);
+        });
+      });
+    }
   };
 
   return (
