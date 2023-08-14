@@ -1,5 +1,5 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -7,27 +7,29 @@ import { useParams } from "react-router-dom";
 import MyDocument from "./MyDocument";
 
 function Invoice() {
-  const { date } = useParams();
+  const dt = useParams();
+  const [url, setUrl] = useState(null);
   const cartProduct = useSelector((state) => state.cart.cart);
   const userData = useSelector((state) => state.user.user);
-  console.log(date);
+  console.log(dt);
 
   const handleDownloadClick = async (blob, url) => {
     console.log(blob, url);
+    setUrl(url);
 
-    const fr = new FileReader();
-    fr.readAsDataURL(blob);
-    fr.addEventListener("load", () => {
-      const res = fr.result;
-      console.log(res);
-    });
+    // const fr = new FileReader();
+    // fr.readAsDataURL(blob);
+    // fr.addEventListener("load", () => {
+    //   const res = fr.result;
+    //   console.log(res);
+    // });
   };
 
   return (
     <div className="d-flex row my-3">
       <PDFDownloadLink
         className="mb-2"
-        document={<MyDocument date={date} item={cartProduct} user={userData} />}
+        document={<MyDocument dt={dt} item={cartProduct} user={userData} />}
         fileName="AwesomeInvoice.pdf"
       >
         {({ blob, url, loading }) =>
@@ -42,6 +44,11 @@ function Invoice() {
       {/* <PDFViewer width={1000} height={1100} showToolbar={true}>
         <MyDocument />
       </PDFViewer> */}
+
+      <br />
+      <br />
+
+      {url && <iframe src={url} width={400} height={940} title="invoice" />}
     </div>
   );
 }

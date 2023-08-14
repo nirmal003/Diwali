@@ -92,24 +92,22 @@ const styles = StyleSheet.create({
   },
 });
 
-function InvoiceDetails({ date, user }) {
+function InvoiceDetails({ dt, user }) {
   // console.log(user);
-  // console.log(new Date(date).getTime());
-  // console.log(new Date(date).getFullYear());
-  // console.log(new Date(date).getDate().toString().padStart(2, "0"));
-  // console.log((new Date(date).getMonth() + 1).toString().padStart(2, "0"));
+  // console.log(new Date(dt.date).getTime());
+  // console.log(new Date(dt.date).getFullYear());
+  // console.log(new Date(dt.date).getDate().toString().padStart(2, "0"));
+  // console.log((new Date(dt.date).getMonth() + 1).toString().padStart(2, "0"));
 
   return (
     <>
       <View style={styles.invoice}>
-        <Text style={styles.invoiceno}>
-          Invoice No : {new Date(date).getTime()}
-        </Text>
+        <Text style={styles.invoiceno}>Invoice No : {dt.time}</Text>
         <Text style={styles.invoicetitle}>INVOICE</Text>
         <Text style={styles.invoicedate}>
-          Date : {new Date(date).getDate().toString().padStart(2, "0")}-
-          {(new Date(date).getMonth() + 1).toString().padStart(2, "0")}-
-          {new Date(date).getFullYear()}
+          Date : {new Date(dt.date).getDate().toString().padStart(2, "0")}-
+          {(new Date(dt.date).getMonth() + 1).toString().padStart(2, "0")}-
+          {new Date(dt.date).getFullYear()}
         </Text>
       </View>
       <View style={styles.column}>

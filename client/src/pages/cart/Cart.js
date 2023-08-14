@@ -137,14 +137,12 @@ function Cart() {
             </div>
           </div>
 
-          <button className=" fs-5 estimate_btn_con">
-            <Link
-              to={totalPrice ? "/estimate" : "/cart"}
-              className="text-decoration-none text-black"
-            >
-              Confirm Estimate
-            </Link>
-          </button>
+          <Link
+            to={totalPrice ? "/estimate" : "/cart"}
+            className="text-decoration-none text-black"
+          >
+            <button className="fs-5 estimate_btn_con">Confirm Estimate</button>
+          </Link>
         </div>
       </div>
 

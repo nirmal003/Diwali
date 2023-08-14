@@ -40,26 +40,27 @@ function Estimate() {
       setLength(true);
       dispatch(addUser(user));
       const date = new Date();
+      const time = new Date(date).getTime();
+      console.log(time);
 
       const postData = await fetch(
-        `${process.env.REACT_APP_ORDER}?customer_Name=${
-          user.name
-        }&mobile_Number=${user.mobilenumber}&address=${
-          user.address
+        `${process.env.REACT_APP_ORDER}?order_Id=${new Date(
+          date
+        ).getTime()}&customer_Name=${user.name}&mobile_Number=${
+          user.mobilenumber
+        }&address=${user.address}&order_Date=${
+          // new Date(date).getDate().toString().padStart(2, "0") /
+          // (new Date(date).getMonth() + 1).toString().padStart(2, "0") /
+          // new Date(date).getFullYear()
+          date
         }&net_total=${netTotal}&sub_total=${Math.round(
           totalPrice
         )}&overall_amount=${overallTotal}&user_Data=${JSON.stringify(
           user
-        )}&cart_Items=${encodeURIComponent(JSON.stringify(cartProduct))}`,
-        {
-          mode: "no-cors",
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
-        }
+        )}&cart_Items=${encodeURIComponent(JSON.stringify(cartProduct))}`
       ).then((res) => {
         console.log(res);
-        navigate(`/invoice/${date}`);
+        navigate(`/invoice/${date}/${time}`);
       });
     } else {
       setLength(false);
