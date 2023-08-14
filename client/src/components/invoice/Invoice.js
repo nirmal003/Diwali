@@ -48,7 +48,7 @@ function Invoice() {
       <br />
       <br />
 
-      {url && <iframe src={url} width={400} height={940} title="invoice" />}
+      {url && <iframe src={url} height={940} title="invoice" />}
     </div>
   );
 }

@@ -43,7 +43,7 @@ function Estimate() {
       const time = new Date(date).getTime();
       console.log(time);
 
-      const postData = await fetch(
+      await fetch(
         `${process.env.REACT_APP_ORDER}?order_Id=${new Date(
           date
         ).getTime()}&customer_Name=${user.name}&mobile_Number=${
@@ -52,7 +52,7 @@ function Estimate() {
           // new Date(date).getDate().toString().padStart(2, "0") /
           // (new Date(date).getMonth() + 1).toString().padStart(2, "0") /
           // new Date(date).getFullYear()
-          date
+          date.getTime()
         }&net_total=${netTotal}&sub_total=${Math.round(
           totalPrice
         )}&overall_amount=${overallTotal}&user_Data=${JSON.stringify(
