@@ -20,7 +20,7 @@ function Invoice() {
   const callfn = async (blob) => {
     setUrl(null);
     console.log(blob);
-    if (cartProduct.length !== 0 && blob) {
+    if (Number(cartProduct.length) !== 0 && blob) {
       try {
         const storageRef = ref(storage, `invoice-${dt.time}.pdf`);
         const snapshot = await uploadBytes(storageRef, blob);
@@ -30,10 +30,10 @@ function Invoice() {
         setUrl(pdfUrl);
 
         const send_mail = await fetch(
-          `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`,
-          {
-            mode: "no-cors",
-          }
+          `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`
+          // {
+          //   mode: "no-cors",
+          // }
         );
       } catch (err) {
         console.log(err);
@@ -47,12 +47,6 @@ function Invoice() {
     callfn(blob);
   }, [blob, dt.time]);
 
-  // const handlePrint = (url) => {
-  //   window.print(url);
-  // };
-
-  // useEffect(() => {}, [url]);
-
   return (
     <div className="d-flex flex-column  my-3 mb-5 pb-5">
       <h2 className="fw-bold">Download PDF Invoice</h2>
@@ -62,21 +56,39 @@ function Invoice() {
         fileName="AwesomeInvoice.pdf"
       >
         {({ blob, url, loading }) =>
-          loading ? <div></div> : <div onClick={setBlob(blob)}></div>
+          loading ? (
+            <div></div>
+          ) : (
+            <div onClick={setBlob(blob)}>
+              <Button
+                className={`bg-secondary fw-bold border-0 px-2 ${
+                  cartProduct.length > 0 ? "" : "d-none"
+                }`}
+              >
+                <FaPrint /> &nbsp; Invoice PDF file
+              </Button>
+            </div>
+          )
         }
       </PDFDownloadLink>
 
-      {/* <Button onClick={() => handlePrint(url)}>Print PDF</Button> */}
-
       {url ? (
         <a href={url} download="invoice" target="_blank">
-          <Button className="bg-secondary fw-bold border-0 px-2">
+          <Button
+            className={`bg-secondary fw-bold border-0 px-2 ${
+              Number(cartProduct.length) === 0 ? "" : "d-none"
+            }`}
+          >
             <FaPrint /> &nbsp; Invoice PDF file
           </Button>
         </a>
       ) : (
         <div>
-          <Button className="bg-secondary fw-bold border-0 px-3">
+          <Button
+            className={`bg-secondary fw-bold border-0 px-3 ${
+              Number(cartProduct.length) === 0 ? "" : "d-none"
+            }`}
+          >
             <ImSpinner3 />
             &nbsp; Loading...
           </Button>
