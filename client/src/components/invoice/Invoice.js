@@ -7,7 +7,6 @@ import { useParams } from "react-router-dom";
 import { storage } from "./firebase";
 
 import MyDocument from "./MyDocument";
-import Preview from "./Preview";
 
 function Invoice() {
   const dt = useParams();
@@ -25,6 +24,8 @@ function Invoice() {
         const snapshot = await uploadBytes(storageRef, blob);
         const downloadURL = await getDownloadURL(snapshot.ref);
         setUrl(downloadURL);
+
+        const local = localStorage.setItem("url", downloadURL);
 
         // const send_mail = await fetch(
         //   `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`,
@@ -70,7 +71,7 @@ function Invoice() {
         />
       )}
 
-      {url && <Preview url={url} />}
+      {/* {url && <Preview url={url} />} */}
     </div>
   );
 }

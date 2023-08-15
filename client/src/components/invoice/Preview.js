@@ -1,17 +1,49 @@
-import React from "react";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+// import pdfjs from "pdfjs-dist/build/pdf";
+// import React, { useState } from "react";
 
-function Preview({ url }) {
-  return (
-    <div className="d-flex align-items-center justify-content-center">
-      <object data={url} type="application/pdf" width="100%" height="800px">
-        <p>PDF viewer is not supported in this browser.</p>
-      </object>
-      {/* <Document file={url}>
-        <Page pageNumber={1} />
-      </Document> */}
-    </div>
-  );
-}
+// function Preview({ url }) {
+//   const [images, setImages] = useState([]);
 
-export default Preview;
+//   const convertPdfToImages = async () => {
+//     const loadingTask = pdfjs.getDocument(url);
+//     const pdf = await loadingTask.promise;
+
+//     const imagePromises = Array.from({ length: pdf.numPages }, (_, index) => {
+//       return new Promise(async (resolve) => {
+//         const page = await pdf.getPage(index + 1);
+//         const canvas = document.createElement("canvas");
+//         const viewport = page.getViewport({ scale: 1.5 });
+//         canvas.width = viewport.width;
+//         canvas.height = viewport.height;
+//         const context = canvas.getContext("2d");
+//         const renderContext = {
+//           canvasContext: context,
+//           viewport: viewport,
+//         };
+
+//         const renderTask = page.render(renderContext);
+//         renderTask.promise.then(() => {
+//           canvas.toBlob((blob) => {
+//             const imgUrl = URL.createObjectURL(blob);
+//             resolve(imgUrl);
+//           });
+//         });
+//       });
+//     });
+
+//     Promise.all(imagePromises).then((imageUrls) => {
+//       setImages(imageUrls);
+//     });
+//   };
+
+//   return (
+//     <div
+//       className="d-flex align-items-center justify-content-center"
+//       onClick={convertPdfToImages()}
+//     >
+//       <img src={images} />
+//     </div>
+//   );
+// }
+
+// export default Preview;

@@ -12,6 +12,8 @@
     "bootstrap": "^5.3.0",
     "fade-animations": "^1.2.1",
     "firebase": "^10.1.0",
+    "html2canvas": "^1.4.1",
+    "pdfjs-dist": "^3.9.179",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
