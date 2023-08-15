@@ -1,6 +1,6 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -23,9 +23,7 @@ function Invoice() {
         const storageRef = ref(storage, `invoice-${dt.time}.pdf`);
         const snapshot = await uploadBytes(storageRef, blob);
         const downloadURL = await getDownloadURL(snapshot.ref);
-        setUrl(downloadURL);
-
-        const local = localStorage.setItem("url", downloadURL);
+        const local = localStorage.setItem("url", JSON.stringify(downloadURL));
 
         // const send_mail = await fetch(
         //   `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`,
@@ -37,11 +35,19 @@ function Invoice() {
         console.log(err);
       }
     }
+    const pdfUrl = JSON.parse(localStorage.getItem("url"));
+    setUrl(pdfUrl);
   };
 
   useMemo(() => {
     callfn(blob);
   }, [blob, dt.time]);
+
+  const handlePrint = (url) => {
+    window.print(url);
+  };
+
+  useEffect(() => {}, [url]);
 
   return (
     <div className="d-flex flex-column  my-3">
@@ -54,12 +60,18 @@ function Invoice() {
           loading ? (
             <Button>Loading</Button>
           ) : (
-            <Button onClick={setBlob(blob)}>Download</Button>
+            <div onClick={setBlob(blob)}></div>
           )
         }
       </PDFDownloadLink>
 
       <br />
+
+      <Button onClick={() => handlePrint(url)}>Print PDF</Button>
+
+      <a href={url} download="invoice" target="_blank">
+        <Button>download invoice</Button>
+      </a>
 
       {url && (
         <iframe
@@ -70,8 +82,6 @@ function Invoice() {
           className="d-none d-lg-block d-md-block"
         />
       )}
-
-      {/* {url && <Preview url={url} />} */}
     </div>
   );
 }
