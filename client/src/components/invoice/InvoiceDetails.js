@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     flexWrap: "wrap",
-    lineHeight: 1.3,
+    lineHeight: 1.4,
     width: "70%",
     textAlign: "right",
   },
@@ -113,7 +113,9 @@ function InvoiceDetails({ dt, user }) {
       <View style={styles.column}>
         <View style={styles.contact}>
           <Text>Mobile : 98947 40650</Text>
-          <Text>E-mail : awesomecrackerss@gmail.com</Text>
+          <Text style={{ fontSize: 11.5 }}>
+            mail : awesomecrackerss@gmail.com
+          </Text>
         </View>
         <View style={styles.logocon}>
           <Image
