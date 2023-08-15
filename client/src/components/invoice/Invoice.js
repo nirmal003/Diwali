@@ -1,6 +1,6 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { Button } from "react-bootstrap";
 import { FaPrint } from "react-icons/fa";
 import { ImSpinner3 } from "react-icons/im";
@@ -51,7 +51,7 @@ function Invoice() {
   //   window.print(url);
   // };
 
-  useEffect(() => {}, [url]);
+  // useEffect(() => {}, [url]);
 
   return (
     <div className="d-flex flex-column  my-3 mb-5 pb-5">
@@ -85,9 +85,11 @@ function Invoice() {
 
       <br />
 
-      <Link to="/product">
-        <Button variant="danger px-4">Back</Button>
-      </Link>
+      {url && (
+        <Link to="/product">
+          <Button variant="danger px-4 mb-5">Back</Button>
+        </Link>
+      )}
 
       {url && (
         <iframe
