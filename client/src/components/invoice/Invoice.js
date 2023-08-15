@@ -1,4 +1,4 @@
-import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import React, { useMemo, useState } from "react";
 import { Button } from "react-bootstrap";
@@ -24,12 +24,12 @@ function Invoice() {
         const snapshot = await uploadBytes(storageRef, blob);
         const downloadURL = await getDownloadURL(snapshot.ref);
         setUrl(downloadURL);
-        const send_mail = await fetch(
-          `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`,
-          {
-            mode: "no-cors",
-          }
-        );
+        // const send_mail = await fetch(
+        //   `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`,
+        //   {
+        //     mode: "no-cors",
+        //   }
+        // );
       } catch (err) {
         console.log(err);
       }
@@ -56,13 +56,17 @@ function Invoice() {
         }
       </PDFDownloadLink>
 
-      <PDFViewer width="100%" height={1100} showToolbar={true}>
-        <MyDocument dt={dt} item={cartProduct} user={userData} />
-      </PDFViewer>
-
       <br />
 
-      {url && <iframe src={url} width="100%" height={940} title="invoice" />}
+      {url && (
+        <iframe
+          src={url}
+          width="100%"
+          height={940}
+          title="invoice"
+          className="d-none d-lg-block d-md-block"
+        />
+      )}
     </div>
   );
 }
