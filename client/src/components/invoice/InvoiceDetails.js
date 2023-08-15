@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   address: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
     alignItems: "flex-end",
     flexWrap: "wrap",
     lineHeight: 1.3,
@@ -142,8 +142,8 @@ function InvoiceDetails({ dt, user }) {
           <Text>{user[0]?.mobilenumber}</Text>
         </View>
         <View style={styles.address}>
-          <Text>{user[0]?.address?.split(" ")?.slice(0, 2)?.join(" ")}</Text>
-          <Text>{user[0]?.address?.split(" ")?.slice(2)?.join(" ")}</Text>
+          <Text>{user[0]?.address?.split(" ")?.slice(0, 3)?.join(" ")}</Text>
+          <Text>{user[0]?.address?.split(" ")?.slice(3)?.join(" ")}</Text>
           <Text>
             {user[0]?.city} {user[0]?.state}
           </Text>
