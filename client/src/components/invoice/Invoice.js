@@ -43,9 +43,9 @@ function Invoice() {
     callfn(blob);
   }, [blob, dt.time]);
 
-  const handlePrint = (url) => {
-    window.print(url);
-  };
+  // const handlePrint = (url) => {
+  //   window.print(url);
+  // };
 
   useEffect(() => {}, [url]);
 
@@ -67,11 +67,13 @@ function Invoice() {
 
       <br />
 
-      <Button onClick={() => handlePrint(url)}>Print PDF</Button>
+      {/* <Button onClick={() => handlePrint(url)}>Print PDF</Button> */}
 
       <a href={url} download="invoice" target="_blank">
         <Button>download invoice</Button>
       </a>
+
+      <br />
 
       {url && (
         <iframe
