@@ -24,6 +24,7 @@ function Invoice() {
         const snapshot = await uploadBytes(storageRef, blob);
         const downloadURL = await getDownloadURL(snapshot.ref);
         setUrl(downloadURL);
+
         // const send_mail = await fetch(
         //   `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`,
         //   {

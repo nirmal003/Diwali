@@ -32,9 +32,10 @@ function Product() {
   const data = useSelector((state) => state.data.data);
   const cartProduct = useSelector((state) => state.cart.cart);
 
-  cartProduct.length &&
+  const remove =
+    cartProduct.length &&
     cartProduct.filter((c) => {
-      if (c.qty === 0) dispatch(deleteCart(c.id));
+      if (Number(c.qty) === 0) dispatch(deleteCart(c.id));
     });
 
   const totalDiscount =
