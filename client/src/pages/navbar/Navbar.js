@@ -15,12 +15,12 @@ function NavBar() {
   return (
     <>
       <Container fluid>
-        <Row className="fw-bold bg-dark header">
+        <Row className="fw-bold bg-danger header py-1">
           <Col className="text-white fs-6">Orders - +91 98947 40650</Col>
-          <Col className="text-white badge fs-6 fw-bolder">
+          <Col className="text-white badge fs-6 ">
             Welcome to Awesome Crackers, Sivakasi
           </Col>
-          <Col className=" text-white badge fs-6 fw-bolder">
+          <Col className=" text-white badge fs-6 ">
             Mail Us : awesomecrackerss@gmail.com
           </Col>
         </Row>
@@ -32,12 +32,16 @@ function NavBar() {
             </div>
           </Col>
           <Col>
-            <div className="align-middle acme py-2 fs-1 text-danger fw-bolder justify-content-md-center">
-              Awesome Crackers
+            <div className="align-middle acme pt-2 text-danger justify-content-md-center">
+              <img
+                className="img-fluid w-50"
+                src="https://nirmal003.github.io/Images/aws3.jpg"
+                alt="Awesome Crackers logo"
+              />
             </div>
           </Col>
           <Col>
-            <div className="align-middle py-2 fw-bold fs-6 justify-content-md-center">
+            <div className="align-middle pb-2 fw-bold fs-6 justify-content-md-center">
               <span className="clr-red fs-5">FOR QUERIES & BULK ORDER </span>
               <br /> +91 98947 40650 <br /> +91 97913 24210
             </div>
