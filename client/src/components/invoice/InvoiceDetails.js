@@ -113,7 +113,7 @@ function InvoiceDetails({ dt, user }) {
       <View style={styles.column}>
         <View style={styles.contact}>
           <Text>Mobile : 98947 40650</Text>
-          <Text>E-mail : awesomecrackerss.com</Text>
+          <Text>E-mail : awesomecrackerss@gmail.com</Text>
         </View>
         <View style={styles.logocon}>
           <Image
