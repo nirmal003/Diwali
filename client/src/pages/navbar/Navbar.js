@@ -37,6 +37,7 @@ function NavBar() {
                 className="img-fluid w-50"
                 src="https://nirmal003.github.io/Images/aws3.jpg"
                 alt="Awesome Crackers logo"
+                loading="lazy"
               />
             </div>
           </Col>
