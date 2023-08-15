@@ -141,7 +141,7 @@ function InvoiceDetails({ dt, user }) {
         </View>
         <View style={styles.address}>
           <Text>{user[0]?.address?.split(" ")?.slice(0, 3)?.join(" ")}</Text>
-          <Text>{user[0]?.address?.split(" ")?.slice(3)?.join(" ")}</Text>
+          <Text>{user[0]?.address?.split(" ")?.slice(3, -1)?.join(" ")}</Text>
           <Text>
             {user[0]?.city} {user[0]?.state}
           </Text>
