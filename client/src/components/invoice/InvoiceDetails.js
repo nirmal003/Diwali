@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     flexWrap: "wrap",
-    lineHeight: 1.3,
+    lineHeight: 1.4,
     width: "70%",
     textAlign: "right",
   },
