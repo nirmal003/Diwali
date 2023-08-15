@@ -2,8 +2,10 @@ import { PDFDownloadLink } from "@react-pdf/renderer";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import React, { useEffect, useMemo, useState } from "react";
 import { Button } from "react-bootstrap";
+import { FaPrint } from "react-icons/fa";
+import { ImSpinner3 } from "react-icons/im";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { storage } from "./firebase";
 
 import MyDocument from "./MyDocument";
@@ -16,21 +18,23 @@ function Invoice() {
   const userData = useSelector((state) => state.user.user);
 
   const callfn = async (blob) => {
+    setUrl(null);
     console.log(blob);
-
     if (cartProduct.length !== 0 && blob) {
       try {
         const storageRef = ref(storage, `invoice-${dt.time}.pdf`);
         const snapshot = await uploadBytes(storageRef, blob);
         const downloadURL = await getDownloadURL(snapshot.ref);
         const local = localStorage.setItem("url", JSON.stringify(downloadURL));
+        const pdfUrl = JSON.parse(localStorage.getItem("url"));
+        setUrl(pdfUrl);
 
-        // const send_mail = await fetch(
-        //   `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`,
-        //   {
-        //     mode: "no-cors",
-        //   }
-        // );
+        const send_mail = await fetch(
+          `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`,
+          {
+            mode: "no-cors",
+          }
+        );
       } catch (err) {
         console.log(err);
       }
@@ -50,30 +54,40 @@ function Invoice() {
   useEffect(() => {}, [url]);
 
   return (
-    <div className="d-flex flex-column  my-3">
+    <div className="d-flex flex-column  my-3 mb-5 pb-5">
+      <h2 className="fw-bold">Download PDF Invoice</h2>
       <PDFDownloadLink
         className="mb-2"
         document={<MyDocument dt={dt} item={cartProduct} user={userData} />}
         fileName="AwesomeInvoice.pdf"
       >
         {({ blob, url, loading }) =>
-          loading ? (
-            <Button>Loading</Button>
-          ) : (
-            <div onClick={setBlob(blob)}></div>
-          )
+          loading ? <div></div> : <div onClick={setBlob(blob)}></div>
         }
       </PDFDownloadLink>
 
-      <br />
-
       {/* <Button onClick={() => handlePrint(url)}>Print PDF</Button> */}
 
-      <a href={url} download="invoice" target="_blank">
-        <Button>download invoice</Button>
-      </a>
+      {url ? (
+        <a href={url} download="invoice" target="_blank">
+          <Button className="bg-secondary fw-bold border-0 px-2">
+            <FaPrint /> &nbsp; Invoice PDF file
+          </Button>
+        </a>
+      ) : (
+        <div>
+          <Button className="bg-secondary fw-bold border-0 px-3">
+            <ImSpinner3 />
+            &nbsp; Loading...
+          </Button>
+        </div>
+      )}
 
       <br />
+
+      <Link to="/product">
+        <Button variant="danger px-4">Back</Button>
+      </Link>
 
       {url && (
         <iframe
