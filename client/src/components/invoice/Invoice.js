@@ -1,4 +1,4 @@
-import { PDFDownloadLink } from "@react-pdf/renderer";
+import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import React, { useMemo, useState } from "react";
 import { Button } from "react-bootstrap";
@@ -56,9 +56,9 @@ function Invoice() {
         }
       </PDFDownloadLink>
 
-      {/* <PDFViewer width={1000} height={1100} showToolbar={true}>
-        <MyDocument />
-      </PDFViewer> */}
+      <PDFViewer width="100%" height={1100} showToolbar={true}>
+        <MyDocument dt={dt} item={cartProduct} user={userData} />
+      </PDFViewer>
 
       <br />
 
