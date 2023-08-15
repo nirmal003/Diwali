@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { storage } from "./firebase";
 
 import MyDocument from "./MyDocument";
+import Preview from "./Preview";
 
 function Invoice() {
   const dt = useParams();
@@ -68,6 +69,8 @@ function Invoice() {
           className="d-none d-lg-block d-md-block"
         />
       )}
+
+      {url && <Preview url={url} />}
     </div>
   );
 }
