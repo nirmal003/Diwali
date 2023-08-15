@@ -138,18 +138,8 @@ function InvoiceDetails({ dt, user }) {
           <Text>{user[0]?.mobilenumber}</Text>
         </View>
         <View style={styles.address}>
-          <Text>
-            {user[0]?.address
-              .split(" " || ",")
-              ?.slice(0, 2)
-              .join(" " || " , ")}
-          </Text>
-          <Text>
-            {user[0]?.address
-              .split(" " || ",")
-              ?.slice(2)
-              .join(" " || " , ")}
-          </Text>
+          <Text>{user[0]?.address?.split(" ")?.slice(0, 2)?.join(" ")}</Text>
+          <Text>{user[0]?.address?.split(" ")?.slice(2)?.join(" ")}</Text>
           <Text>
             {user[0]?.city} {user[0]?.state}
           </Text>
