@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   address: {
     display: "flex",
     flexDirection: "column",
-    flexWrap: "wrap",
+    // flexWrap: "wrap",
     lineHeight: 1.5,
     width: "70%",
     textAlign: "right",
