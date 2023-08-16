@@ -16,6 +16,10 @@ export const cartSlice = createSlice({
       state.cart = state.cart.filter((c) => c.id !== action.payload);
     },
 
+    deleteAllCart: (state, action) => {
+      state.cart = [];
+    },
+
     updateCart: (state, action) => {
       state.cart.map((c) => {
         if (c.id === action.payload.id) {
@@ -32,6 +36,7 @@ export const cartSlice = createSlice({
   },
 });
 
-export const { addCart, deleteCart, updateCart } = cartSlice.actions;
+export const { addCart, deleteCart, deleteAllCart, updateCart } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;

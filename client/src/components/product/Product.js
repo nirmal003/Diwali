@@ -62,7 +62,7 @@ function Product() {
         />
       </div>
 
-      <div className="crat_sticky bg-warning d-flex flex-row justify-content-between w-100 text-center">
+      <div className="crat_sticky  d-flex flex-row justify-content-between w-100 text-center lg-px-5">
         <div className="fw-bold text-wrap cart_price">
           Total Products : {cartProduct.length}
         </div>

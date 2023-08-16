@@ -4,10 +4,11 @@ import React, { useMemo, useState } from "react";
 import { Button } from "react-bootstrap";
 import { FaPrint } from "react-icons/fa";
 import { ImSpinner3 } from "react-icons/im";
-import { useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
 import { storage } from "./firebase";
 
+import { deleteAllCart } from "../product/cartSlice";
 import MyDocument from "./MyDocument";
 
 function Invoice() {
@@ -17,6 +18,9 @@ function Invoice() {
   const cartProduct = useSelector((state) => state.cart.cart);
   const userData = useSelector((state) => state.user.user);
 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const callfn = async (blob) => {
     setUrl(null);
     console.log(blob);
@@ -25,27 +29,32 @@ function Invoice() {
         const storageRef = ref(storage, `invoice-${dt.time}.pdf`);
         const snapshot = await uploadBytes(storageRef, blob);
         const downloadURL = await getDownloadURL(snapshot.ref);
-        const local = localStorage.setItem("url", JSON.stringify(downloadURL));
+        localStorage.setItem("url", JSON.stringify(downloadURL));
         const pdfUrl = JSON.parse(localStorage.getItem("url"));
         setUrl(pdfUrl);
 
-        const send_mail = await fetch(
-          `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`
-          // {
-          //   mode: "no-cors",
-          // }
+        await fetch(
+          `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`,
+          {
+            mode: "no-cors",
+          }
         );
       } catch (err) {
         console.log(err);
       }
     }
     const pdfUrl = JSON.parse(localStorage.getItem("url"));
-    setUrl(pdfUrl);
+    if (localStorage.length) setUrl(pdfUrl);
   };
 
   useMemo(() => {
     callfn(blob);
   }, [blob, dt.time]);
+
+  const goBack = () => {
+    dispatch(deleteAllCart());
+    navigate("/product");
+  };
 
   return (
     <div className="d-flex flex-column  my-3 mb-5 pb-5">
@@ -73,7 +82,7 @@ function Invoice() {
       </PDFDownloadLink>
 
       {url ? (
-        <a href={url} download="invoice" target="_blank">
+        <a href={url} download="invoice" target="_blank" rel="noreferrer">
           <Button
             className={`bg-secondary fw-bold border-0 px-2 ${
               Number(cartProduct.length) === 0 ? "" : "d-none"
@@ -98,9 +107,11 @@ function Invoice() {
       <br />
 
       {url && (
-        <Link to="/product">
-          <Button variant="danger px-4 mb-5">Back</Button>
-        </Link>
+        <div>
+          <Button variant="danger px-4 mb-5" onClick={() => goBack()}>
+            Back
+          </Button>
+        </div>
       )}
 
       {url && (
