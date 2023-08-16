@@ -20,6 +20,7 @@ function Invoice() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  // const { pathname } = useLocation();
 
   const callfn = async (blob) => {
     setUrl(null);
@@ -52,9 +53,18 @@ function Invoice() {
   }, [blob, dt.time]);
 
   const goBack = () => {
+    console.log("call from back");
     dispatch(deleteAllCart());
     navigate("/product");
   };
+
+  // useEffect(() => {
+  //   const back = (window.onpopstate = () => {
+  //     console.log(`call from useEffect`);
+  // if (pathname.startsWith("/invoice")) goBack();
+  //   });
+  //   return back;
+  // }, []);
 
   return (
     <div className="d-flex flex-column  my-3 mb-5 pb-5">
