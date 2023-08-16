@@ -57,7 +57,7 @@ function Product() {
       <div className="w-100">
         <img
           className="img-fluid"
-          src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
+          src="https://nirmal003.github.io/Images/home1.jpg"
           alt="Diwali Crackers"
         />
       </div>
@@ -92,7 +92,6 @@ function Product() {
                         className="img-fluid"
                         loading="lazy"
                         src={u.Image}
-                        // src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
                         alt={u.Product_id}
                         onClick={() => getImgUrl(u.Image)}
                       />

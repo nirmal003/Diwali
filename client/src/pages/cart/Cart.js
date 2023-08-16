@@ -85,7 +85,6 @@ function Cart() {
                       className="col-5"
                       loading="lazy"
                       src={c.product.u.Image}
-                      // src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
                       alt={c.id}
                       onClick={() => getImgUrl(c.product.u.Image)}
                     />

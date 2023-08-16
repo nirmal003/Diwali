@@ -265,7 +265,7 @@ function Home() {
               src="https://nirmal003.github.io/Images/home14.jpeg"
               className="img-fluid"
               alt="img14"
-              title="Malathi Traders"
+              title="Diwali Traders"
             />
           </div>
           <div className="col-lg-3 col-md-4 col-12 text-center">
@@ -273,7 +273,7 @@ function Home() {
               src="https://nirmal003.github.io/Images/home16.jpeg"
               className="img-fluid"
               alt="img16"
-              title="Malathi Traders"
+              title="Diwali Traders"
             />
           </div>
           <div className="col-lg-3 col-md-4 col-12 text-center">
@@ -281,7 +281,7 @@ function Home() {
               src="https://nirmal003.github.io/Images/home15.jpg"
               className="img-fluid"
               alt="img15"
-              title="Malathi Traders"
+              title="Diwali Traders"
             />
           </div>
         </div>

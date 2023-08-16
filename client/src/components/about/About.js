@@ -26,7 +26,7 @@ function About() {
               src="https://nirmal003.github.io/Images/about1.jpg"
               className="img-fluid abtlogo"
               alt="Sivakasi Crackers"
-              title="Wholesale Crackers Shop in Sivakasi"
+              title="Wholesale Crackers"
             />
           </div>
 
