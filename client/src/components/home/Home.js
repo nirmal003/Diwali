@@ -81,16 +81,16 @@ function Home() {
                 <img
                   data-aos="flip-right"
                   className="img1"
-                  src="https://www.malathicrackers.com/images/chakkar.jpg"
-                  alt="3456"
+                  src="https://nirmal003.github.io/Images/home2.jpg"
+                  alt="img2"
                 />
               </div>
               <div>
                 <img
                   data-aos="flip-left"
                   className="img1 img2"
-                  src="https://www.malathicrackers.com/images/rocket.jpg"
-                  alt="3456"
+                  src="https://nirmal003.github.io/Images/home3.jpg"
+                  alt="img3"
                 />
               </div>
             </div>
@@ -101,16 +101,16 @@ function Home() {
                 <img
                   data-aos="flip-left"
                   className="img1 img3"
-                  src="https://www.malathicrackers.com/images/flowerpot.jpg"
-                  alt="3456"
+                  src="https://nirmal003.github.io/Images/home4.jpg"
+                  alt="img4"
                 />
               </div>
               <div>
                 <img
                   data-aos="flip-right"
                   className="img1 img4 "
-                  src="https://www.malathicrackers.com/images/sparklers.jpg"
-                  alt="3456"
+                  src="https://nirmal003.github.io/Images/home5.jpg"
+                  alt="img5"
                 />
               </div>
             </div>
@@ -152,12 +152,12 @@ function Home() {
             <div className="col-lg-4 col-md-4 text-center pt-4">
               <Link to="/product">
                 <img
-                  src="https://www.malathicrackers.com/images/singlesound.png"
+                  src="https://nirmal003.github.io/Images/home7.png"
                   className="img-fluid pb-3 wow rollIn"
                   data-aos="flip-right"
                   // data-aos-duration="300"
                   data-aos-delay="100"
-                  alt="Single Sound"
+                  alt="img7"
                   title="Sivakasi Crackers Shop"
                 />
               </Link>
@@ -169,12 +169,12 @@ function Home() {
               <div className="pt-lg-4"></div>
               <Link to="/products">
                 <img
-                  src="https://www.malathicrackers.com/images/flowerpots.png"
+                  src="https://nirmal003.github.io/Images/home8.png"
                   className="img-fluid pb-3 wow rollIn"
                   data-aos="flip-left"
                   // data-aos-duration="300"
                   data-aos-delay="100"
-                  alt="Flower Pots"
+                  alt="img8"
                   title="Sivakasi Crackers Shop"
                 />
               </Link>
@@ -187,12 +187,12 @@ function Home() {
             <div className="col-lg-4 col-md-4 align-self-center text-center">
               <Link to="/product">
                 <img
-                  src="https://www.malathicrackers.com/images/diwalicrackers.png"
+                  src="https://nirmal003.github.io/Images/home9.png"
                   className="w-100 pb-4"
                   data-aos="zoom-in"
                   // data-aos-duration="300"
                   data-aos-delay="100"
-                  alt="Discount Sivakasi Crackers"
+                  alt="img9"
                   title="Sivakasi Crackers Shop"
                 />
               </Link>
@@ -200,12 +200,12 @@ function Home() {
             <div className="col-lg-4 col-md-4 text-center pt-4">
               <Link to="/product">
                 <img
-                  src="https://www.malathicrackers.com/images/chakkar.png"
+                  src="https://nirmal003.github.io/Images/home10.png"
                   className="img-fluid pb-3 wow rollIn"
                   data-aos="flip-left"
                   // data-aos-duration="300"
                   data-aos-delay="100"
-                  alt="Lar Crackers"
+                  alt="img10"
                   title="Sivakasi Crackers Shop"
                 />
               </Link>
@@ -217,12 +217,12 @@ function Home() {
               <div className="pt-lg-4"></div>
               <Link to="/products">
                 <img
-                  src="https://www.malathicrackers.com/images/novelties.png"
+                  src="https://nirmal003.github.io/Images/home11.png"
                   className="img-fluid pb-3 wow rollIn"
                   data-aos="flip-right"
                   // data-aos-duration="300"
                   data-aos-delay="100"
-                  alt="Diwali Pattasu"
+                  alt="img11"
                   title="Fancy Novelties"
                 />
               </Link>
@@ -238,7 +238,7 @@ function Home() {
 
       <div>
         <img
-          src="https://www.malathicrackers.com/images/diwalisale.jpg"
+          src="https://nirmal003.github.io/Images/home12.jpg"
           className="img-fluid w-100"
           alt="Diwali Crackers"
           title="Diwali Crackers"
@@ -254,25 +254,33 @@ function Home() {
           </div>
           <div className="col-lg-3 col-md-4 col-12 text-center">
             <img
-              src="https://www.malathicrackers.com/images/brand1.jpg"
+              src="https://nirmal003.github.io/Images/home13.jpeg"
               className="img-fluid"
-              alt="Malathi Crackers"
+              alt="img13"
+              title="img13"
+            />
+          </div>
+          <div className="col-lg-3 col-md-4 col-12 text-center">
+            <img
+              src="https://nirmal003.github.io/Images/home14.jpeg"
+              className="img-fluid"
+              alt="img14"
               title="Malathi Traders"
             />
           </div>
           <div className="col-lg-3 col-md-4 col-12 text-center">
             <img
-              src="https://www.malathicrackers.com/images/brand2.jpg"
+              src="https://nirmal003.github.io/Images/home16.jpeg"
               className="img-fluid"
-              alt="Malathi Crackers"
+              alt="img16"
               title="Malathi Traders"
             />
           </div>
           <div className="col-lg-3 col-md-4 col-12 text-center">
             <img
-              src="https://www.malathicrackers.com/images/brand3.jpg"
+              src="https://nirmal003.github.io/Images/home15.jpg"
               className="img-fluid"
-              alt="Malathi Crackers"
+              alt="img15"
               title="Malathi Traders"
             />
           </div>

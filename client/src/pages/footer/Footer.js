@@ -22,9 +22,9 @@ function Footer() {
                           <span className="text-white roboto">
                             Contact with us
                           </span>
-                          <h1 className="acme text-white ">
+                          <h2 className="acme text-white mb-2 ">
                             For Call &amp; WhatsApp
-                          </h1>
+                          </h2>
                         </div>
                       </div>
 
@@ -32,10 +32,10 @@ function Footer() {
                         <div className="footer__call__number">
                           <div className="footer__call__number__icon">
                             <img
-                              src="https://www.malathicrackers.com/images/support.png"
+                              src="https://nirmal003.github.io/Images/contact1.png"
                               className="img-fluid"
-                              alt="Malathi Crackers"
-                              title="Malathi Crackers"
+                              alt="contact1"
+                              title="contact1"
                             />
                           </div>
                           <div className="footer__call__number__text">
@@ -170,7 +170,7 @@ function Footer() {
       <div className="fixed point w0">
         <a onClick={() => window.open("https://wa.me/+919894740650")}>
           <img
-            src="https://www.malathicrackers.com/images/whatsappicon.png"
+            src="https://nirmal003.github.io/Images/whatsappicon.png"
             className="priceicn float-left filter"
             alt="Awesome Crackers"
             title="Awesome Crackers"
@@ -181,7 +181,7 @@ function Footer() {
       {/* <div className="fixed point1 w0 d-none d-lg-block">
         <span className="time-of-year">
           <img
-            src="https://www.malathicrackers.com/images/callicon.png"
+            src="https://nirmal003.github.io/Images/callicon.png"
             className="priceicn float-left"
             alt="Malathi Crackers"
             title="Malathi Crackers"
@@ -197,7 +197,7 @@ function Footer() {
       <div className="fixed point1 w0 d-lg-none">
         <a href="tel:+919894740650">
           <img
-            src="https://www.malathicrackers.com/images/callicon.png"
+            src="https://nirmal003.github.io/Images/callicon.png"
             className=" priceicn float-left"
             alt="Awesome Crackers"
             title="Awesome Crackers"
@@ -208,7 +208,7 @@ function Footer() {
       <div className="fixed point2">
         <Link to="/product">
           <img
-            src="https://www.malathicrackers.com/images/quickpurchase.png"
+            src="https://nirmal003.github.io/Images/quickpurchase.png"
             className="priceicn2 float-right"
             alt="Awesome Crackers"
             title="Awesome Crackers"

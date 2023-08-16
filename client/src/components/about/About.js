@@ -14,7 +14,7 @@ function About() {
       <div className="w-100">
         <img
           className="img-fluid"
-          src="https://www.malathicrackers.com/images/upload/home_banner_08_07_2022_05_34_01.jpg?t=290723113433"
+          src="https://nirmal003.github.io/Images/home1.jpg"
           alt="Diwali Crackers"
         />
       </div>
@@ -23,7 +23,7 @@ function About() {
         <div className="row">
           <div className="col-lg-6 col-md-6 col-12 text-center align-self-center pt-4">
             <img
-              src="https://www.malathicrackers.com/images/sivakasicrackers.jpg"
+              src="https://nirmal003.github.io/Images/about1.jpg"
               className="img-fluid abtlogo"
               alt="Sivakasi Crackers"
               title="Wholesale Crackers Shop in Sivakasi"
@@ -88,7 +88,7 @@ function About() {
           <div className="col-lg-12 col-md-12 col-12 pb-2 text-center">
             <h1 className="acme clr-red fw-bold mb-1">Why Choose Us</h1>
             <img
-              src="https://www.malathicrackers.com/images/line.png"
+              src="https://nirmal003.github.io/Images/line.png"
               className="w-10 mb-1"
               alt="RJR Agency"
               title=" RJR Agency"
