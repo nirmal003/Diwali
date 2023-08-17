@@ -24,6 +24,7 @@ function Invoice() {
   const callfn = async (blob) => {
     setUrl(null);
     console.log(blob);
+
     if (Number(cartProduct.length) !== 0 && blob) {
       try {
         const storageRef = ref(storage, `invoice-${dt.time}.pdf`);
@@ -33,7 +34,7 @@ function Invoice() {
         const pdfUrl = await JSON.parse(localStorage.getItem("url"));
         setUrl(pdfUrl);
 
-        await fetch(
+        fetch(
           `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`,
           {
             mode: "no-cors",
