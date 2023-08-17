@@ -31,15 +31,31 @@ function NavBar() {
               Diwali with Malathi Crackers
             </div>
           </Col>
-          <Col>
-            <div className="align-middle acme pt-2 text-danger justify-content-md-center">
+
+          <Col className="d-flex align-items-center">
+            <div className="align-middle acme pt-2  justify-content-center col-3">
               <img
-                className="img-fluid w-50"
+                className="img-fluid w-100 "
+                src="https://nirmal003.github.io/Images/aws3.jpg"
+                alt="Awesome Crackers logo"
+              />
+            </div>
+            <div className="align-middle acme pt-2 justify-content-center col-6">
+              <img
+                className="img-fluid w-100 "
+                src="https://nirmal003.github.io/Images/homeaws3.jpg"
+                alt="Awesome Crackers logo"
+              />
+            </div>
+            <div className="align-middle acme pt-2  justify-content-center col-3">
+              <img
+                className="img-fluid w-100 "
                 src="https://nirmal003.github.io/Images/aws3.jpg"
                 alt="Awesome Crackers logo"
               />
             </div>
           </Col>
+
           <Col>
             <div className="align-middle pb-2 fw-bold fs-6 justify-content-md-center">
               <span className="clr-red fs-5">FOR QUERIES & BULK ORDER </span>
