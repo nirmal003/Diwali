@@ -31,7 +31,7 @@ function Invoice() {
         const snapshot = await uploadBytes(storageRef, blob);
         const downloadURL = await getDownloadURL(snapshot.ref);
         localStorage.setItem("url", JSON.stringify(downloadURL));
-        const pdfUrl = JSON.parse(localStorage.getItem("url"));
+        const pdfUrl = await JSON.parse(localStorage.getItem("url"));
         setUrl(pdfUrl);
 
         await fetch(
@@ -40,6 +40,9 @@ function Invoice() {
             mode: "no-cors",
           }
         );
+
+        dispatch(deleteAllCart());
+        console.log("deletedAll", pdfUrl);
       } catch (err) {
         console.log(err);
       }
@@ -58,14 +61,6 @@ function Invoice() {
     navigate("/product");
   };
 
-  // useEffect(() => {
-  //   const back = (window.onpopstate = () => {
-  //     console.log(`call from useEffect`);
-  // if (pathname.startsWith("/invoice")) goBack();
-  //   });
-  //   return back;
-  // }, []);
-
   return (
     <div className="d-flex flex-column  my-3 mb-5 pb-5">
       <h2 className="fw-bold">Download PDF Invoice</h2>
@@ -76,7 +71,10 @@ function Invoice() {
       >
         {({ blob, url, loading }) =>
           loading ? (
-            <div></div>
+            <div>
+              <ImSpinner3 />
+              &nbsp; Loading...
+            </div>
           ) : (
             <div onClick={setBlob(blob)}>
               <Button
