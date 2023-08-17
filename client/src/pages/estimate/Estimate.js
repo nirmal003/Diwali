@@ -17,6 +17,8 @@ function Estimate() {
   const cartProduct = useSelector((state) => state.cart.cart);
   console.log(cartProduct);
 
+  if (Number(cartProduct.length) === 0) navigate("/product");
+
   const userData = useSelector((state) => state.user.user);
   console.log(userData);
 

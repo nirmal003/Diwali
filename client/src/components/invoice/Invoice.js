@@ -20,7 +20,6 @@ function Invoice() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const { pathname } = useLocation();
 
   const callfn = async (blob) => {
     setUrl(null);
@@ -56,7 +55,6 @@ function Invoice() {
   }, [blob, dt.time]);
 
   const goBack = () => {
-    console.log("call from back");
     dispatch(deleteAllCart());
     navigate("/product");
   };
@@ -72,8 +70,10 @@ function Invoice() {
         {({ blob, url, loading }) =>
           loading ? (
             <div>
-              <ImSpinner3 />
-              &nbsp; Loading...
+              <Button>
+                <ImSpinner3 />
+                &nbsp; Loading...
+              </Button>
             </div>
           ) : (
             <div onClick={setBlob(blob)}>
