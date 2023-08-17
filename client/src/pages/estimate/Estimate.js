@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,13 @@ import "./estimate.css";
 import { addUser } from "./userSlice";
 
 function Estimate() {
+  useEffect(() => {
+    if (Number(cartProduct.length) === 0) {
+      console.log("product");
+      navigate("/product");
+    }
+  }, []);
+
   const [user, setUser] = useState({});
   const [length, setLength] = useState(true);
 
@@ -16,8 +23,6 @@ function Estimate() {
 
   const cartProduct = useSelector((state) => state.cart.cart);
   console.log(cartProduct);
-
-  if (Number(cartProduct.length) === 0) navigate("/product");
 
   const userData = useSelector((state) => state.user.user);
   console.log(userData);

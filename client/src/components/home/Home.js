@@ -246,7 +246,7 @@ function Home() {
       </div>
 
       <div className="container my-5">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center align-items-center">
           <div className="col-lg-12 pb-4">
             <h1 className="acme text-center fw-bolder clr-red">
               Brands We Handle
@@ -260,14 +260,7 @@ function Home() {
               title="img13"
             />
           </div>
-          <div className="col-lg-3 col-md-4 col-12 text-center">
-            <img
-              src="https://nirmal003.github.io/Images/home14.jpeg"
-              className="img-fluid"
-              alt="img14"
-              title="Diwali Traders"
-            />
-          </div>
+
           <div className="col-lg-3 col-md-4 col-12 text-center">
             <img
               src="https://nirmal003.github.io/Images/home16.jpeg"
@@ -278,9 +271,17 @@ function Home() {
           </div>
           <div className="col-lg-3 col-md-4 col-12 text-center">
             <img
-              src="https://nirmal003.github.io/Images/home15.jpg"
+              src="https://nirmal003.github.io/Images/home15.jpeg"
               className="img-fluid"
               alt="img15"
+              title="Diwali Traders"
+            />
+          </div>
+          <div className="col-lg-3 col-md-4 col-12 text-center">
+            <img
+              src="https://nirmal003.github.io/Images/home14.jpeg"
+              className="img-fluid"
+              alt="img14"
               title="Diwali Traders"
             />
           </div>
