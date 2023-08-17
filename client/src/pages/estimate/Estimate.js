@@ -9,10 +9,7 @@ import { addUser } from "./userSlice";
 
 function Estimate() {
   useEffect(() => {
-    if (Number(cartProduct.length) === 0) {
-      console.log("product");
-      navigate("/product");
-    }
+    if (Number(cartProduct.length) === 0) navigate("/product");
   }, []);
 
   const [user, setUser] = useState({});
