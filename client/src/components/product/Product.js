@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Button } from "react-bootstrap";
+import { ImSpinner3 } from "react-icons/im";
 import { Link } from "react-router-dom";
 import * as helpers from "../../Helper/helper";
 import ModelView from "../../pages/model/ModelView";
@@ -126,7 +127,10 @@ function Product() {
             </div>
           ))
         ) : (
-          <h1 className="fw-bold text-center pt-3">Loading...</h1>
+          <h1 className="fw-bold text-center  py-3 bg-warning">
+            <ImSpinner3 />
+            &nbsp; Loading...
+          </h1>
         )}
       </>
 
