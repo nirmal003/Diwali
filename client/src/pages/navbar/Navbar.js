@@ -32,11 +32,11 @@ function NavBar() {
             </div>
           </Col>
 
-          <Col className="d-flex align-items-center">
+          <Col className="d-flex align-items-center px-1">
             <div className="align-middle acme pt-2  justify-content-center col-3">
               <img
                 className="img-fluid w-100 "
-                src="https://nirmal003.github.io/Images/aws3.jpg"
+                src="https://nirmal003.github.io/Images/homesmall.jpg"
                 alt="Awesome Crackers logo"
               />
             </div>
@@ -50,7 +50,7 @@ function NavBar() {
             <div className="align-middle acme pt-2  justify-content-center col-3">
               <img
                 className="img-fluid w-100 "
-                src="https://nirmal003.github.io/Images/aws3.jpg"
+                src="https://nirmal003.github.io/Images/homesmall.jpg"
                 alt="Awesome Crackers logo"
               />
             </div>
