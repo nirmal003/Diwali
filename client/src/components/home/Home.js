@@ -42,6 +42,14 @@ function Home() {
           loading="lazy"
         />
       </div>
+      <div className="w-100">
+        <img
+          className="img-fluid"
+          src="https://nirmal003.github.io/Images/homeoffer.jpg"
+          alt="Diwali Crackers"
+          loading="lazy"
+        />
+      </div>
 
       <Row className="my-3 cracker justify-content-center">
         <Col className="col-lg-6 col-md-8 col-12">
