@@ -45,6 +45,7 @@ function NavBar() {
                 className="img-fluid w-100 "
                 src="https://nirmal003.github.io/Images/homeaws3.jpg"
                 alt="Awesome Crackers logo"
+                loading="lazy"
               />
             </div>
             <div className="align-middle acme pt-2  justify-content-center col-3">
