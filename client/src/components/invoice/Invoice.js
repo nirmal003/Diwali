@@ -14,8 +14,8 @@ import MyDocument from "./MyDocument";
 
 function Invoice() {
   const dt = useParams();
-  const [blob, setBlob] = useState(() => null);
-  const [pdfUrl, setPdfUrl] = useState(() => null);
+  const [blob, setBlob] = useState(null);
+  const [pdfUrl, setPdfUrl] = useState(null);
   const cartProduct = useSelector((state) => state.cart.cart);
   const userData = useSelector((state) => state.user.user);
 
