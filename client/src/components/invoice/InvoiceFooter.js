@@ -45,7 +45,9 @@ function InvoiceFooter({ item }) {
         <Text style={styles.total}>{Math.round(netTotal).toFixed(2)}</Text>
       </View>
       <View style={styles.row} className="fw-bolder">
-        <Text style={styles.description}>Discount(30%)</Text>
+        <Text style={styles.description}>
+          Discount({(Math.round(totalDiscount) / Math.round(netTotal)) * 100}%)
+        </Text>
         <Text style={styles.total}>{Math.round(totalDiscount).toFixed(2)}</Text>
       </View>
       <View style={styles.row} className="fw-bolder">
