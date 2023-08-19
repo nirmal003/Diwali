@@ -293,6 +293,14 @@ function Home() {
               title="Diwali Traders"
             />
           </div>
+          <div className="col-lg-3 col-md-4 col-12 text-center">
+            <img
+              src="https://nirmal003.github.io/Images/home18.jpeg"
+              className="img-fluid"
+              alt="img14"
+              title="Diwali Traders"
+            />
+          </div>
         </div>
       </div>
     </div>
