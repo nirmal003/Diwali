@@ -136,16 +136,16 @@ function InvoiceDetails({ dt, user }) {
           <Text style={{ fontWeight: "bold", fontSize: 13 }}>
             Customer Details
           </Text>
-          <Text>{user[0]?.name}</Text>
-          <Text>{user[0]?.mobilenumber}</Text>
+          <Text>{user?.name}</Text>
+          <Text>{user?.mobilenumber}</Text>
         </View>
         <View style={styles.address}>
-          <Text>{user[0]?.address?.split(" ")?.slice(0, 3)?.join(" ")}</Text>
+          <Text>{user?.address?.split(" ")?.slice(0, 3)?.join(" ")}</Text>
           <Text>
-            {user[0]?.address?.split(" ")?.slice(3, Infinity)?.join(" ")}
+            {user?.address?.split(" ")?.slice(3, Infinity)?.join(" ")}
           </Text>
           <Text>
-            {user[0]?.city} {user[0]?.state}
+            {user?.city} {user?.state}
           </Text>
         </View>
       </View>
