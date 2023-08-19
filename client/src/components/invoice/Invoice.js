@@ -24,7 +24,7 @@ function Invoice() {
 
   const callfn = async (blob) => {
     setPdfUrl(null);
-    console.log(blob);
+    // console.log(blob);
 
     if (Number(cartProduct.length) !== 0 && blob) {
       try {
@@ -34,6 +34,7 @@ function Invoice() {
         localStorage.setItem("url", JSON.stringify(downloadURL));
         const url_Link = await JSON.parse(localStorage.getItem("url"));
         setPdfUrl(url_Link);
+        dispatch(deleteAllCart());
 
         fetch(
           `${process.env.REACT_APP_SEND_INVOICE}?invoice_No=${dt.time}&pdf_Url=${downloadURL}`,
@@ -42,8 +43,7 @@ function Invoice() {
           }
         );
 
-        dispatch(deleteAllCart());
-        console.log("deletedAll", url_Link);
+        // console.log("deletedAll", url_Link);
       } catch (err) {
         console.log(err);
       }

@@ -19,10 +19,10 @@ function Estimate() {
   const dispatch = useDispatch();
 
   const cartProduct = useSelector((state) => state.cart.cart);
-  console.log(cartProduct);
+  // console.log(cartProduct);
 
   const userData = useSelector((state) => state.user.user);
-  console.log(userData);
+  // console.log(userData);
 
   const netTotal = cartProduct.length && helpers.netTotal(cartProduct);
   const totalPrice = cartProduct.length && helpers.overallPrice(cartProduct);
@@ -34,7 +34,7 @@ function Estimate() {
     const { name, value } = e.target;
     const inputData = { [name]: value };
     setUser({ ...user, ...inputData });
-    console.log(user);
+    // console.log(user);
   };
 
   const handleOnSubmit = async (e) => {
@@ -45,7 +45,7 @@ function Estimate() {
       dispatch(addUser(user));
       const date = new Date();
       const time = new Date(date).getTime();
-      console.log(time);
+      // console.log(time);
 
       const resp = await fetch(
         `${process.env.REACT_APP_ORDER}?order_Id=${new Date(
@@ -64,7 +64,7 @@ function Estimate() {
       );
 
       if (resp.ok) {
-        console.log(resp);
+        // console.log(resp);
         navigate(`/invoice/${date}/${time}`);
       }
     } else {
