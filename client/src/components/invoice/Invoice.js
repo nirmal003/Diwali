@@ -36,7 +36,7 @@ function Invoice() {
         setPdfUrl(url_Link);
 
         fetch(
-          `${process.env.REACT_APP_SEND_INVOICE}?invoice_url=${downloadURL}`,
+          `${process.env.REACT_APP_SEND_INVOICE}?invoice_No=${dt.time}&pdf_Url=${downloadURL}`,
           {
             mode: "no-cors",
           }
