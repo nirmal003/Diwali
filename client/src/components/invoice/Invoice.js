@@ -24,7 +24,7 @@ function Invoice() {
 
   const callfn = async (blob) => {
     setPdfUrl(null);
-    // console.log(blob);
+    console.log(blob);
 
     if (Number(cartProduct.length) !== 0 && blob) {
       try {
@@ -40,10 +40,10 @@ function Invoice() {
           {
             mode: "no-cors",
           }
-          );
+        );
 
-          dispatch(deleteAllCart());
-        // console.log("deletedAll", url_Link);
+        dispatch(deleteAllCart());
+        console.log("deletedAll", url_Link);
       } catch (err) {
         console.log(err);
       }
