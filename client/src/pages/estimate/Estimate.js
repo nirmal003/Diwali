@@ -60,10 +60,14 @@ function Estimate() {
           totalPrice
         )}&overall_amount=${overallTotal}&user_Data=${JSON.stringify(
           user
-        )}&cart_Items=${encodeURIComponent(JSON.stringify(cartProduct))}`
+        )}&cart_Items=${encodeURIComponent(JSON.stringify(cartProduct))}`,
+        {
+          mode: "no-cors",
+        }
       );
 
-      if (resp.ok) {
+      console.log(resp);
+      if (resp) {
         console.log(resp);
         navigate(`/invoice/${date}/${time}`);
       }
