@@ -47,7 +47,7 @@ function Estimate() {
       const time = new Date(date).getTime();
       console.log(time);
 
-      const resp = await fetch(
+      const resp = fetch(
         `${process.env.REACT_APP_ORDER}?order_Id=${new Date(
           date
         ).getTime()}&customer_Name=${user.name}&mobile_Number=${
@@ -60,17 +60,18 @@ function Estimate() {
           totalPrice
         )}&overall_amount=${overallTotal}&user_Data=${JSON.stringify(
           user
-        )}&cart_Items=${encodeURIComponent(JSON.stringify(cartProduct))}`,
-        {
-          mode: "no-cors",
-        }
+        )}&cart_Items=${encodeURIComponent(JSON.stringify(cartProduct))}`
+        // {
+        //   mode: "no-cors",
+        // }
       );
 
-      console.log(resp);
-      if (resp) {
-        console.log(resp);
-        navigate(`/invoice/${date}/${time}`);
-      }
+      navigate(`/invoice/${date}/${time}`);
+
+      // if (resp) {
+      //   console.log(resp);
+      //   navigate(`/invoice/${date}/${time}`);
+      // }
     } else {
       setLength(false);
     }
