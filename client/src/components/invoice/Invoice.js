@@ -34,15 +34,15 @@ function Invoice() {
         localStorage.setItem("url", JSON.stringify(downloadURL));
         const url_Link = await JSON.parse(localStorage.getItem("url"));
         setPdfUrl(url_Link);
-        dispatch(deleteAllCart());
 
         fetch(
           `${process.env.REACT_APP_SEND_INVOICE}?invoice_No=${dt.time}&pdf_Url=${downloadURL}`,
           {
             mode: "no-cors",
           }
-        );
+          );
 
+          dispatch(deleteAllCart());
         // console.log("deletedAll", url_Link);
       } catch (err) {
         console.log(err);
