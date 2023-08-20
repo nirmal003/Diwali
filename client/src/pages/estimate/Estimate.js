@@ -45,7 +45,7 @@ function Estimate() {
       dispatch(addUser(user));
       const date = new Date();
       const time = new Date(date).getTime();
-      // console.log(time);
+      console.log(time);
 
       const resp = await fetch(
         `${process.env.REACT_APP_ORDER}?order_Id=${new Date(
@@ -64,7 +64,7 @@ function Estimate() {
       );
 
       if (resp.ok) {
-        // console.log(resp);
+        console.log(resp);
         navigate(`/invoice/${date}/${time}`);
       }
     } else {
