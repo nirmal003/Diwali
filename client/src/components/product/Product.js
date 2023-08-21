@@ -138,7 +138,12 @@ function Product() {
       </>
 
       <Link to="/cart">
-        <Button variant="success" className="mt-4 fs-5 fw-bold">
+        <Button
+          variant="success"
+          className={`mt-4 fs-5 fw-bold ${
+            cartProduct.length > 0 ? "" : "disabled"
+          }`}
+        >
           Submit
         </Button>
       </Link>
