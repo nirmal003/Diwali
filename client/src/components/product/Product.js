@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Button } from "react-bootstrap";
 import { ImSpinner3 } from "react-icons/im";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as helpers from "../../Helper/helper";
-import ModelView from "../../pages/model/ModelView";
 import { addData } from "../home/dataSlice";
 import TotalPrice from "./TotalPrice";
 import { deleteCart } from "./cartSlice";
 import "./product.css";
 
 function Product() {
-  const [imgUrl, setImgUrl] = useState("");
-  const [show, setShow] = useState(() => false);
+  // const [imgUrl, setImgUrl] = useState("");
+  // const [show, setShow] = useState(() => false);
 
   useEffect(() => {
     fetchData();
@@ -29,6 +28,7 @@ function Product() {
     }
   };
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const data = useSelector((state) => state.data.data);
   const cartProduct = useSelector((state) => state.cart.cart);
@@ -48,10 +48,10 @@ function Product() {
 
   console.log(groupByCategory);
 
-  const getImgUrl = (url) => {
-    setImgUrl(url);
-    setShow(!show);
-  };
+  // const getImgUrl = (url) => {
+  //   setImgUrl(url);
+  //   setShow(!show);
+  // };
 
   return (
     <>
@@ -94,7 +94,11 @@ function Product() {
                         loading="lazy"
                         src={u.Image}
                         alt={u.Product_id}
-                        onClick={() => getImgUrl(u.Image)}
+                        onClick={() =>
+                          navigate(`/product/${u.Product_id}`, {
+                            state: u.Image,
+                          })
+                        }
                       />
                       <span className="proId_con">{u.Product_id}</span>
                     </div>
@@ -148,7 +152,7 @@ function Product() {
         </Button>
       </Link>
 
-      {show && <ModelView imgUrl={imgUrl} show={() => setShow(!show)} />}
+      {/* {show && <ModelView imgUrl={imgUrl} show={() => setShow(!show)} />} */}
     </>
   );
 }
